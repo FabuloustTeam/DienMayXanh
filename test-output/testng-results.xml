@@ -1,128 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-24T18:41:37 ICT" name="Default suite" finished-at="2020-11-24T18:43:43 ICT" duration-ms="125390">
+  <suite started-at="2020-12-01T19:11:07 ICT" name="Default suite" finished-at="2020-12-01T19:11:32 ICT" duration-ms="24466">
     <groups>
     </groups>
-    <test started-at="2020-11-24T18:41:37 ICT" name="Default test" finished-at="2020-11-24T18:43:43 ICT" duration-ms="125390">
-      <class name="ChooseReceivedPlace">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:37 ICT" name="beforeMethod" finished-at="2020-11-24T18:41:44 ICT" duration-ms="7043" status="PASS">
+    <test started-at="2020-12-01T19:11:07 ICT" name="Default test" finished-at="2020-12-01T19:11:32 ICT" duration-ms="24466">
+      <class name="ViewListProducts">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:07 ICT" name="beforeMethod" finished-at="2020-12-01T19:11:18 ICT" duration-ms="10325" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="mainSFWithFullInfor()[pri:1, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:44 ICT" name="mainSFWithFullInfor" finished-at="2020-11-24T18:41:50 ICT" duration-ms="6121" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mainSFWithFullInfor -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:50 ICT" name="closeDriver" finished-at="2020-11-24T18:41:54 ICT" duration-ms="4133" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:54 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:01 ICT" duration-ms="6035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successWithOnlyProvince()[pri:2, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:01 ICT" name="successWithOnlyProvince" finished-at="2020-11-24T18:42:06 ICT" duration-ms="5828" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successWithOnlyProvince -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:06 ICT" name="closeDriver" finished-at="2020-11-24T18:42:10 ICT" duration-ms="4113" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:10 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:17 ICT" duration-ms="6134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successWithoutFillTextboxAddress()[pri:3, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:17 ICT" name="successWithoutFillTextboxAddress" finished-at="2020-11-24T18:42:24 ICT" duration-ms="7226" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successWithoutFillTextboxAddress -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:24 ICT" name="closeDriver" finished-at="2020-11-24T18:42:28 ICT" duration-ms="4318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:28 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:34 ICT" duration-ms="6078" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="failWithoutChooseWard()[pri:4, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:34 ICT" name="failWithoutChooseWard" finished-at="2020-11-24T18:42:40 ICT" duration-ms="5443" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failWithoutChooseWard -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:40 ICT" name="closeDriver" finished-at="2020-11-24T18:42:44 ICT" duration-ms="4136" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:44 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:52 ICT" duration-ms="8688" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateWithOnlyProvinceSubmitBefor()[pri:5, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:52 ICT" name="successUpdateWithOnlyProvinceSubmitBefor" finished-at="2020-11-24T18:43:01 ICT" duration-ms="8297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successUpdateWithOnlyProvinceSubmitBefor -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:01 ICT" name="closeDriver" finished-at="2020-11-24T18:43:05 ICT" duration-ms="4138" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:05 ICT" name="beforeMethod" finished-at="2020-11-24T18:43:12 ICT" duration-ms="6606" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateByClickOnButonChange()[pri:6, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:12 ICT" name="successUpdateByClickOnButonChange" finished-at="2020-11-24T18:43:23 ICT" duration-ms="11309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successUpdateByClickOnButonChange -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:23 ICT" name="closeDriver" finished-at="2020-11-24T18:43:27 ICT" duration-ms="4129" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:27 ICT" name="beforeMethod" finished-at="2020-11-24T18:43:33 ICT" duration-ms="6209" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateByClickOnDropBoxProvince()[pri:7, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:33 ICT" name="successUpdateByClickOnDropBoxProvince" finished-at="2020-11-24T18:43:38 ICT" duration-ms="5206" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:18 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-01T19:11:31 ICT" duration-ms="13834" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='provinces-box']//child::span"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Expected condition failed: waiting for value to contain "check". Current value: "null" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54239}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 35bcfc980faf3a75125ccae168c139a8
-*** Element info: {Using=xpath, value=//div[@class='provinces-box']//child::span}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: b2ca5d203a0f544015149e8b118f83b8]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='provinces-box']//child::span"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for value to contain "check". Current value: "null" (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54239}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 35bcfc980faf3a75125ccae168c139a8
-*** Element info: {Using=xpath, value=//div[@class='provinces-box']//child::span}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at ChooseReceivedPlace.chooseProvinceBox(ChooseReceivedPlace.java:255)
-at ChooseReceivedPlace.successUpdateByClickOnDropBoxProvince(ChooseReceivedPlace.java:236)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: b2ca5d203a0f544015149e8b118f83b8
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at ViewListProducts.chooseSort(ViewListProducts.java:250)
+at ViewListProducts.testViewWithSortPriceDescending(ViewListProducts.java:95)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -153,15 +62,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successUpdateByClickOnDropBoxProvince -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:38 ICT" name="closeDriver" finished-at="2020-11-24T18:43:43 ICT" duration-ms="4132" status="PASS">
+        </test-method> <!-- testViewWithSortPriceDescending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:31 ICT" name="closeBrowser" finished-at="2020-12-01T19:11:32 ICT" duration-ms="257" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-      </class> <!-- ChooseReceivedPlace -->
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- ViewListProducts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

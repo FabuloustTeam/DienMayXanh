@@ -27,7 +27,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
 	 */
-	@Test(priority = 1)
+//	@Test(priority = 1)
 	public void ShowAllProduct() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		WebElement locnuoc = driver.findElement(By.xpath("//a[@href='/may-loc-nuoc']"));
@@ -49,7 +49,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
 	 */
-	@Test(priority = 2)
+//	@Test(priority = 2)
 	private void ShowAllProductOfBrand() {
 		WebElement locnuoc = driver.findElement(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
@@ -102,7 +102,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-02. Test case ID: TC-DMX-VLP-04
 	 */
-	@Test (priority = 4)
+//	@Test (priority = 4)
 	public void testViewWithSortPriceAscending() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
@@ -118,7 +118,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-03. Test case ID: TC-DMX-VLP-05
 	 */
-	@Test (priority = 5)
+//	@Test (priority = 5)
 	public void testQuantity() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
@@ -241,6 +241,19 @@ public class ViewListProducts {
 		WebElement sortPriceDescending = waitForElementClickable(
 				By.xpath("//aside[@id='scroll-MLN']//child::a[text()='" + sortType + "']"));
 		sortPriceDescending.click();
+		
+//		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+//		
+//		while(true) {
+//			sortPriceDescending.click();
+//			try {
+//				if(!wait.until(ExpectedConditions.attributeContains(sortPriceDescending, "class", "check")))
+//					break;
+//			} catch(Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+		
 		waitForElementInvisible(By.id("dlding"));
 
 		waitForProductsLoad();

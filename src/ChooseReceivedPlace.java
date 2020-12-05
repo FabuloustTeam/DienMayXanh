@@ -22,7 +22,7 @@ public class ChooseReceivedPlace {
 		String baseUrl = "https://www.dienmayxanh.com";
 		driver.get(baseUrl);
 		// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
-		WebElement provincesBox = driver.findElement(By.xpath("//div[@class='provinces-box']//child::span"));
+		WebElement provincesBox = waitForElementClickable(By.xpath("//div[@class='provinces-box']//child::span"));
 		provincesBox.click();
 	}
 
