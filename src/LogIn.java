@@ -1,7 +1,3 @@
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import org.openqa.selenium.*;
@@ -10,15 +6,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LogIn extends abstractLogin {
+public class LogIn {
 	public String baseUrl = "https://www.dienmayxanh.com";
 	public WebDriver driver;
-	
+
 	/**
 	 * Test Requirement: TR-DMX-Login-02. TestCaseID: TC-DMX-Login-02
 	 */
-	@Test (priority=1)
+	@Test
 	public void NhapSDTChuaChuCai() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -33,15 +32,18 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-02. TestCaseID: TC-DMX-Login-03
 	 */
-	@Test(priority=2)
+	@Test
 	public void ChuaKiTuDacBiet() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -56,14 +58,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-02. TestCaseID: TC-DMX-Login-04
 	 */
-	@Test(priority=3)
+	@Test
 	public void SaiSDT() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -78,14 +83,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-03. TestCaseID: TC-DMX-Login-05
 	 */
-	@Test(priority=4)
+	@Test
 	public void KhongNhapSDT() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -100,14 +108,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-03. TestCaseID: TC-DMX-Login-06
 	 */
-	@Test(priority=5)
+	@Test
 	public void NhapKhoangTrang() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -122,14 +133,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-04. TestCaseID: TC-DMX-Login-07
 	 */
-	@Test(priority=6)
+	@Test
 	public void NhapSaiMaOTP() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -152,14 +166,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-05. TestCaseID: TC-DMX-Login-08
 	 */
-	@Test(priority=7)
+	@Test
 	public void NhapKhongDuSo() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -182,14 +199,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-06. TestCaseID: TC-DMX-Login-09
 	 */
-	@Test(priority=8)
+	@Test
 	public void OTPChuaChuCai() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -212,14 +232,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-06. TestCaseID: TC-DMX-Login-010
 	 */
-	@Test(priority=9)
+	@Test
 	public void OTPChuaKiTuDacBiet() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -242,14 +265,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-07. TestCaseID: TC-DMX-Login-011
 	 */
-	@Test(priority=10)
+	@Test
 	public void OTPNhapKhoangTrang() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -272,14 +298,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-07. TestCaseID: TC-DMX-Login-012
 	 */
-	@Test(priority=11)
+	@Test
 	public void BoTrongOTP() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -302,14 +331,17 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-08. TestCaseID: TC-DMX-Login-013
 	 */
-	@Test(priority=12)
+	@Test
 	public void ThongBaoGuiLaiMa() throws InterruptedException {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -324,14 +356,17 @@ public class LogIn extends abstractLogin {
 		WebElement thongbao = waitForElementClickable(By.xpath("//a[@class='resend-sms']"));
 		thongbao.click();
 
-		//driver.close();
+		driver.close();
 	}
 
 	/**
 	 * Test Requirement: TR-DMX-Login-10. TestCaseID: TC-DMX-Login-015
 	 */
-	@Test(priority=13)
+	@Test
 	public void TestTitle() {
+		System.out.println("lauching chrome browser");
+		driver = new ChromeDriver();
+		driver.get(baseUrl);
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -340,12 +375,10 @@ public class LogIn extends abstractLogin {
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
 
-		//driver.close();
+		driver.close();
 
 	}
-	
 
-	
 	private WebElement waitForElementClickable(By locator) {
 		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(this.driver, 10);

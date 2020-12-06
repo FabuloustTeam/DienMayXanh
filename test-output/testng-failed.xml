@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [test login]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="login(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Link">
+      <class name="ChooseReceivedPlace">
         <methods>
-          <include name="LinkFacebook"/>
-          <include name="LinkMaiAm"/>
-          <include name="LinkTgdd"/>
-          <include name="LinkYoutube"/>
-          <include name="LinkBachhoaXanh"/>
+          <include name="closeDriver"/>
+          <include name="beforeMethod"/>
+          <include name="successUpdateByClickOnDropBoxProvince"/>
         </methods>
-      </class> <!-- Link -->
-      <class name="LogIn">
-        <methods>
-          <include name="BoTrongOTP"/>
-          <include name="OTPChuaKiTuDacBiet"/>
-          <include name="TestTitle"/>
-          <include name="SaiSDT"/>
-          <include name="OTPNhapKhoangTrang"/>
-          <include name="NhapKhoangTrang"/>
-          <include name="NhapSaiMaOTP"/>
-          <include name="terminateBrowser"/>
-          <include name="KhongNhapSDT"/>
-          <include name="ChuaKiTuDacBiet"/>
-          <include name="launchBrowser"/>
-          <include name="NhapKhongDuSo"/>
-          <include name="OTPChuaChuCai"/>
-          <include name="ThongBaoGuiLaiMa"/>
-        </methods>
-      </class> <!-- LogIn -->
+      </class> <!-- ChooseReceivedPlace -->
     </classes>
-  </test> <!-- login(failed) -->
-</suite> <!-- Failed suite [test login] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
