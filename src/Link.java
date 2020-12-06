@@ -18,13 +18,6 @@ public class Link {
 	public WebDriver driver;
 
 
-	@BeforeTest
-	public void launchBrowser() {
-		System.out.println("lauching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
-	}
-
 	/**
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-01
 	 */
@@ -168,11 +161,6 @@ public class Link {
 			}
 		}
 		driver.switchTo().window(MainWindow);
-	}
-	
-	@AfterTest
-	public void terminateBrowser() {
-		driver.close();
 	}
 	
 	private WebElement waitForElementClickable(By locator) {
