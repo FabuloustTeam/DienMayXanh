@@ -1,37 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="38" passed="37" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-01T19:11:07 ICT" name="Default suite" finished-at="2020-12-01T19:11:32 ICT" duration-ms="24466">
+  <suite started-at="2020-12-06T18:56:25 ICT" name="testing list product" finished-at="2020-12-06T19:03:13 ICT" duration-ms="408282">
     <groups>
     </groups>
-    <test started-at="2020-12-01T19:11:07 ICT" name="Default test" finished-at="2020-12-01T19:11:32 ICT" duration-ms="24466">
-      <class name="ViewListProducts">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:07 ICT" name="beforeMethod" finished-at="2020-12-01T19:11:18 ICT" duration-ms="10325" status="PASS">
+    <test started-at="2020-12-06T18:56:25 ICT" name="list product" finished-at="2020-12-06T19:03:13 ICT" duration-ms="408282">
+      <class name="com.dienmayxanh.testcases.Link">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:56:25 ICT" name="launchBrowser" finished-at="2020-12-06T18:56:29 ICT" duration-ms="4102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="LinkFacebook()[pri:1, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:58:07 ICT" name="LinkFacebook" finished-at="2020-12-06T18:58:10 ICT" duration-ms="3419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkFacebook -->
+        <test-method signature="LinkYoutube()[pri:2, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:58:10 ICT" name="LinkYoutube" finished-at="2020-12-06T18:58:13 ICT" duration-ms="2395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkYoutube -->
+        <test-method signature="LinkMaiAm()[pri:3, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:58:13 ICT" name="LinkMaiAm" finished-at="2020-12-06T18:58:15 ICT" duration-ms="2150" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkMaiAm -->
+        <test-method signature="LinkTgdd()[pri:4, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:58:15 ICT" name="LinkTgdd" finished-at="2020-12-06T18:58:17 ICT" duration-ms="2151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkTgdd -->
+        <test-method signature="LinkBachhoaXanh()[pri:5, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T18:58:17 ICT" name="LinkBachhoaXanh" finished-at="2020-12-06T18:58:19 ICT" duration-ms="2142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LinkBachhoaXanh -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.dienmayxanh.testcases.Link@282cb7c7]" started-at="2020-12-06T19:03:09 ICT" name="terminateBrowser" finished-at="2020-12-06T19:03:13 ICT" duration-ms="4326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.dienmayxanh.testcases.Link -->
+      <class name="com.dienmayxanh.testcases.ViewListProducts">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:29 ICT" name="accessWebsite" finished-at="2020-12-06T18:56:34 ICT" duration-ms="5608" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="ShowAllProduct()[pri:1, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:34 ICT" name="ShowAllProduct" finished-at="2020-12-06T18:56:35 ICT" duration-ms="952" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ShowAllProduct -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:35 ICT" name="closeBrowser" finished-at="2020-12-06T18:56:35 ICT" duration-ms="46" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:35 ICT" name="accessWebsite" finished-at="2020-12-06T18:56:41 ICT" duration-ms="5972" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="ShowAllProductOfBrand()[pri:2, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:41 ICT" name="ShowAllProductOfBrand" finished-at="2020-12-06T18:56:46 ICT" duration-ms="4258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ShowAllProductOfBrand -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:46 ICT" name="closeBrowser" finished-at="2020-12-06T18:56:46 ICT" duration-ms="44" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:46 ICT" name="accessWebsite" finished-at="2020-12-06T18:56:52 ICT" duration-ms="6008" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:56:52 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-06T18:57:08 ICT" duration-ms="16420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewWithSortPriceDescending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:08 ICT" name="closeBrowser" finished-at="2020-12-06T18:57:12 ICT" duration-ms="4314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:12 ICT" name="accessWebsite" finished-at="2020-12-06T18:57:18 ICT" duration-ms="6011" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:18 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-06T18:57:37 ICT" duration-ms="18644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewWithSortPriceAscending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:37 ICT" name="closeBrowser" finished-at="2020-12-06T18:57:41 ICT" duration-ms="4314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:41 ICT" name="accessWebsite" finished-at="2020-12-06T18:57:47 ICT" duration-ms="5534" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:57:47 ICT" name="testQuantity" finished-at="2020-12-06T18:58:02 ICT" duration-ms="15468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuantity -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@7d898981]" started-at="2020-12-06T18:58:02 ICT" name="closeBrowser" finished-at="2020-12-06T18:58:07 ICT" duration-ms="4313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.dienmayxanh.testcases.ViewListProducts -->
+      <class name="com.dienmayxanh.testcases.Comment">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:58:19 ICT" name="beforeMethod" finished-at="2020-12-06T18:58:26 ICT" duration-ms="6773" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:18 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-01T19:11:31 ICT" duration-ms="13834" status="FAIL">
+        <test-method signature="testWithoutCommentContent()[pri:1, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:58:26 ICT" name="testWithoutCommentContent" finished-at="2020-12-06T18:58:39 ICT" duration-ms="13549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithoutCommentContent -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:58:39 ICT" name="beforeMethod" finished-at="2020-12-06T18:58:47 ICT" duration-ms="7554" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testOnlySpaceCommentContent()[pri:2, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:58:47 ICT" name="testOnlySpaceCommentContent" finished-at="2020-12-06T18:59:01 ICT" duration-ms="14025" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnlySpaceCommentContent -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:01 ICT" name="beforeMethod" finished-at="2020-12-06T18:59:07 ICT" duration-ms="6037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testWithoutName()[pri:3, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:07 ICT" name="testWithoutName" finished-at="2020-12-06T18:59:20 ICT" duration-ms="12875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithoutName -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:20 ICT" name="beforeMethod" finished-at="2020-12-06T18:59:26 ICT" duration-ms="6614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testOnlySpaceName()[pri:4, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:26 ICT" name="testOnlySpaceName" finished-at="2020-12-06T18:59:39 ICT" duration-ms="12878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnlySpaceName -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:39 ICT" name="beforeMethod" finished-at="2020-12-06T18:59:45 ICT" duration-ms="6056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testContentCommentIsLessThan10Characters()[pri:5, instance:com.dienmayxanh.testcases.Comment@48d61b48]" started-at="2020-12-06T18:59:45 ICT" name="testContentCommentIsLessThan10Characters" finished-at="2020-12-06T19:00:00 ICT" duration-ms="14556" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContentCommentIsLessThan10Characters -->
+      </class> <!-- com.dienmayxanh.testcases.Comment -->
+      <class name="com.dienmayxanh.testcases.LogIn">
+        <test-method signature="BoTrongOTP()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:06 ICT" name="BoTrongOTP" finished-at="2020-12-06T19:01:11 ICT" duration-ms="5380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BoTrongOTP -->
+        <test-method signature="ChuaKiTuDacBiet()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:11 ICT" name="ChuaKiTuDacBiet" finished-at="2020-12-06T19:01:16 ICT" duration-ms="4790" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChuaKiTuDacBiet -->
+        <test-method signature="KhongNhapSDT()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:16 ICT" name="KhongNhapSDT" finished-at="2020-12-06T19:01:20 ICT" duration-ms="4173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- KhongNhapSDT -->
+        <test-method signature="NhapKhoangTrang()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:20 ICT" name="NhapKhoangTrang" finished-at="2020-12-06T19:01:34 ICT" duration-ms="14203" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for value to contain "check". Current value: "null" (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/section/div[1]/form/label (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-IRHMPCR', ip: '192.168.31.47', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: b2ca5d203a0f544015149e8b118f83b8]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64513}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 96489da5baeb8aa1b216c3f50de6d4af]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for value to contain "check". Current value: "null" (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/section/div[1]/form/label (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.116', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+System info: host: 'DESKTOP-IRHMPCR', ip: '192.168.31.47', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64369}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: b2ca5d203a0f544015149e8b118f83b8
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64513}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 96489da5baeb8aa1b216c3f50de6d4af
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at ViewListProducts.chooseSort(ViewListProducts.java:250)
-at ViewListProducts.testViewWithSortPriceDescending(ViewListProducts.java:95)
+at com.dienmayxanh.testcases.LogIn.waitForElementClickable(LogIn.java:386)
+at com.dienmayxanh.testcases.LogIn.NhapKhoangTrang(LogIn.java:134)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -65,12 +242,96 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testViewWithSortPriceDescending -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ViewListProducts@6a2b953e]" started-at="2020-12-01T19:11:31 ICT" name="closeBrowser" finished-at="2020-12-01T19:11:32 ICT" duration-ms="257" status="PASS">
+        </test-method> <!-- NhapKhoangTrang -->
+        <test-method signature="NhapKhongDuSo()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:34 ICT" name="NhapKhongDuSo" finished-at="2020-12-06T19:01:39 ICT" duration-ms="5125" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- ViewListProducts -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- NhapKhongDuSo -->
+        <test-method signature="NhapSDTChuaChuCai()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:39 ICT" name="NhapSDTChuaChuCai" finished-at="2020-12-06T19:01:44 ICT" duration-ms="4956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapSDTChuaChuCai -->
+        <test-method signature="NhapSaiMaOTP()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:44 ICT" name="NhapSaiMaOTP" finished-at="2020-12-06T19:01:52 ICT" duration-ms="7520" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapSaiMaOTP -->
+        <test-method signature="OTPChuaChuCai()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:52 ICT" name="OTPChuaChuCai" finished-at="2020-12-06T19:01:57 ICT" duration-ms="5563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OTPChuaChuCai -->
+        <test-method signature="OTPChuaKiTuDacBiet()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:01:57 ICT" name="OTPChuaKiTuDacBiet" finished-at="2020-12-06T19:02:02 ICT" duration-ms="4977" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OTPChuaKiTuDacBiet -->
+        <test-method signature="OTPNhapKhoangTrang()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:02:02 ICT" name="OTPNhapKhoangTrang" finished-at="2020-12-06T19:02:08 ICT" duration-ms="5440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OTPNhapKhoangTrang -->
+        <test-method signature="SaiSDT()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:02:08 ICT" name="SaiSDT" finished-at="2020-12-06T19:02:12 ICT" duration-ms="4357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaiSDT -->
+        <test-method signature="TestTitle()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:02:12 ICT" name="TestTitle" finished-at="2020-12-06T19:02:16 ICT" duration-ms="4172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTitle -->
+        <test-method signature="ThongBaoGuiLaiMa()[pri:0, instance:com.dienmayxanh.testcases.LogIn@258d79be]" started-at="2020-12-06T19:02:16 ICT" name="ThongBaoGuiLaiMa" finished-at="2020-12-06T19:02:56 ICT" duration-ms="39748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ThongBaoGuiLaiMa -->
+      </class> <!-- com.dienmayxanh.testcases.LogIn -->
+      <class name="com.dienmayxanh.testcases.ViewProductThroughList">
+        <test-method is-config="true" signature="accessWebsite()[pri:0, instance:com.dienmayxanh.testcases.ViewProductThroughList@14f9390f]" started-at="2020-12-06T19:02:56 ICT" name="accessWebsite" finished-at="2020-12-06T19:03:02 ICT" duration-ms="5664" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.testcases.ViewProductThroughList@14f9390f]" started-at="2020-12-06T19:03:02 ICT" name="testSuccessViewProductByList" finished-at="2020-12-06T19:03:08 ICT" duration-ms="6429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessViewProductByList -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewProductThroughList@14f9390f]" started-at="2020-12-06T19:03:08 ICT" name="quitBrowser" finished-at="2020-12-06T19:03:09 ICT" duration-ms="595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.dienmayxanh.testcases.ViewProductThroughList -->
+      <class name="com.dienmayxanh.testcases.Contact">
+        <test-method signature="BotrongtruongHvT()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:00 ICT" name="BotrongtruongHvT" finished-at="2020-12-06T19:00:05 ICT" duration-ms="5345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BotrongtruongHvT -->
+        <test-method signature="Chuachongioitinh()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:05 ICT" name="Chuachongioitinh" finished-at="2020-12-06T19:00:10 ICT" duration-ms="4364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Chuachongioitinh -->
+        <test-method signature="Lienhethanhcong()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:10 ICT" name="Lienhethanhcong" finished-at="2020-12-06T19:00:19 ICT" duration-ms="9164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Lienhethanhcong -->
+        <test-method signature="NhapEmailkhonghople()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:19 ICT" name="NhapEmailkhonghople" finished-at="2020-12-06T19:00:27 ICT" duration-ms="8572" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapEmailkhonghople -->
+        <test-method signature="NhapchuhoavaotruognEmail()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:27 ICT" name="NhapchuhoavaotruognEmail" finished-at="2020-12-06T19:00:38 ICT" duration-ms="10263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapchuhoavaotruognEmail -->
+        <test-method signature="NhapkytudacbiettruongSDT()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:38 ICT" name="NhapkytudacbiettruongSDT" finished-at="2020-12-06T19:00:43 ICT" duration-ms="4989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapkytudacbiettruongSDT -->
+        <test-method signature="NhapkytudacbietvaotruongEmail()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:43 ICT" name="NhapkytudacbietvaotruongEmail" finished-at="2020-12-06T19:00:47 ICT" duration-ms="4643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NhapkytudacbietvaotruongEmail -->
+        <test-method signature="SDTkhonghople()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:47 ICT" name="SDTkhonghople" finished-at="2020-12-06T19:00:56 ICT" duration-ms="8884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SDTkhonghople -->
+        <test-method signature="SaiTruongSDT()[pri:0, instance:com.dienmayxanh.testcases.Contact@68d279ec]" started-at="2020-12-06T19:00:56 ICT" name="SaiTruongSDT" finished-at="2020-12-06T19:01:06 ICT" duration-ms="9392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SaiTruongSDT -->
+      </class> <!-- com.dienmayxanh.testcases.Contact -->
+    </test> <!-- list product -->
+  </suite> <!-- testing list product -->
 </testng-results>

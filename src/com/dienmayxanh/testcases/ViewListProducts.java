@@ -1,36 +1,24 @@
+package com.dienmayxanh.testcases;
 import java.util.List;
+import com.dienmayxanh.abstractclass.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class ViewListProducts {
-	WebDriver driver;
-
-	@BeforeMethod
-	public void beforeMethod() {
-		// 1. Truy cập trang chủ điện máy xanh
-		accessWebsite("https://www.dienmayxanh.com/");
-	}
-	
-	@AfterMethod
-	public void closeBrowser() {
-		this.driver.close();
-	}
+public class ViewListProducts extends AbstractAnnotation {
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
 	 */
-//	@Test(priority = 1)
+	@Test(priority = 1)
 	public void ShowAllProduct() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		WebElement locnuoc = driver.findElement(By.xpath("//a[@href='/may-loc-nuoc']"));
+		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 
 		boolean isAllProductTrueName = true;
@@ -49,9 +37,9 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
 	 */
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	private void ShowAllProductOfBrand() {
-		WebElement locnuoc = driver.findElement(By.xpath("//a[@href='/may-loc-nuoc']"));
+		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 		// 3. Chọn hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
@@ -102,7 +90,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-02. Test case ID: TC-DMX-VLP-04
 	 */
-//	@Test (priority = 4)
+	@Test (priority = 4)
 	public void testViewWithSortPriceAscending() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
@@ -118,7 +106,7 @@ public class ViewListProducts {
 	/**
 	 * Test requirement: TR-DMX-VLP-03. Test case ID: TC-DMX-VLP-05
 	 */
-//	@Test (priority = 5)
+	@Test (priority = 5)
 	public void testQuantity() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
@@ -240,20 +228,14 @@ public class ViewListProducts {
 	private void chooseSort(String sortType) {
 		WebElement sortPriceDescending = waitForElementClickable(
 				By.xpath("//aside[@id='scroll-MLN']//child::a[text()='" + sortType + "']"));
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		sortPriceDescending.click();
-		
-//		WebDriverWait wait = new WebDriverWait(this.driver, 10);
-//		
-//		while(true) {
-//			sortPriceDescending.click();
-//			try {
-//				if(!wait.until(ExpectedConditions.attributeContains(sortPriceDescending, "class", "check")))
-//					break;
-//			} catch(Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-		
+
 		waitForElementInvisible(By.id("dlding"));
 
 		waitForProductsLoad();
@@ -291,12 +273,6 @@ public class ViewListProducts {
 		}
 	}
 
-	private void accessWebsite(String url) {
-		System.setProperty("webdriver.chrome.silentOutput", "true");
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
-		this.driver.get(url);
-	}
 
 	private WebElement waitForElementClickable(By locator) {
 		WebDriverWait wait = new WebDriverWait(this.driver, 10);

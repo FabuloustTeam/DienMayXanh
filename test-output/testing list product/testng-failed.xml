@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testing list product]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <test thread-count="5" name="list product(failed)">
     <classes>
-      <class name="ViewListProducts">
+      <class name="com.dienmayxanh.testcases.LogIn">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="closeBrowser"/>
-          <include name="testViewWithSortPriceDescending"/>
-          <include name="testViewWithSortPriceAscending"/>
+          <include name="NhapKhoangTrang"/>
         </methods>
-      </class> <!-- ViewListProducts -->
+      </class> <!-- com.dienmayxanh.testcases.LogIn -->
     </classes>
   </test> <!-- list product(failed) -->
 </suite> <!-- Failed suite [testing list product] -->

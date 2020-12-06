@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="testing list product">
+	<parameter name="url" value="https://www.dienmayxanh.com/" />
 	<test name="list product">
 		<classes>
-			<class name="ViewListProducts" />
+		<!-- 	<class name="com.dienmayxanh.testcases.ViewListProducts" /> -->
+				<!-- chi chay method nay
+				<methods>
+					<include name="testViewWithSortPriceAscending" />
+				</methods> -->
+			<!-- </class> -->
+<!-- 			<class name="com.dienmayxanh.testcases.Link" />
+			<class name="com.dienmayxanh.testcases.Comment" />
+			<class name="com.dienmayxanh.testcases.Contact" /> -->
+			<class name="com.dienmayxanh.testcases.LogIn" />
+	<!-- 		<class name="com.dienmayxanh.testcases.ViewProductThroughList" /> -->
 		</classes>
 	</test>
 </suite>

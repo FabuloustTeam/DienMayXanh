@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ViewListProducts">
+      <class name="com.dienmayxanh.testcases.ViewListProducts">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="closeBrowser"/>
+          <include name="accessWebsite"/>
           <include name="testViewWithSortPriceDescending"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- ViewListProducts -->
+      </class> <!-- com.dienmayxanh.testcases.ViewListProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

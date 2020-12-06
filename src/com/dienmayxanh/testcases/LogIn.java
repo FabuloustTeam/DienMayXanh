@@ -1,3 +1,4 @@
+package com.dienmayxanh.testcases;
 import org.testng.annotations.Test;
 
 import org.openqa.selenium.*;
@@ -29,7 +30,7 @@ public class LogIn {
 		login.click();
 
 		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -55,7 +56,7 @@ public class LogIn {
 		login.click();
 
 		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -80,7 +81,7 @@ public class LogIn {
 		login.click();
 
 		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -105,7 +106,7 @@ public class LogIn {
 		login.click();
 
 		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -130,7 +131,7 @@ public class LogIn {
 		login.click();
 
 		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -163,7 +164,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Mã xác nhận không đúng, vui lòng thử lại.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -196,7 +197,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Vui lòng nhập mã OTP.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -229,7 +230,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Mã xác nhận không đúng, vui lòng thử lại.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -262,7 +263,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Mã xác nhận không đúng, vui lòng thử lại.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -295,7 +296,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Mã xác nhận không đúng, vui lòng thử lại.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
@@ -328,7 +329,7 @@ public class LogIn {
 		code.click();
 
 		String expectedError = "* Vui lòng nhập mã OTP.";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[2]/form/label")).getText();
+		String error = waitForElementClickable(By.xpath("//form[@id='frmGetVerifyCode']//child::label")).getText();
 		Assert.assertEquals(error, expectedError);
 
 		driver.close();
