@@ -8,20 +8,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Contact {
-	// 1. Truy cập https://www.dienmayxanh.com/lien-he
-	public String baseUrl = "https://www.dienmayxanh.com/";
-	public WebDriver driver;
+public class Contact extends AbstractBOT {
+//	// 1. Truy cập https://www.dienmayxanh.com/lien-he
+//	public String baseUrl = "https://www.dienmayxanh.com/";
+//	public WebDriver driver;
 
 	/**
 	 * Test requirement: TR-DMX-CMCT-01 Test case ID: TC-DMX-CMCT-01
 	 */
 	@Test
 	public void Lienhethanhcong() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -72,11 +72,11 @@ public class Contact {
 	 */
 	@Test
 	public void SaiTruongSDT() {
-		
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
@@ -113,10 +113,10 @@ public class Contact {
 	 */
 	@Test
 	public void NhapkytudacbiettruongSDT() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -148,10 +148,10 @@ public class Contact {
 	 */
 	@Test
 	public void SDTkhonghople() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -190,10 +190,10 @@ public class Contact {
 	 */
 	@Test
 	public void Chuachongioitinh() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -226,10 +226,10 @@ public class Contact {
 	 */
 	@Test
 	public void BotrongtruongHvT() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -262,10 +262,10 @@ public class Contact {
 	 */
 	@Test
 	public void NhapchuhoavaotruognEmail() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -304,10 +304,10 @@ public class Contact {
 	 */
 	@Test
 	public void NhapkytudacbietvaotruongEmail() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -340,10 +340,10 @@ public class Contact {
 	 */
 	@Test
 	public void NhapEmailkhonghople() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+//		// 1. Truy cập vào website: https://www.dienmayxanh.com
+//		System.out.print("Launching chrome browser");
+//		driver = new ChromeDriver();
+//		driver.get(baseUrl);
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();

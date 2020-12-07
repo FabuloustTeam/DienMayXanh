@@ -3,13 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ChooseReceivedPlace">
+      <class name="ViewListProducts">
         <methods>
-          <include name="closeDriver"/>
-          <include name="beforeMethod"/>
-          <include name="successUpdateByClickOnDropBoxProvince"/>
+          <include name="BeforeMethod"/>
+          <include name="ShowAllProductOfBrand"/>
+          <include name="ShowAllProduct"/>
+          <include name="testViewWithSortPriceDescending"/>
+          <include name="testViewWithSortPriceAscending"/>
+          <include name="closeBrowser"/>
+          <include name="testQuantity"/>
         </methods>
-      </class> <!-- ChooseReceivedPlace -->
+      </class> <!-- ViewListProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "testRunBrowser" >
+	<parameter name="url" value="https://www.dienmayxanh.com/" />
+   	<test name = "viewlistproduct">
+      <classes>
+         <class name = "ViewListProducts"/>
+          <class name = "Contact"/>
+      </classes>
+   </test>
+</suite> 
