@@ -1,27 +1,16 @@
 import java.util.List;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.testng.annotations.Test;
 
-public class ViewProductThroughList {
-	WebDriver driver;
-
-	@BeforeMethod
-	public void accessWebsite() {
-		driver = new ChromeDriver();
-		// Step 1 Truy cập vào website: https://www.dienmayxanh.com
-		driver.get("https://www.dienmayxanh.com");
-		driver.manage().window().maximize();
-	}
+public class ViewProductThroughList extends AbstractClass {
 
 	/**
 	 * Test requirement: TR-DMX-VPBLP-01 Test case: TC-DMX-VPBLP-01
 	 */
-	@Test
+	@Test(groups = {"viewByName"})
 	public void testSuccessViewProductByList() {
 		// Step 2 Nhấn chọn loại sản phẩm muốn xem trong danh mục
 		chooseCategory("Lọc nước");
@@ -31,11 +20,6 @@ public class ViewProductThroughList {
 		getProduct("Máy lọc nước RO hydrogen ion kiềm Kangaroo 7 lõi KG100E0");
 
 		comfirmResult("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
-	}
-
-	@AfterClass
-	public void quitBrowser() {
-		driver.quit();
 	}
 
 	private void chooseCategory(String category) {
@@ -120,7 +104,7 @@ public class ViewProductThroughList {
 	}
 
 	private WebElement waitForElement(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 }

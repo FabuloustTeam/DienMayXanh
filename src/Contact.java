@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Contact {
+public class Contact extends AbstractClass{
 	// 1. Truy cập https://www.dienmayxanh.com/lien-he
 	public String baseUrl = "https://www.dienmayxanh.com/";
 	public WebDriver driver;
@@ -18,10 +18,7 @@ public class Contact {
 	 */
 	@Test
 	public void Lienhethanhcong() {
-		// 1. Truy cập vào website: https://www.dienmayxanh.com
-		System.out.print("Launching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
+
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
@@ -62,9 +59,6 @@ public class Contact {
 
 		String expected = "Đã gửi thông tin thành công!";
 		Assert.assertEquals(actual, expected);
-
-		this.driver.close();
-
 	}
 
 	/**
