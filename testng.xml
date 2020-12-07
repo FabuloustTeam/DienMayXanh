@@ -4,13 +4,13 @@
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
 	<test name="list product">
 		<classes>
-			<class name="com.dienmayxanh.testcases.ViewListProducts" >
-				<methods >
-					<include name="testViewWithSortPriceDescending" />
-					<include name="testViewWithSortPriceAscending" />
-				</methods>
-			</class>
-			<!-- <class name="com.dienmayxanh.testcases.Comment" /> -->
+<!-- 			<class name="com.dienmayxanh.testcases.ViewListProducts" > -->
+<!-- 				<methods > -->
+<!-- 					<include name="testViewWithSortPriceDescending" /> -->
+<!-- 					<include name="testViewWithSortPriceAscending" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+			<class name="com.dienmayxanh.testcases.Comment" />
 <!-- 			<class name="com.dienmayxanh.testcases.Link" />
 			<class name="com.dienmayxanh.testcases.Contact" /> 
 			<class name="com.dienmayxanh.testcases.LogIn" />

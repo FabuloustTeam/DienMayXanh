@@ -18,7 +18,6 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.*;
 
 public class Comment extends AbstractAnnotation {
-	WebDriver driver;
 	
 	@BeforeMethod
 	public void beforeMethod() {
