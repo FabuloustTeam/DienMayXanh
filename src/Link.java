@@ -13,10 +13,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Link {
-	public String baseUrl = "https://www.dienmayxanh.com";
-	public WebDriver driver;
-
+public class Link extends abstractLink{
 
 	/**
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-01

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [test login]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.dienmayxanh.com/"/>
+  <test thread-count="5" name="login(failed)">
+    <classes>
+      <class name="Link">
+        <methods>
+          <include name="LinkFacebook"/>
+          <include name="terminateBrowser"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- Link -->
+    </classes>
+  </test> <!-- login(failed) -->
+</suite> <!-- Failed suite [test login] -->

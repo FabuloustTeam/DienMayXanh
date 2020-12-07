@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "test login" >
+<parameter name="url" value="https://www.dienmayxanh.com/" />
    <test name = "login">
       <classes>
-         <class name = "LogIn"/>
-         <class name="Link"></class>
+        <class name = "LogIn">
+         	<methods>
+         		<include name="BoTrongOTP"/>
+         		<include name="OTPNhapKhoangTrang"/>
+         	</methods>
+         </class>
+         <class name = "Link">
+         	<methods>
+         		<include name="LinkYoutube"/>
+         	</methods>
+         </class>
       </classes>
    </test>
 </suite>
