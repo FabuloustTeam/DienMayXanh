@@ -4,17 +4,17 @@
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
 	<test name="list product">
 		<classes>
-		<!-- 	<class name="com.dienmayxanh.testcases.ViewListProducts" /> -->
-				<!-- chi chay method nay
-				<methods>
+			<class name="com.dienmayxanh.testcases.ViewListProducts" >
+				<methods >
+					<include name="testViewWithSortPriceDescending" />
 					<include name="testViewWithSortPriceAscending" />
-				</methods> -->
-			<!-- </class> -->
+				</methods>
+			</class>
+			<!-- <class name="com.dienmayxanh.testcases.Comment" /> -->
 <!-- 			<class name="com.dienmayxanh.testcases.Link" />
-			<class name="com.dienmayxanh.testcases.Comment" />
-			<class name="com.dienmayxanh.testcases.Contact" /> -->
+			<class name="com.dienmayxanh.testcases.Contact" /> 
 			<class name="com.dienmayxanh.testcases.LogIn" />
-	<!-- 		<class name="com.dienmayxanh.testcases.ViewProductThroughList" /> -->
+			<class name="com.dienmayxanh.testcases.ViewProductThroughList" /> -->
 		</classes>
 	</test>
 </suite>

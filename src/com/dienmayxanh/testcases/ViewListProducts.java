@@ -1,10 +1,13 @@
 package com.dienmayxanh.testcases;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import com.dienmayxanh.abstractclass.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -29,10 +32,9 @@ public class ViewListProducts extends AbstractAnnotation {
 				isAllProductTrueName = false;
 				break;
 			}
-		}	
+		}
 		Assert.assertEquals(isAllProductTrueName, true);
 	}
-	
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
@@ -44,8 +46,9 @@ public class ViewListProducts extends AbstractAnnotation {
 		// 3. Chọn hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
 		JavascriptExecutor jsEx = (JavascriptExecutor) driver;
-		jsEx.executeScript(
-				"var el = document.querySelectorAll('div.test.manufacture.show-10')[0]; el.scrollIntoView(true)");
+//		jsEx.executeScript(
+//				"var el = document.querySelectorAll('div.test.manufacture.show-10')[0]; el.scrollIntoView(true)");
+//		
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -57,6 +60,7 @@ public class ViewListProducts extends AbstractAnnotation {
 				break;
 			}
 		}
+		waitForPageLoad();
 		
 		boolean isOnlyBrandProducts = true;
 		List<WebElement> allProducts = getAllProducts();
@@ -79,8 +83,10 @@ public class ViewListProducts extends AbstractAnnotation {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
 
+		waitForPageLoad();
+		
 		// 3. Chọn sắp xếp
-		chooseSort(" Giá cao đến thấp ");
+		chooseSort("Giá cao đến thấp");
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkDescending(dataTable);
@@ -95,8 +101,10 @@ public class ViewListProducts extends AbstractAnnotation {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		chooseCategory("Lọc nước");
 
+		waitForPageLoad();
+		
 		// 3. Chọn sắp xếp
-		chooseSort(" Giá thấp đến cao ");
+		chooseSort("Giá thấp đến cao");
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkAscending(dataTable);
@@ -112,6 +120,7 @@ public class ViewListProducts extends AbstractAnnotation {
 		chooseCategory("Lọc nước");
 		
 		waitForProductsLoad();
+		waitForPageLoad();
 		int quantityBreadcrumb = getQuantityBreadcrumb();
 		int quantityProducts = getQuantityProducts();
 		int quantityTotal = getQuantityTotal();
@@ -226,15 +235,31 @@ public class ViewListProducts extends AbstractAnnotation {
 	}
 
 	private void chooseSort(String sortType) {
-		WebElement sortPriceDescending = waitForElementClickable(
-				By.xpath("//aside[@id='scroll-MLN']//child::a[text()='" + sortType + "']"));
+		WebElement orderType = waitForElementVisibility(By.xpath("//div[@class='ordertype twonum']"));
+		List<WebElement> orderTypes = orderType.findElements(By.tagName("a"));
+		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		for (int i = 0; i < orderTypes.size(); i++) {
+			wait.until(ExpectedConditions.elementToBeClickable(orderTypes.get(i)));
+			if(orderTypes.get(i).getText().trim().equals(sortType)) {
+//				orderTypes.get(i).click();
+				int centerWidth = orderTypes.get(i).getSize().getWidth()/2;
+				int centerHeight = orderTypes.get(i).getSize().getHeight()/2;
+				Actions builder = new Actions(this.driver);
+				builder.moveToElement(orderTypes.get(i), centerWidth, centerHeight).click().build().perform();
+				break;
+			}
+		}
+		
+		waitForPageLoad();
+//		WebElement sortPriceDescending = waitForElementClickable(
+//				By.xpath("//div[@class='ordertype twonum']//child::a[@data-text='"+sortType+"']"));
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		sortPriceDescending.click();
+//		sortPriceDescending.click();
 
 		waitForElementInvisible(By.id("dlding"));
 
@@ -273,6 +298,9 @@ public class ViewListProducts extends AbstractAnnotation {
 		}
 	}
 
+	private void waitForPageLoad() {
+		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
 
 	private WebElement waitForElementClickable(By locator) {
 		WebDriverWait wait = new WebDriverWait(this.driver, 10);

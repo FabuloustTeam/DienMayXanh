@@ -1,6 +1,6 @@
 package com.dienmayxanh.testcases;
+import com.dienmayxanh.abstractclass.*;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,14 +17,11 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.*;
 
-public class Comment {
+public class Comment extends AbstractAnnotation {
 	WebDriver driver;
 	
 	@BeforeMethod
 	public void beforeMethod() {
-		// 1. Truy cập https://www.dienmayxanh.com/
-		accessWebsite("https://www.dienmayxanh.com/");
-
 		// 2. Chọn mục Gửi góp ý, khiếu nại ở footer
 		goToSendCommentPage();
 	}
@@ -53,8 +50,6 @@ public class Comment {
 		String actualError = getErrorTextCommentContent();
 		String expectedError = "Vui lòng nhập nội dung";
 		Assert.assertEquals(actualError, expectedError);
-
-		this.driver.close();
 	}
 
 	/**
@@ -81,8 +76,6 @@ public class Comment {
 		String actualError = getErrorTextCommentContent();
 		String expectedError = "Vui lòng nhập nội dung";
 		Assert.assertEquals(actualError, expectedError);
-
-		this.driver.close();
 	}
 
 	/**
@@ -110,8 +103,6 @@ public class Comment {
 		String expectedError = "Vui lòng nhập họ tên.";
 
 		Assert.assertEquals(actualError, expectedError);
-
-		this.driver.close();
 	}
 
 	/**
@@ -139,8 +130,6 @@ public class Comment {
 		String expectedError = "Vui lòng nhập họ tên.";
 
 		Assert.assertEquals(actualError, expectedError);
-
-		this.driver.close();
 	}
 
 	/**
@@ -168,15 +157,6 @@ public class Comment {
 		String expectedError = "Nội dung bình luận quá ngắn";
 
 		Assert.assertEquals(actualError, expectedError);
-
-		this.driver.close();
-	}
-
-	private void accessWebsite(String url) {
-		System.setProperty("webdriver.chrome.silentOutput", "true");
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
-		this.driver.get(url);
 	}
 
 	private void goToSendCommentPage() {

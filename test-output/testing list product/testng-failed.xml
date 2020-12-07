@@ -4,11 +4,14 @@
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <test thread-count="5" name="list product(failed)">
     <classes>
-      <class name="com.dienmayxanh.testcases.LogIn">
+      <class name="com.dienmayxanh.testcases.ViewListProducts">
         <methods>
-          <include name="NhapKhoangTrang"/>
+          <include name="accessWebsite"/>
+          <include name="testViewWithSortPriceDescending"/>
+          <include name="testViewWithSortPriceAscending"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.dienmayxanh.testcases.LogIn -->
+      </class> <!-- com.dienmayxanh.testcases.ViewListProducts -->
     </classes>
   </test> <!-- list product(failed) -->
 </suite> <!-- Failed suite [testing list product] -->
