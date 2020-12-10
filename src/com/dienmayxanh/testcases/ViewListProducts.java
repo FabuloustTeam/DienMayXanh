@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+//@Listeners(com.dienmayxanh.listener.ListenerTest.class)
+
 public class ViewListProducts extends AbstractAnnotation {
 	
 	/**
