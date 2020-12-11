@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-10T15:12:59 ICT" name="testing list product" finished-at="2020-12-10T15:14:19 ICT" duration-ms="80353">
+  <suite started-at="2020-12-11T18:33:06 ICT" name="testing list product" finished-at="2020-12-11T18:35:31 ICT" duration-ms="144465">
     <groups>
     </groups>
-    <test started-at="2020-12-10T15:12:59 ICT" name="list product" finished-at="2020-12-10T15:14:19 ICT" duration-ms="80353">
+    <test started-at="2020-12-11T18:33:06 ICT" name="list product" finished-at="2020-12-11T18:35:31 ICT" duration-ms="144465">
       <class name="com.dienmayxanh.testcases.ViewListProducts">
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:12:59 ICT" name="accessWebsite" finished-at="2020-12-10T15:13:07 ICT" duration-ms="7367" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:06 ICT" name="accessWebsite" finished-at="2020-12-11T18:33:19 ICT" duration-ms="12775" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="ShowAllProduct()[pri:1, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:07 ICT" name="ShowAllProduct" finished-at="2020-12-10T15:13:08 ICT" duration-ms="1114" status="PASS">
+        <test-method signature="ShowAllProduct()[pri:1, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:19 ICT" name="ShowAllProduct" finished-at="2020-12-11T18:33:26 ICT" duration-ms="6546" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShowAllProduct -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:08 ICT" name="closeBrowser" finished-at="2020-12-10T15:13:08 ICT" duration-ms="49" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:26 ICT" name="closeBrowser" finished-at="2020-12-11T18:33:26 ICT" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:08 ICT" name="accessWebsite" finished-at="2020-12-10T15:13:14 ICT" duration-ms="6487" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:26 ICT" name="accessWebsite" finished-at="2020-12-11T18:33:38 ICT" duration-ms="12104" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,15 +37,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="ShowAllProductOfBrand()[pri:2, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:14 ICT" name="ShowAllProductOfBrand" finished-at="2020-12-10T15:13:18 ICT" duration-ms="3691" status="PASS">
+        <test-method signature="ShowAllProductOfBrand()[pri:2, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:38 ICT" name="ShowAllProductOfBrand" finished-at="2020-12-11T18:33:54 ICT" duration-ms="16363" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShowAllProductOfBrand -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:18 ICT" name="closeBrowser" finished-at="2020-12-10T15:13:18 ICT" duration-ms="50" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:54 ICT" name="closeBrowser" finished-at="2020-12-11T18:33:54 ICT" duration-ms="132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:18 ICT" name="accessWebsite" finished-at="2020-12-10T15:13:24 ICT" duration-ms="5816" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:33:54 ICT" name="accessWebsite" finished-at="2020-12-11T18:34:06 ICT" duration-ms="11602" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -56,7 +56,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:24 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-10T15:13:39 ICT" duration-ms="15334" status="FAIL">
+        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:34:06 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-11T18:34:26 ICT" duration-ms="20354" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -104,11 +104,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testViewWithSortPriceDescending -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:39 ICT" name="closeBrowser" finished-at="2020-12-10T15:13:39 ICT" duration-ms="36" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:34:27 ICT" name="closeBrowser" finished-at="2020-12-11T18:34:27 ICT" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:39 ICT" name="accessWebsite" finished-at="2020-12-10T15:13:45 ICT" duration-ms="5691" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:34:27 ICT" name="accessWebsite" finished-at="2020-12-11T18:34:39 ICT" duration-ms="12109" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -119,7 +119,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:13:45 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-10T15:14:00 ICT" duration-ms="14906" status="FAIL">
+        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:34:39 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-11T18:34:59 ICT" duration-ms="20202" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -167,11 +167,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testViewWithSortPriceAscending -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:14:00 ICT" name="closeBrowser" finished-at="2020-12-10T15:14:00 ICT" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:35:00 ICT" name="closeBrowser" finished-at="2020-12-11T18:35:00 ICT" duration-ms="91" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:14:00 ICT" name="accessWebsite" finished-at="2020-12-10T15:14:05 ICT" duration-ms="5716" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:35:00 ICT" name="accessWebsite" finished-at="2020-12-11T18:35:12 ICT" duration-ms="12000" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -182,11 +182,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:14:05 ICT" name="testQuantity" finished-at="2020-12-10T15:14:19 ICT" duration-ms="13990" status="PASS">
+        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:35:12 ICT" name="testQuantity" finished-at="2020-12-11T18:35:31 ICT" duration-ms="18587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testQuantity -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3e6f3f28]" started-at="2020-12-10T15:14:19 ICT" name="closeBrowser" finished-at="2020-12-10T15:14:19 ICT" duration-ms="43" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.testcases.ViewListProducts@3c01cfa1]" started-at="2020-12-11T18:35:31 ICT" name="closeBrowser" finished-at="2020-12-11T18:35:31 ICT" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
