@@ -1,3 +1,5 @@
+package TestCases;
+
 import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -5,12 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import AbstractAnnotation.AbstractClass;
+
 public class ViewProductThroughList extends AbstractClass {
 
 	/**
 	 * Test requirement: TR-DMX-VPBLP-01 Test case: TC-DMX-VPBLP-01
 	 */
-	@Test(groups = {"viewByName"})
+	@Test(groups = { "viewByName" })
 	public void testSuccessViewProductByList() {
 		// Step 2 Nhấn chọn loại sản phẩm muốn xem trong danh mục
 		chooseCategory("Lọc nước");

@@ -3,19 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="chooserp">
+      <class name="ViewProductThroughList">
         <methods>
-          <include name="successWithoutFillTextboxAddress"/>
-          <include name="closeDriver"/>
-          <include name="successUpdateWithOnlyProvinceSubmitBefor"/>
-          <include name="failWithoutChooseWard"/>
+          <include name="testSuccessViewProductByList"/>
+          <include name="closeBrowser"/>
           <include name="accessWebsite"/>
-          <include name="successUpdateByClickOnButonChange"/>
-          <include name="successUpdateByClickOnDropBoxProvince"/>
-          <include name="successWithOnlyProvince"/>
-          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- chooserp -->
+      </class> <!-- ViewProductThroughList -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

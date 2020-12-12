@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="suite">
+<suite name="Suite">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
+	
+	<listeners>
+		<listener class-name="IListener.IListenerClass"/>
+	</listeners>
 	<test name="runGroup">
-		
-		<!-- <groups>
-			<run>
-				<include name="viewByName"/>
-			</run>
-		</groups> -->
-		
+
+<!-- 		<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="viewByName" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+
 		<classes>
-			<class name="ChooseReceivedPlace"/>
-			<class name="ViewProductThroughList"/>
-<!-- 			<class name="Comment"/>
-			<class name="Contact"/>
-			<class name="Link"/>
-			<class name="LogIn"/>
-			<class name="ViewListProducts"/> -->
+			<class name="TestCases.ChooseReceivedPlace" />
+			<class name="TestCases.ViewProductThroughList" />
 		</classes>
-		
+
 	</test>
 </suite>

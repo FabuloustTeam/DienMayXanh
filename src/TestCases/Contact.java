@@ -1,3 +1,4 @@
+package TestCases;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import AbstractAnnotation.AbstractClass;
 
 public class Contact extends AbstractClass{
 	// 1. Truy cập https://www.dienmayxanh.com/lien-he

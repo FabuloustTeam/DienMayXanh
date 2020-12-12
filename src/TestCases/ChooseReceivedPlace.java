@@ -1,6 +1,10 @@
+package TestCases;
+
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
+
+import AbstractAnnotation.AbstractClass;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -12,8 +16,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class chooserp extends AbstractClass{
-
+public class ChooseReceivedPlace extends AbstractClass {
+	
 	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {
 		// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
@@ -24,9 +28,9 @@ public class chooserp extends AbstractClass{
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-01
 	 */
-	@Test(priority = 1, groups={"chooseReceivePlaceSuccess"})
+	@Test(priority = 1, groups = { "chooseReceivePlaceSuccess" })
 	public void mainSFWithFullInfor() throws InterruptedException {
-		//chooseProvince("Hồ Chí Minh");
+		// chooseProvince("Hồ Chí Minh");
 		// step 3 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
 		chooseDistrict("Quận Gò Vấp");
@@ -46,7 +50,7 @@ public class chooserp extends AbstractClass{
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-02
 	 */
-	@Test(priority = 2, groups={"chooseRecivePlaceSuccess"})
+	@Test(priority = 2, groups = { "chooseRecivePlaceSuccess" })
 	public void successWithOnlyProvince() throws InterruptedException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Đồng Nai");
@@ -60,7 +64,7 @@ public class chooserp extends AbstractClass{
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-03
 	 */
-	@Test(priority = 3, groups={"chooseReceivePlaceSuccess"})
+	@Test(priority = 3, groups = { "chooseReceivePlaceSuccess" })
 	public void successWithoutFillTextboxAddress() throws InterruptedException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Hồ Chí Minh");
@@ -81,7 +85,7 @@ public class chooserp extends AbstractClass{
 	/*
 	 * Test requirement: TR-DMX-CNNH-02 - Test case: TC-DMX-CNNH-04
 	 */
-	@Test(priority = 4, groups={"chooseReceivePlaceFail"})
+	@Test(priority = 4, groups = { "chooseReceivePlaceFail" })
 	public void failWithoutChooseWard() throws InterruptedException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Bình Định");
@@ -103,11 +107,11 @@ public class chooserp extends AbstractClass{
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-05
 	 */
 
-	@Test(priority = 5, groups={"successUpdateReceivePlace"})
+	@Test(priority = 5, groups = { "successUpdateReceivePlace" })
 	public void successUpdateWithOnlyProvinceSubmitBefor() throws InterruptedException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Bình Thuận");
-		
+
 		// step 4 Nhấn Xác nhận
 		submitForm();
 
@@ -131,7 +135,7 @@ public class chooserp extends AbstractClass{
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-06
 	 */
 
-	@Test(priority = 6, groups={"successUpdateReceivePlace"})
+	@Test(priority = 6, groups = { "successUpdateReceivePlace" })
 	public void successUpdateByClickOnButonChange() throws InterruptedException, AWTException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Hà Nội");
@@ -167,7 +171,7 @@ public class chooserp extends AbstractClass{
 	/**
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-07
 	 */
-	@Test(priority = 7, groups={"successUpdateReceivePlace"})
+	@Test(priority = 7, groups = { "successUpdateReceivePlace" })
 	public void successUpdateByClickOnDropBoxProvince() throws InterruptedException {
 		// step 3 Chọn tỉnh thành
 		chooseProvince("Đà Nẵng");
@@ -232,7 +236,7 @@ public class chooserp extends AbstractClass{
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		List<WebElement> scrollboxDistrict = driver.findElements(By.xpath("//div[@class='boxprov__listTT--scroll']"));
 		String getStyle = scrollboxDistrict.get(2).getAttribute("style");
-		if(getStyle.equals("display: none;") || getStyle.equals("")) {
+		if (getStyle.equals("display: none;") || getStyle.equals("")) {
 			WebElement setDistrict = waitForElementClickable(By.id("location_listDistrict"));
 			setDistrict.click();
 		}
@@ -275,8 +279,8 @@ public class chooserp extends AbstractClass{
 	}
 
 	private void confirmResult(String expectedResult) throws InterruptedException {
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		WebElement actualResult =waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"));
+		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		WebElement actualResult = waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"));
 		Thread.sleep(2000);
 		Assert.assertEquals(actualResult.getText(), expectedResult);
 	}
@@ -285,14 +289,14 @@ public class chooserp extends AbstractClass{
 		WebElement actualErr = waitForElementVisible(By.className("errWard"));
 		Assert.assertEquals(actualErr.getText(), expectedErr);
 	}
-	
+
 	private WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-	
+
 	private WebElement waitForElementVisible(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 }
