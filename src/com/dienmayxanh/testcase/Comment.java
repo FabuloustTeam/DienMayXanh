@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 import com.dienmayxanh.abstractclass.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -21,7 +21,7 @@ public class Comment extends AbstractAnnotation {
 	
 	@BeforeMethod
 	public void beforeMethod() {
-		// 2. Chọn mục Gửi góp ý, khiếu nại ở footer
+		// 2. Ch�?n mục Gửi góp ý, khiếu nại ở footer
 		goToSendCommentPage();
 	}
 
@@ -34,16 +34,16 @@ public class Comment extends AbstractAnnotation {
 		// 3. Không nội dung bình luận
 		inputComment("");
 
-		// 4. Nhập họ tên
+		// 4. Nhập h�? tên
 		inputName("Nguyễn Thanh Tùng");
 
-		// 5. Chọn gửi hình
+		// 5. Ch�?n gửi hình
 		inputImage();
 
 		// 6. Nhập email
 		inputEmail("tung@gmail.com");
 
-		// 7. Chọn gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
@@ -60,16 +60,16 @@ public class Comment extends AbstractAnnotation {
 		// 3. Chỉ nhập khoảng trắng vào nội dung
 		inputComment("    ");
 
-		// 4. Nhập họ tên
+		// 4. Nhập h�? tên
 		inputName("Nguyễn Thanh Tùng");
 
-		// 5. Chọn gửi hình
+		// 5. Ch�?n gửi hình
 		inputImage();
 
 		// 6. Nhập email
 		inputEmail("tung@gmail.com");
 
-		// 7. Chọn gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
@@ -84,22 +84,22 @@ public class Comment extends AbstractAnnotation {
 	public void testWithoutName() throws AWTException, InterruptedException {
 
 		/// 3. Nhập nội dung bình luận
-		inputComment("Cho hỏi con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
+		inputComment("Cho h�?i con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
 
-		// 4. Nhập họ tên
+		// 4. Nhập h�? tên
 		inputName("");
 
-		// 5. Chọn gửi hình
+		// 5. Ch�?n gửi hình
 		inputImage();
 
 		// 6. Nhập email
 		inputEmail("tung@gmail.com");
 
-		// 7. Chọn gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
-		String expectedError = "Vui lòng nhập họ tên.";
+		String expectedError = "Vui lòng nhập h�? tên.";
 
 		Assert.assertEquals(actualError, expectedError);
 	}
@@ -111,22 +111,22 @@ public class Comment extends AbstractAnnotation {
 	public void testOnlySpaceName() throws AWTException, InterruptedException {
 
 		// 3. Nhập nội dung bình luận
-		inputComment("Cho hỏi con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
+		inputComment("Cho h�?i con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
 
-		// 4. Nhập họ tên
+		// 4. Nhập h�? tên
 		inputName("      ");
 
-		// 5. Chọn gửi hình
+		// 5. Ch�?n gửi hình
 		inputImage();
 
 		// 6. Nhập email
 		inputEmail("tung@gmail.com");
 
-		// 7. Chọn gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
-		String expectedError = "Vui lòng nhập họ tên.";
+		String expectedError = "Vui lòng nhập h�? tên.";
 
 		Assert.assertEquals(actualError, expectedError);
 	}
@@ -138,18 +138,18 @@ public class Comment extends AbstractAnnotation {
 	public void testContentCommentIsLessThan10Characters() throws AWTException, InterruptedException {
 
 		// 3. Nhập nội dung bình luận ít hơn 10 ký tự
-		inputComment("Cho hỏi");
+		inputComment("Cho h�?i");
 
-		// 4. Nhập họ tên
+		// 4. Nhập h�? tên
 		inputName("Nguyễn Thanh Tùng");
 
-		// 5. Chọn gửi hình
+		// 5. Ch�?n gửi hình
 		inputImage();
 
 		// 6. Nhập email
 		inputEmail("tung@gmail.com");
 
-		// 7. Chọn gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
@@ -167,7 +167,7 @@ public class Comment extends AbstractAnnotation {
 
 	private void inputComment(String comment) throws AWTException, InterruptedException {
 		WebElement maskComment = waitForElementClickable(
-				By.xpath("//textarea[@placeholder='Mời bạn thảo luận, vui lòng nhập tiếng Việt có dấu']"));
+				By.xpath("//textarea[@placeholder='M�?i bạn thảo luận, vui lòng nhập tiếng Việt có dấu']"));
 
 		Thread.sleep(5000);
 		Actions builder = new Actions(this.driver);
@@ -178,7 +178,7 @@ public class Comment extends AbstractAnnotation {
 	}
 
 	private void inputName(String name) {
-		WebElement txtBoxName = waitForElementClickable(By.xpath("//input[@placeholder='Họ tên (bắt buộc)']"));
+		WebElement txtBoxName = waitForElementClickable(By.xpath("//input[@placeholder='H�? tên (bắt buộc)']"));
 		txtBoxName.sendKeys(name);
 	}
 

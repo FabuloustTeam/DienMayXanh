@@ -7,7 +7,7 @@
 	</listeners>
 	<test name="list product">
 		<classes>
-			<class name="com.dienmayxanh.testcases.ViewListProducts" />
+			<class name="com.dienmayxanh.testcase.ViewListProducts" />
 <!-- 				<methods > -->
 <!-- 					<include name="testViewWithSortPriceDescending" /> -->
 <!-- 					<include name="testViewWithSortPriceAscending" /> -->

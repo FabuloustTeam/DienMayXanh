@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 
 import java.util.Iterator;
 import java.util.Set;
@@ -23,7 +23,7 @@ public class Link extends AbstractAnnotation {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn chọn liên kết trang Facebook.
+		// Nhấn ch�?n liên kết trang Facebook.
 		waitForElementClickable(By.xpath("//*[(@class='linkfb')]")).click();
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -34,7 +34,7 @@ public class Link extends AbstractAnnotation {
 			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
 
 				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Điện máy XANH (dienmayxanh.com) - Trang chủ | Facebook";
+				String expectedTitle = "�?iện máy XANH (dienmayxanh.com) - Trang chủ | Facebook";
 				String actualTitle = driver.getTitle();
 				Assert.assertEquals(actualTitle, expectedTitle);
 
@@ -52,7 +52,7 @@ public class Link extends AbstractAnnotation {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn chọn liên kết trang YouTube.
+		// Nhấn ch�?n liên kết trang YouTube.
 		waitForElementClickable(By.xpath("//*[(@class='linkyt')]")).click();
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -63,7 +63,7 @@ public class Link extends AbstractAnnotation {
 			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
 
 				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Điện máy XANH - YouTube";
+				String expectedTitle = "�?iện máy XANH - YouTube";
 				String actualTitle = driver.getTitle();
 				Assert.assertEquals(actualTitle, expectedTitle);
 
@@ -81,7 +81,7 @@ public class Link extends AbstractAnnotation {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn chọn liên kết trang Mái Ấm.
+		// Nhấn ch�?n liên kết trang Mái Ấm.
 		waitForElementClickable(By.xpath("//*[(@class='icondmx-logomaiam')]")).click();
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -110,7 +110,7 @@ public class Link extends AbstractAnnotation {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn chọn liên kết trang thegioididong.
+		// Nhấn ch�?n liên kết trang thegioididong.
 		waitForElementClickable(By.xpath("//*[(@class='icondmx-logotgdd')]")).click();
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -121,7 +121,7 @@ public class Link extends AbstractAnnotation {
 			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
 
 				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Thegioididong.com - Điện thoại, Laptop, Phụ kiện, Đồng hồ chính hãng";
+				String expectedTitle = "Thegioididong.com - �?iện thoại, Laptop, Phụ kiện, �?ồng hồ chính hãng";
 				String actualTitle = driver.getTitle();
 				Assert.assertEquals(actualTitle, expectedTitle);
 
@@ -139,7 +139,7 @@ public class Link extends AbstractAnnotation {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn chọn liên kết trang Bách hóa XANH.
+		// Nhấn ch�?n liên kết trang Bách hóa XANH.
 		waitForElementClickable(By.xpath("//*[(@class='icondmx-logobhx')]")).click();
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();

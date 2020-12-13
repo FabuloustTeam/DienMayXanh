@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -19,7 +19,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 
 	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {
-		// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 2 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
 		WebElement provincesBox = waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"));
 		provincesBox.click();
 	}
@@ -30,20 +30,20 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	@Test(priority = 1, groups={"chooseReceivePlaceSuccess"})
 	public void mainSFWithFullInfor() throws InterruptedException {
 		//chooseProvince("Hồ Chí Minh");
-		// step 3 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 3 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
 		chooseDistrict("Quận Gò Vấp");
 
-		// step 4 Chọn Phường/Xã
-		chooseWard("Phường 6");
+		// step 4 Ch�?n Phư�?ng/Xã
+		chooseWard("Phư�?ng 6");
 
-		// step 5 Nhập vào textbox "Số nhà, tên đường"
+		// step 5 Nhập vào textbox "Số nhà, tên đư�?ng"
 		fillAddress("496 Dương Quảng Hàm");
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("496 Dương Quảng Hàm, Phường 6, Quận Gò Vấp, Hồ Chí Minh");
+		confirmResult("496 Dương Quảng Hàm, Phư�?ng 6, Quận Gò Vấp, Hồ Chí Minh");
 	}
 
 	/*
@@ -51,13 +51,13 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	 */
 	@Test(priority = 2, groups={"chooseRecivePlaceSuccess"})
 	public void successWithOnlyProvince() throws InterruptedException {
-		// step 3 Chọn tỉnh thành
-		chooseProvince("Đồng Nai");
+		// step 3 Ch�?n tỉnh thành
+		chooseProvince("�?ồng Nai");
 
 		// step 4 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Đồng Nai");
+		confirmResult("�?ồng Nai");
 	}
 
 	/*
@@ -65,20 +65,20 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	 */
 	@Test(priority = 3, groups={"chooseReceivePlaceSuccess"})
 	public void successWithoutFillTextboxAddress() throws InterruptedException {
-		// step 3 Chọn tỉnh thành
+		// step 3 Ch�?n tỉnh thành
 		chooseProvince("Hồ Chí Minh");
 
-		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
 		chooseDistrict("Quận Bình Thạnh");
 
-		// step 5 Chọn Phường/Xã
-		chooseWard("Phường 15");
+		// step 5 Ch�?n Phư�?ng/Xã
+		chooseWard("Phư�?ng 15");
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Phường 15, Quận Bình Thạnh, Hồ Chí Minh");
+		confirmResult("Phư�?ng 15, Quận Bình Thạnh, Hồ Chí Minh");
 	}
 
 	/*
@@ -86,20 +86,20 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	 */
 	@Test(priority = 4, groups={"chooseReceivePlaceFail"})
 	public void failWithoutChooseWard() throws InterruptedException {
-		// step 3 Chọn tỉnh thành
-		chooseProvince("Bình Định");
-		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 3 Ch�?n tỉnh thành
+		chooseProvince("Bình �?ịnh");
+		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
 		chooseDistrict("Huyện Vân Canh");
 
-		// step 5 Không chọn Phường/Xã
+		// step 5 Không ch�?n Phư�?ng/Xã
 		WebElement dropboxWard = waitForElementClickable(By.id("location_listWard"));
 		dropboxWard.click();
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmErrorWard("Vui lòng chọn phường xã");
+		confirmErrorWard("Vui lòng ch�?n phư�?ng xã");
 	}
 
 	/**
@@ -108,26 +108,26 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 
 	@Test(priority = 5, groups={"successUpdateReceivePlace"})
 	public void successUpdateWithOnlyProvinceSubmitBefor() throws InterruptedException {
-		// step 3 Chọn tỉnh thành
+		// step 3 Ch�?n tỉnh thành
 		chooseProvince("Bình Thuận");
 		
 		// step 4 Nhấn Xác nhận
 		submitForm();
 
-		// step 5 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 5 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 6 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 6 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
 		chooseDistrict("Huyện Hàm Tân");
 
-		// step 7 Chọn Phường/Xã
-		chooseWard("Xã Tân Đức");
+		// step 7 Ch�?n Phư�?ng/Xã
+		chooseWard("Xã Tân �?ức");
 
 		// step 8 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Xã Tân Đức, Huyện Hàm Tân, Bình Thuận");
+		confirmResult("Xã Tân �?ức, Huyện Hàm Tân, Bình Thuận");
 	}
 
 	/**
@@ -136,35 +136,35 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 
 	@Test(priority = 6, groups={"successUpdateReceivePlace"})
 	public void successUpdateByClickOnButonChange() throws InterruptedException, AWTException {
-		// step 3 Chọn tỉnh thành
+		// step 3 Ch�?n tỉnh thành
 		chooseProvince("Hà Nội");
 
-		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
-		chooseDistrict("Quận Ba Đình");
+		chooseDistrict("Quận Ba �?ình");
 
-		// step 5 Chọn Phường/Xã
-		chooseWard("Phường Đội Cấn");
+		// step 5 Ch�?n Phư�?ng/Xã
+		chooseWard("Phư�?ng �?ội Cấn");
 
-		// step 6 Nhập vào textbox "Số nhà, tên đường"
-		fillAddress("13 Đội Cấn");
+		// step 6 Nhập vào textbox "Số nhà, tên đư�?ng"
+		fillAddress("13 �?ội Cấn");
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		// step 8 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 8 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 9 Nhấn chọn địa chỉ khác
+		// step 9 Nhấn ch�?n địa chỉ khác
 		clickButtonChangeLc();
 
-		// step 10 Thay đổi số nhà, tên đường
-		changeInforOnTextBox("17 Đội Mũ");
+		// step 10 Thay đổi số nhà, tên đư�?ng
+		changeInforOnTextBox("17 �?ội Mũ");
 
 		// step 11 sNhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("17 Đội Mũ, Phường Đội Cấn, Quận Ba Đình, Hà Nội");
+		confirmResult("17 �?ội Mũ, Phư�?ng �?ội Cấn, Quận Ba �?ình, Hà Nội");
 	}
 
 	/**
@@ -172,26 +172,26 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	 */
 	@Test(priority = 7, groups={"successUpdateReceivePlace"})
 	public void successUpdateByClickOnDropBoxProvince() throws InterruptedException {
-		// step 3 Chọn tỉnh thành
-		chooseProvince("Đà Nẵng");
+		// step 3 Ch�?n tỉnh thành
+		chooseProvince("�?à Nẵng");
 
-		// step 4 cNhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// step 4 cNhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
 		// tương ứng
 		chooseDistrict("Quận Ngũ Hành Sơn");
 
-		// step 5 Chọn Phường/Xã
-		chooseWard("Phường Mỹ An");
+		// step 5 Ch�?n Phư�?ng/Xã
+		chooseWard("Phư�?ng Mỹ An");
 
-		// step 6 Nhập vào textbox "Số nhà, tên đường"
+		// step 6 Nhập vào textbox "Số nhà, tên đư�?ng"
 		fillAddress("27 Sơn An");
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		// step 8 cNhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 8 cNhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 9 Nhấn chọn tình thành khác ở dropdown list tỉnh thành
+		// step 9 Nhấn ch�?n tình thành khác ở dropdown list tỉnh thành
 		chooseProvince("Bắc Kạn");
 
 		// step 10 Nhấn Xác nhận và xem kết quả hiển thị

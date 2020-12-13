@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -31,14 +31,14 @@ public class Contact extends AbstractAnnotation {
 		// 3. Nhập nội dung muốn góp ý
 		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
 		
-		// 4. Chọn giới tính "Anh" hoặc "Chị"
+		// 4. Ch�?n giới tính "Anh" hoặc "Chị"
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
 		genderMiss.click();
 
 		waitForElementClickable(By.id("fullname"));
 		WebElement fullname = driver.findElement(By.id("fullname"));
-		// 5. Nhập họ và tên
+		// 5. Nhập h�? và tên
 		fullname.sendKeys("Jônh Aná");
 
 		waitForElementClickable(By.id("contel"));
@@ -59,7 +59,7 @@ public class Contact extends AbstractAnnotation {
 		String actual = driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();
 
-		String expected = "Đã gửi thông tin thành công!";
+		String expected = "�?ã gửi thông tin thành công!";
 		Assert.assertEquals(actual, expected);
 
 		this.driver.close();
@@ -77,7 +77,7 @@ public class Contact extends AbstractAnnotation {
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
 		
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -91,7 +91,7 @@ public class Contact extends AbstractAnnotation {
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		
-		// 3. Nhập số vào trường có 'Nhập số điện thoại'
+		// 3. Nhập số vào trư�?ng có 'Nhập số điện thoại'
 		phonenumber.sendKeys("0907898mbcd");
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
@@ -116,7 +116,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -128,7 +128,7 @@ public class Contact extends AbstractAnnotation {
 		fullname.sendKeys("Jônh Aná");
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
-		// 3. Nhập ký tự đặc biệt vào trường "số điện thoại"
+		// 3. Nhập ký tự đặc biệt vào trư�?ng "số điện thoại"
 		phonenumber.sendKeys("090943432!./?");
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
@@ -151,7 +151,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -162,7 +162,7 @@ public class Contact extends AbstractAnnotation {
 		waitForElementClickable(By.id("fullname"));
 		WebElement fullname = driver.findElement(By.id("fullname"));
 		fullname.sendKeys("Jônh Aná");
-		// 3. Nhập số điện thoại không có thật vào trường 'Nhập số điện thoại mua hàng
+		// 3. Nhập số điện thoại không có thật vào trư�?ng 'Nhập số điện thoại mua hàng
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		phonenumber.sendKeys("0542344234");
@@ -193,7 +193,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -207,7 +207,7 @@ public class Contact extends AbstractAnnotation {
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		phonenumber.sendKeys("");
 
-		// 3. Bỏ trống không chọn nút "Anh", " Chị"
+		// 3. B�? trống không ch�?n nút "Anh", " Chị"
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
 		//// genderMiss.click();
@@ -229,7 +229,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -238,7 +238,7 @@ public class Contact extends AbstractAnnotation {
 		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
 		waitForElementClickable(By.id("fullname"));
 		WebElement fullname = driver.findElement(By.id("fullname"));
-		// 3. Bỏ trống trường họ và tên vào trường 'Nhập họ và tên'.
+		// 3. B�? trống trư�?ng h�? và tên vào trư�?ng 'Nhập h�? và tên'.
 		fullname.sendKeys("");
 
 		waitForElementClickable(By.id("contel"));
@@ -265,7 +265,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 		waitForElementClickable(By.id("message"));
@@ -275,7 +275,7 @@ public class Contact extends AbstractAnnotation {
 		waitForElementClickable(By.id("fullname"));
 		WebElement fullname = driver.findElement(By.id("fullname"));
 		fullname.sendKeys("Jônh Aná");
-		// 3. Nhập chữ vào trường 'Email'.
+		// 3. Nhập chữ vào trư�?ng 'Email'.
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
 		email.sendKeys("Thanhnhan@gmail.com");
@@ -307,7 +307,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -320,7 +320,7 @@ public class Contact extends AbstractAnnotation {
 
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
-		// 3. Nhập kí tự đặc biệt vào trường 'Email'.
+		// 3. Nhập kí tự đặc biệt vào trư�?ng 'Email'.
 		email.sendKeys("thanhnhan?..'`@gmail.com");
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
@@ -343,7 +343,7 @@ public class Contact extends AbstractAnnotation {
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
 //		driver.get(baseUrl);
-		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
+		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
 
@@ -357,7 +357,7 @@ public class Contact extends AbstractAnnotation {
 
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
-		// 3. Nhập email không có thật vào trường 'Email'.
+		// 3. Nhập email không có thật vào trư�?ng 'Email'.
 		email.sendKeys("motconvitxoa2caichan@gmail.com");
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));

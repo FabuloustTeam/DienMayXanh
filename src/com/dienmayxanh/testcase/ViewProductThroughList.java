@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 
 import java.util.List;
 import org.openqa.selenium.*;
@@ -15,14 +15,14 @@ public class ViewProductThroughList extends AbstractAnnotation {
 	 */
 	@Test(groups = {"viewByName"})
 	public void testSuccessViewProductByList() {
-		// Step 2 Nhấn chọn loại sản phẩm muốn xem trong danh mục
-		chooseCategory("Lọc nước");
-		// Step 3 Nhấn chọn vào hãng muốn xem của sản phẩm đó
+		// Step 2 Nhấn ch�?n loại sản phẩm muốn xem trong danh mục
+		chooseCategory("L�?c nước");
+		// Step 3 Nhấn ch�?n vào hãng muốn xem của sản phẩm đó
 		chooseManufacture("Kangaroo");
-		// Step 4 Nhấn chọn vào sản phẩm muốn xem
-		getProduct("Máy lọc nước RO hydrogen ion kiềm Kangaroo 7 lõi KG100E0");
+		// Step 4 Nhấn ch�?n vào sản phẩm muốn xem
+		getProduct("Máy l�?c nước RO hydrogen ion ki�?m Kangaroo 7 lõi KG100E0");
 
-		comfirmResult("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
+		comfirmResult("Máy l�?c nước RO hydrogen ion ki�?m Kangaroo KG100EO 7 lõi");
 	}
 
 	private void chooseCategory(String category) {

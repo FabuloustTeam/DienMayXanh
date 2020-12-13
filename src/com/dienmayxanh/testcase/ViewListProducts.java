@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +22,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 */
 	@Test(priority = 1)
 	public void testShowAllProduct() {
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 
@@ -30,7 +30,7 @@ public class ViewListProducts extends AbstractAnnotation {
 		List<WebElement> products = getAllProducts();
 		for (int i = 0; i < products.size(); i ++) {
 			WebElement spanName = products.get(i).findElement(By.xpath("//div[@class='prdName']//span"));
-			if(!spanName.getText().toLowerCase().contains("máy lọc nước")) {
+			if(!spanName.getText().toLowerCase().contains("máy l�?c nước")) {
 				isAllProductTrueName = false;
 				break;
 			}
@@ -45,7 +45,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	private void testShowAllProductOfBrand() {
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
-		// 3. Chọn hãng
+		// 3. Ch�?n hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
 		JavascriptExecutor jsEx = (JavascriptExecutor) driver;
 //		jsEx.executeScript(
@@ -82,12 +82,12 @@ public class ViewListProducts extends AbstractAnnotation {
 	 */
 	@Test (priority = 3)
 	public void testViewWithSortPriceDescending() {
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		chooseCategory("Lọc nước");
+		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
+		chooseCategory("L�?c nước");
 
 		waitForPageLoad();
 		
-		// 3. Chọn sắp xếp
+		// 3. Ch�?n sắp xếp
 		chooseSort("Giá cao đến thấp");
 
 		WebElement[][] dataTable = getTable();
@@ -100,12 +100,12 @@ public class ViewListProducts extends AbstractAnnotation {
 	 */
 	@Test (priority = 4)
 	public void testViewWithSortPriceAscending() {
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		chooseCategory("Lọc nước");
+		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
+		chooseCategory("L�?c nước");
 
 		waitForPageLoad();
 		
-		// 3. Chọn sắp xếp
+		// 3. Ch�?n sắp xếp
 		chooseSort("Giá thấp đến cao");
 
 		WebElement[][] dataTable = getTable();
@@ -118,8 +118,8 @@ public class ViewListProducts extends AbstractAnnotation {
 	 */
 	@Test (priority = 5)
 	public void testQuantity() {
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		chooseCategory("Lọc nước");
+		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
+		chooseCategory("L�?c nước");
 		
 		waitForProductsLoad();
 		waitForPageLoad();

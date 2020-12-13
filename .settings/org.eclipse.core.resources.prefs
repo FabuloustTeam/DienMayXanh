@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
-encoding//src/com/dienmayxanh/testcases/ChooseReceivedPlace.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/Comment.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/Contact.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/Link.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/LogIn.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/ViewListProducts.java=UTF-8
-encoding//src/com/dienmayxanh/testcases/ViewProductThroughList.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/ChooseReceivedPlace.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/Comment.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/Contact.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/Link.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/LogIn.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/ViewListProducts.java=UTF-8
+encoding//src/com/dienmayxanh/testcase/ViewProductThroughList.java=UTF-8

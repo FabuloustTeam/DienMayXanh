@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcases;
+package com.dienmayxanh.testcase;
 
 import org.testng.annotations.Test;
 
@@ -21,13 +21,13 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập chữ vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone1.sendKeys("090dwwwr");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục'
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 
@@ -47,13 +47,13 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập kí tự đặc biệt vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập kí tự đặc biệt vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone2 = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone2.sendKeys("575(){'.");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục'
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 
@@ -72,13 +72,13 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại không có thật vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại không có thật vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone3 = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone3.sendKeys("5412368521");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục'
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 
@@ -97,13 +97,13 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Bỏ trống trường 'Nhập số điện thoại mua hàng'.
+		// B�? trống trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone4 = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone4.sendKeys("");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục'
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 
@@ -122,13 +122,13 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập khoảng trắng vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập khoảng trắng vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone5 = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone5.sendKeys("     ");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục'
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 
@@ -147,21 +147,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0342256477");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(5000);
-		// Nhập sai mã xác nhận vào trường 'Nhập mã xác nhận gồm 4 số'
+		// Nhập sai mã xác nhận vào trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp.sendKeys("4512");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -180,21 +180,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0348775124");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(5000);
-		// Nhập không đủ 4 chữ số mã xác nhận vào trường 'Nhập mã xác nhận gồm 4 số'
+		// Nhập không đủ 4 chữ số mã xác nhận vào trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp1 = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp1.sendKeys("452");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -213,21 +213,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0341235789");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(5000);
-		// Nhập chữ vào trường 'Nhập mã xác nhận gồm 4 số'
+		// Nhập chữ vào trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp2 = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp2.sendKeys("45a2");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -246,21 +246,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0386586541");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(7000);
-		// Nhập kí tự đặc biệt vào trường 'Nhập mã xác nhận gồm 4 số'
+		// Nhập kí tự đặc biệt vào trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp3 = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp3.sendKeys("4>?2");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -279,21 +279,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0345154856");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(5000);
-		// Nhập khoảng trắng vào trường 'Nhập mã xác nhận gồm 4 số'
+		// Nhập khoảng trắng vào trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp4 = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp4.sendKeys("    ");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -312,21 +312,21 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0389852132");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 //		Thread.sleep(5000);
-		// Bỏ trống trường 'Nhập mã xác nhận gồm 4 số'
+		// B�? trống trư�?ng 'Nhập mã xác nhận gồm 4 số'
 		WebElement otp5 = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
 		otp5.sendKeys("");
 //		Thread.sleep(5000);
-		// Nhấn chọn "Tiếp tục" hoặc phím Enter.
+		// Nhấn ch�?n "Tiếp tục" hoặc phím Enter.
 		WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
 		code.click();
 
@@ -345,17 +345,17 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
-		// Nhập số điện thoại vào trường 'Nhập số điện thoại mua hàng'.
+		// Nhập số điện thoại vào trư�?ng 'Nhập số điện thoại mua hàng'.
 		WebElement phone = waitForElementClickable(By.name("txtPhoneNumber"));
 		phone.sendKeys("0345468365");
-		// Nhấn Enter hoặc chọn 'Tiếp tục' và đợi mã xác nhận được gửi về SMS.
+		// Nhấn Enter hoặc ch�?n 'Tiếp tục' và đợi mã xác nhận được gửi v�? SMS.
 		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
 		login.click();
 		Thread.sleep(35000);
-		// Nhấn chọn "Tôi không nhận được mã, vui lòng gửi lại"
+		// Nhấn ch�?n "Tôi không nhận được mã, vui lòng gửi lại"
 		WebElement thongbao = waitForElementClickable(By.xpath("//a[@class='resend-sms']"));
 		thongbao.click();
 
@@ -370,7 +370,7 @@ public class LogIn extends AbstractAnnotation {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+		// Nhấn ch�?n "Lịch sử mua hàng" trên thanh Header
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
 
