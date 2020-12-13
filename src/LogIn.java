@@ -1,10 +1,15 @@
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import AbstractClass.abstractLogin;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+//@Listeners(ListenerTest.class)			
 
 public class LogIn extends abstractLogin {
 	public String baseUrl = "https://www.dienmayxanh.com";

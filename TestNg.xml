@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name = "test login" >
-<parameter name="url" value="https://www.dienmayxanh.com/" />
+<listeners>
+<listener class-name="ilistener.ListenerTest"></listener>
+</listeners>
    <test name = "login">
       <classes>
         <class name = "LogIn">
-         	<methods>
-         		<include name="BoTrongOTP"/>
-         		<include name="OTPNhapKhoangTrang"/>
-         	</methods>
          </class>
          <class name = "Link">
          	<methods>

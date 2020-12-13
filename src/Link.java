@@ -13,6 +13,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import AbstractClass.abstractLink;
+
 public class Link extends abstractLink{
 
 	/**
