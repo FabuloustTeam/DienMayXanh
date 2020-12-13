@@ -21,7 +21,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
 	 */
 	@Test(priority = 1)
-	public void ShowAllProduct() {
+	public void testShowAllProduct() {
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
@@ -42,7 +42,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
 	 */
 	@Test(priority = 2)
-	private void ShowAllProductOfBrand() {
+	private void testShowAllProductOfBrand() {
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 		// 3. Chọn hãng
