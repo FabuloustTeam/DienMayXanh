@@ -8,11 +8,12 @@ import com.dienmayxanh.service.TakeSnapShot;
 import com.dienmayxanh.abstractclass.*;
 
 public class ListenerTest extends AbstractPath implements ITestListener {
-	
+
 	@Override
 	public void onTestFailure(ITestResult arg0) {
 //		String file = System.getProperty("user.dir")+"\\screenshots\\"+"screenshot-"+(arg0.getName())+".png";
-		String file = getScreenShotsFolderPath() + "screenshot-" + (arg0.getName()) + ".png";
+		String fileName = "screenshot-" + (arg0.getName()) + ".png";
+		String file = getScreenShotsFolderPath() + fileName;
 		try {
 			TakeSnapShot.takeSnapShot(file);
 		} catch (Exception e) {
