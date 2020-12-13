@@ -8,16 +8,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class TakeSnapShot {
-	
-	public static void takeSnapShot(String fileWithPath) throws Exception {
-		// Convert web driver object to TakeScreenshot
-		TakesScreenshot scrShot = ((TakesScreenshot) AbstractAnnotation.driver);
-		// Call getScreenshotAs method to create image file
-		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		// Move image file to new destination
-		File DestFile = new File(fileWithPath);
-		// Copy file at destination
-		FileUtils.copyFile(SrcFile, DestFile);
 
+	public static void takeSnapShot(String fileWithPath) throws Exception {
+		TakesScreenshot scrShot = ((TakesScreenshot) AbstractAnnotation.driver);
+
+		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+		File DestFile = new File(fileWithPath);
+
+		FileUtils.copyFile(SrcFile, DestFile);
 	}
 }

@@ -1,30 +1,19 @@
 package com.dienmayxanh.testcases;
+
 import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Link {
-	public String baseUrl = "https://www.dienmayxanh.com";
-	public WebDriver driver;
+import com.dienmayxanh.abstractclass.AbstractAnnotation;
 
-
-	@BeforeTest
-	public void launchBrowser() {
-		System.out.println("lauching chrome browser");
-		driver = new ChromeDriver();
-		driver.get(baseUrl);
-	}
+public class Link extends AbstractAnnotation {
 
 	/**
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-01
@@ -169,11 +158,6 @@ public class Link {
 			}
 		}
 		driver.switchTo().window(MainWindow);
-	}
-	
-	@AfterTest
-	public void terminateBrowser() {
-		driver.close();
 	}
 	
 	private WebElement waitForElementClickable(By locator) {
