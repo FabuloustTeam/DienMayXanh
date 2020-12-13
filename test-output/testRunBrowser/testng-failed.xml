@@ -2,29 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testRunBrowser]" guice-stage="DEVELOPMENT">
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
+  <listeners>
+    <listener class-name="Listeners.IListeners"/>
+  </listeners>
   <test thread-count="5" name="viewlistproduct(failed)">
     <classes>
       <class name="ViewListProducts">
         <methods>
-          <include name="ShowAllProductOfBrand"/>
           <include name="accessWebsite"/>
+          <include name="ShowAllProduct"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- ViewListProducts -->
-      <class name="Contact">
-        <methods>
-          <include name="SDTkhonghople"/>
-          <include name="Chuachongioitinh"/>
-          <include name="NhapchuhoavaotruognEmail"/>
-          <include name="accessWebsite"/>
-          <include name="NhapkytudacbiettruongSDT"/>
-          <include name="NhapEmailkhonghople"/>
-          <include name="NhapkytudacbietvaotruongEmail"/>
-          <include name="SaiTruongSDT"/>
-          <include name="closeBrowser"/>
-          <include name="Lienhethanhcong"/>
-        </methods>
-      </class> <!-- Contact -->
     </classes>
   </test> <!-- viewlistproduct(failed) -->
 </suite> <!-- Failed suite [testRunBrowser] -->

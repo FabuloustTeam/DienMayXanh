@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import AbstractClasses.AbstractBOT;
+
 public class ViewListProducts extends AbstractBOT {
 //	@BeforeMethod
 //	public void beforeMethod() {

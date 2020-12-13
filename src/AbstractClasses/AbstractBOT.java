@@ -1,3 +1,4 @@
+package AbstractClasses;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.*;
@@ -5,7 +6,7 @@ import org.testng.annotations.*;
 
 public abstract class AbstractBOT {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 
 	String driverPath = "E:\\Selenium\\chromedriver_win32\\chromedriver.exe";
 	@BeforeMethod
@@ -14,13 +15,13 @@ public abstract class AbstractBOT {
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 
 		System.setProperty("webdriver.chrome.driver", driverPath);
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
-		this.driver.get(url);
+		AbstractBOT.driver = new ChromeDriver();
+		AbstractBOT.driver.manage().window().maximize();
+		AbstractBOT.driver.get(url);
 	}
 
 	@AfterMethod
 	public void closeBrowser() {
-		this.driver.close();
+		driver.close();
 	}
 }

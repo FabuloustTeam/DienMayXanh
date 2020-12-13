@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import AbstractClasses.AbstractBOT;
+
 public class Contact extends AbstractBOT {
 //	// 1. Truy cập https://www.dienmayxanh.com/lien-he
 //	public String baseUrl = "https://www.dienmayxanh.com/";
@@ -63,7 +65,7 @@ public class Contact extends AbstractBOT {
 		String expected = "Đã gửi thông tin thành công!";
 		Assert.assertEquals(actual, expected);
 
-		this.driver.close();
+//		this.driver.close();
 
 	}
 
@@ -104,7 +106,7 @@ public class Contact extends AbstractBOT {
 
 		// driver.close();
 
-		this.driver.close();
+//		this.driver.close();
 
 	}
 
@@ -139,7 +141,7 @@ public class Contact extends AbstractBOT {
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
 
-		driver.close();
+//		driver.close();
 
 	}
 
@@ -182,7 +184,7 @@ public class Contact extends AbstractBOT {
 		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
 		Assert.assertEquals(actual, expected);
 
-		driver.close();
+//		driver.close();
 	}
 
 	/**
@@ -217,7 +219,7 @@ public class Contact extends AbstractBOT {
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
 
-		driver.close();
+//		driver.close();
 
 	}
 
@@ -253,7 +255,7 @@ public class Contact extends AbstractBOT {
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
 
-		driver.close();
+//		driver.close();
 
 	}
 
@@ -295,7 +297,7 @@ public class Contact extends AbstractBOT {
 		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
 		Assert.assertEquals(actual, expected);
 
-		driver.close();
+//		driver.close();
 
 	}
 
@@ -331,7 +333,7 @@ public class Contact extends AbstractBOT {
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
 
-		driver.close();
+//		driver.close();
 
 	}
 
@@ -375,7 +377,7 @@ public class Contact extends AbstractBOT {
 		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
 		Assert.assertEquals(actual, expected);
 
-		driver.close();
+//		driver.close();
 
 	}
 
