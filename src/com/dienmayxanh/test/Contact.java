@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcase;
+package com.dienmayxanh.test;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcase;
+package com.dienmayxanh.test;
 
 import org.testng.Assert;
 import org.testng.annotations.*;

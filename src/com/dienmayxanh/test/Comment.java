@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcase;
+package com.dienmayxanh.test;
 import com.dienmayxanh.abstractclass.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;

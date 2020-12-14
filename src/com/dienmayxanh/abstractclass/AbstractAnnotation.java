@@ -5,15 +5,16 @@ import org.openqa.selenium.chrome.*;
 import org.testng.annotations.*;
 import com.dienmayxanh.service.ExcelUtils;
 
-public abstract class AbstractAnnotation {
+public abstract class AbstractAnnotation extends AbstractPath {
 	
 	public static WebDriver driver;
 	
 	@BeforeMethod
-	@Parameters({"url"})
-	public void accessWebsite(String url, String Path, String SheetName) throws Exception {
+	@Parameters({ "url", "testCaseName", "SheetName" })
+	public void accessWebsite(String url, String testCaseName, String SheetName) throws Exception {
+		String Path = getTestCasesFolderPath() + "DienmayXANH-" + testCaseName + ".xlsx";
 		ExcelUtils.setExcelFile(Path, SheetName);
-		
+
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -21,18 +22,22 @@ public abstract class AbstractAnnotation {
 	}
 
 	@AfterMethod
-	public void closeBrowser(String Path) throws Exception {
+	public void closeBrowser() throws Exception {
+		String Path = projPath + "//DienmayXANH-FunctionalTestExecution.xlsx";
 		ExcelUtils.saveFile(Path);
 		driver.close();
 	}
-	
+
 	@BeforeClass
-	public void setExcel(String Path, String SheetName) throws Exception {
+	@Parameters({ "testCaseName", "SheetName" })
+	public void setExcel(String testCaseName, String SheetName) throws Exception {
+		String Path = getTestCasesFolderPath() + "DienmayXANH-" + testCaseName + ".xlsx";
 		ExcelUtils.setExcelFile(Path, SheetName);
 	}
-	
+
 	@AfterClass
-	public void saveAndCloseExcel(String Path) throws Exception {
+	public void saveAndCloseExcel() throws Exception {
+		String Path = projPath + "//DienmayXANH-FunctionalTestExecution.xlsx";
 		ExcelUtils.closeandsaveFile(Path);
 	}
 }

@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcase;
+package com.dienmayxanh.test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
+import com.dienmayxanh.service.ExcelUtils;
 //@Listeners(com.dienmayxanh.listener.ListenerTest.class)
 
 public class ViewListProducts extends AbstractAnnotation {
@@ -45,7 +45,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	private void testShowAllProductOfBrand() {
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
-		// 3. Ch�?n hãng
+		// 3. Chọn hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
 		JavascriptExecutor jsEx = (JavascriptExecutor) driver;
 //		jsEx.executeScript(
@@ -79,16 +79,20 @@ public class ViewListProducts extends AbstractAnnotation {
 
 	/**
 	 * Test requirement: TR-DMX-VLP-02. Test case ID: TC-DMX-VLP-03
+	 * @throws Exception 
 	 */
 	@Test (priority = 3)
-	public void testViewWithSortPriceDescending() {
-		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
-		chooseCategory("L�?c nước");
+	public void testViewWithSortPriceDescending() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-03", 2);
+		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+		String category = ExcelUtils.getCellData(rowData + 1, 7);
+		chooseCategory(category);
 
 		waitForPageLoad();
 		
-		// 3. Ch�?n sắp xếp
-		chooseSort("Giá cao đến thấp");
+		// 3. Chọn sắp xếp
+		String sortType = ExcelUtils.getCellData(rowData + 2, 7);
+		chooseSort(sortType);
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkDescending(dataTable);
@@ -97,16 +101,20 @@ public class ViewListProducts extends AbstractAnnotation {
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-02. Test case ID: TC-DMX-VLP-04
+	 * @throws Exception 
 	 */
 	@Test (priority = 4)
-	public void testViewWithSortPriceAscending() {
-		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
-		chooseCategory("L�?c nước");
+	public void testViewWithSortPriceAscending() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-04", 2);
+		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+		String category = ExcelUtils.getCellData(rowData + 1, 7);
+		chooseCategory(category);
 
 		waitForPageLoad();
 		
-		// 3. Ch�?n sắp xếp
-		chooseSort("Giá thấp đến cao");
+		// 3. Chọn sắp xếp
+		String sortType = ExcelUtils.getCellData(rowData + 2, 7);
+		chooseSort(sortType);
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkAscending(dataTable);
@@ -115,11 +123,14 @@ public class ViewListProducts extends AbstractAnnotation {
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-03. Test case ID: TC-DMX-VLP-05
+	 * @throws Exception 
 	 */
 	@Test (priority = 5)
-	public void testQuantity() {
-		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
-		chooseCategory("L�?c nước");
+	public void testQuantity() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-05", 2);
+		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+		String category = ExcelUtils.getCellData(rowData + 1, 7);
+		chooseCategory(category);
 		
 		waitForProductsLoad();
 		waitForPageLoad();
@@ -239,14 +250,14 @@ public class ViewListProducts extends AbstractAnnotation {
 	private void chooseSort(String sortType) {
 		WebElement orderType = waitForElementVisibility(By.xpath("//div[@class='ordertype twonum']"));
 		List<WebElement> orderTypes = orderType.findElements(By.tagName("a"));
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		for (int i = 0; i < orderTypes.size(); i++) {
 			wait.until(ExpectedConditions.elementToBeClickable(orderTypes.get(i)));
-			if(orderTypes.get(i).getText().trim().equals(sortType)) {
-//				orderTypes.get(i).click();
+			if(orderTypes.get(i).getText().trim().equalsIgnoreCase(sortType.toLowerCase())) {
+				orderTypes.get(i).click();
 				int centerWidth = orderTypes.get(i).getSize().getWidth()/2;
 				int centerHeight = orderTypes.get(i).getSize().getHeight()/2;
-				Actions builder = new Actions(this.driver);
+				Actions builder = new Actions(driver);
 				builder.moveToElement(orderTypes.get(i), centerWidth, centerHeight).click().build().perform();
 				break;
 			}
@@ -269,7 +280,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	}
 
 	private void waitForProductsLoad() {
-		JavascriptExecutor js = (JavascriptExecutor) this.driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		while (true) {
 			try {
 				WebElement loadMore = waitForElementClickable(By.xpath("//a[@class='viewmore']"));
@@ -305,17 +316,17 @@ public class ViewListProducts extends AbstractAnnotation {
 	}
 
 	private WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
 	private void waitForElementInvisible(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
 
 	private WebElement waitForElementVisibility(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 

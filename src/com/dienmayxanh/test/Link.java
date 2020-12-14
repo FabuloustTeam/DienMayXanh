@@ -1,4 +1,4 @@
-package com.dienmayxanh.testcase;
+package com.dienmayxanh.test;
 
 import java.util.Iterator;
 import java.util.Set;

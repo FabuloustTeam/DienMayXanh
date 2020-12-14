@@ -1,7 +1,7 @@
 package com.dienmayxanh.abstractclass;
 
 public abstract class AbstractPath {
-	private static String projPath = System.getProperty("user.dir");
+	protected static String projPath = System.getProperty("user.dir");
 	
 	public static String getScreenShotsFolderPath() {
 		return projPath+"\\screenshots\\";

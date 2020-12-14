@@ -2,22 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="testing list product">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
+	<parameter name="SheetName" value="Test Case" />
 	<listeners>
 		<listener class-name="com.dienmayxanh.listener.ListenerTest" />
 	</listeners>
-	<test name="list product">
+	<test name="test view list products">
+		<parameter name="testCaseName" value="ViewListProducts" />
 		<classes>
-			<class name="com.dienmayxanh.testcase.ViewListProducts" />
-<!-- 				<methods > -->
-<!-- 					<include name="testViewWithSortPriceDescending" /> -->
-<!-- 					<include name="testViewWithSortPriceAscending" /> -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 			<class name="com.dienmayxanh.testcases.Comment" /> -->
-<!-- 			<class name="com.dienmayxanh.testcases.Link" />
-			<class name="com.dienmayxanh.testcases.Contact" /> 
-			<class name="com.dienmayxanh.testcases.LogIn" />
-			<class name="com.dienmayxanh.testcases.ViewProductThroughList" /> -->
+			<!-- <class name="com.dienmayxanh.test.ViewListProducts" /> -->
+			<class name="com.dienmayxanh.test.ViewListProducts">
+				<methods>
+					<include name="testViewWithSortPriceDescending" />
+					<include name="testViewWithSortPriceAscending" />
+					<include name="testQuantity" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="test comment">
+		<parameter name="testCaseName" value="Comment" />
+		<classes>
+			<class name="com.dienmayxanh.test.Comment" />
 		</classes>
 	</test>
 </suite>
