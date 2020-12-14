@@ -1,13 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="2" total="10" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-14T12:01:23 ICT" name="testing list product" finished-at="2020-12-14T12:03:34 ICT" duration-ms="130359">
+  <suite started-at="2020-12-14T12:29:57 ICT" name="testing list product" finished-at="2020-12-14T12:32:21 ICT" duration-ms="143713">
     <groups>
     </groups>
-    <test started-at="2020-12-14T12:01:23 ICT" name="test comment" finished-at="2020-12-14T12:03:34 ICT" duration-ms="130359">
+    <test started-at="2020-12-14T12:29:57 ICT" name="test view list products" finished-at="2020-12-14T12:31:03 ICT" duration-ms="65588">
+      <class name="com.dienmayxanh.test.ViewListProducts">
+        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:29:57 ICT" name="setExcel" finished-at="2020-12-14T12:29:58 ICT" duration-ms="435" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ViewListProducts]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Test Case]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExcel -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:29:58 ICT" name="accessWebsite" finished-at="2020-12-14T12:30:04 ICT" duration-ms="6006" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ViewListProducts]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test Case]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:04 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-14T12:30:20 ICT" duration-ms="16737" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewWithSortPriceDescending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:20 ICT" name="closeBrowser" finished-at="2020-12-14T12:30:21 ICT" duration-ms="175" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:21 ICT" name="accessWebsite" finished-at="2020-12-14T12:30:27 ICT" duration-ms="6209" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ViewListProducts]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test Case]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:27 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-14T12:30:43 ICT" duration-ms="16241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testViewWithSortPriceAscending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:43 ICT" name="closeBrowser" finished-at="2020-12-14T12:30:43 ICT" duration-ms="98" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:43 ICT" name="accessWebsite" finished-at="2020-12-14T12:30:49 ICT" duration-ms="5738" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ViewListProducts]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test Case]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:30:49 ICT" name="testQuantity" finished-at="2020-12-14T12:31:02 ICT" duration-ms="13542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuantity -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:31:03 ICT" name="closeBrowser" finished-at="2020-12-14T12:31:03 ICT" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T12:31:03 ICT" name="saveAndCloseExcel" finished-at="2020-12-14T12:31:03 ICT" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveAndCloseExcel -->
+      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
+    </test> <!-- test view list products -->
+    <test started-at="2020-12-14T12:31:03 ICT" name="test comment" finished-at="2020-12-14T12:32:21 ICT" duration-ms="78106">
       <class name="com.dienmayxanh.test.Comment">
-        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:01:23 ICT" name="setExcel" finished-at="2020-12-14T12:01:24 ICT" duration-ms="473" status="PASS">
+        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:03 ICT" name="setExcel" finished-at="2020-12-14T12:31:03 ICT" duration-ms="34" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +134,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcel -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:01:24 ICT" name="accessWebsite" finished-at="2020-12-14T12:02:21 ICT" duration-ms="57197" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:03 ICT" name="accessWebsite" finished-at="2020-12-14T12:31:09 ICT" duration-ms="5775" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,19 +155,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:21 ICT" name="beforeMethod" finished-at="2020-12-14T12:02:22 ICT" duration-ms="1232" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:09 ICT" name="beforeMethod" finished-at="2020-12-14T12:31:09 ICT" duration-ms="981" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testWithoutCommentContent()[pri:1, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:22 ICT" name="testWithoutCommentContent" finished-at="2020-12-14T12:02:31 ICT" duration-ms="8753" status="PASS">
+        <test-method signature="testWithoutCommentContent()[pri:1, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:09 ICT" name="testWithoutCommentContent" finished-at="2020-12-14T12:31:18 ICT" duration-ms="8643" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWithoutCommentContent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:31 ICT" name="closeBrowser" finished-at="2020-12-14T12:02:31 ICT" duration-ms="167" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:18 ICT" name="closeBrowser" finished-at="2020-12-14T12:31:18 ICT" duration-ms="66" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:31 ICT" name="accessWebsite" finished-at="2020-12-14T12:02:37 ICT" duration-ms="5973" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:18 ICT" name="accessWebsite" finished-at="2020-12-14T12:31:24 ICT" duration-ms="5709" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,19 +188,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:37 ICT" name="beforeMethod" finished-at="2020-12-14T12:02:37 ICT" duration-ms="452" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:24 ICT" name="beforeMethod" finished-at="2020-12-14T12:31:25 ICT" duration-ms="599" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testOnlySpaceCommentContent()[pri:2, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:37 ICT" name="testOnlySpaceCommentContent" finished-at="2020-12-14T12:02:47 ICT" duration-ms="9627" status="PASS">
+        <test-method signature="testOnlySpaceCommentContent()[pri:2, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:25 ICT" name="testOnlySpaceCommentContent" finished-at="2020-12-14T12:31:34 ICT" duration-ms="9597" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOnlySpaceCommentContent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:47 ICT" name="closeBrowser" finished-at="2020-12-14T12:02:47 ICT" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:34 ICT" name="closeBrowser" finished-at="2020-12-14T12:31:34 ICT" duration-ms="58" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:47 ICT" name="accessWebsite" finished-at="2020-12-14T12:02:53 ICT" duration-ms="5859" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:34 ICT" name="accessWebsite" finished-at="2020-12-14T12:31:40 ICT" duration-ms="5707" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -110,19 +221,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:53 ICT" name="beforeMethod" finished-at="2020-12-14T12:02:53 ICT" duration-ms="495" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:40 ICT" name="beforeMethod" finished-at="2020-12-14T12:31:40 ICT" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testWithoutName()[pri:3, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:02:53 ICT" name="testWithoutName" finished-at="2020-12-14T12:03:02 ICT" duration-ms="8630" status="PASS">
+        <test-method signature="testWithoutName()[pri:3, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:40 ICT" name="testWithoutName" finished-at="2020-12-14T12:31:49 ICT" duration-ms="8576" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWithoutName -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:02 ICT" name="closeBrowser" finished-at="2020-12-14T12:03:02 ICT" duration-ms="95" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:49 ICT" name="closeBrowser" finished-at="2020-12-14T12:31:49 ICT" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:02 ICT" name="accessWebsite" finished-at="2020-12-14T12:03:08 ICT" duration-ms="5803" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:49 ICT" name="accessWebsite" finished-at="2020-12-14T12:31:55 ICT" duration-ms="5708" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -143,19 +254,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:08 ICT" name="beforeMethod" finished-at="2020-12-14T12:03:08 ICT" duration-ms="424" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:55 ICT" name="beforeMethod" finished-at="2020-12-14T12:31:55 ICT" duration-ms="534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testOnlySpaceName()[pri:4, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:08 ICT" name="testOnlySpaceName" finished-at="2020-12-14T12:03:17 ICT" duration-ms="8591" status="PASS">
+        <test-method signature="testOnlySpaceName()[pri:4, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:31:55 ICT" name="testOnlySpaceName" finished-at="2020-12-14T12:32:04 ICT" duration-ms="8568" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOnlySpaceName -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:17 ICT" name="closeBrowser" finished-at="2020-12-14T12:03:17 ICT" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:04 ICT" name="closeBrowser" finished-at="2020-12-14T12:32:04 ICT" duration-ms="78" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:17 ICT" name="accessWebsite" finished-at="2020-12-14T12:03:23 ICT" duration-ms="5753" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:04 ICT" name="accessWebsite" finished-at="2020-12-14T12:32:10 ICT" duration-ms="5761" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -176,19 +287,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:23 ICT" name="beforeMethod" finished-at="2020-12-14T12:03:23 ICT" duration-ms="459" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:10 ICT" name="beforeMethod" finished-at="2020-12-14T12:32:11 ICT" duration-ms="671" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testContentCommentIsLessThan10Characters()[pri:5, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:23 ICT" name="testContentCommentIsLessThan10Characters" finished-at="2020-12-14T12:03:33 ICT" duration-ms="10070" status="PASS">
+        <test-method signature="testContentCommentIsLessThan10Characters()[pri:5, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:11 ICT" name="testContentCommentIsLessThan10Characters" finished-at="2020-12-14T12:32:21 ICT" duration-ms="10163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testContentCommentIsLessThan10Characters -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:33 ICT" name="closeBrowser" finished-at="2020-12-14T12:03:33 ICT" duration-ms="74" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:21 ICT" name="closeBrowser" finished-at="2020-12-14T12:32:21 ICT" duration-ms="56" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.Comment@60b4beb4]" started-at="2020-12-14T12:03:33 ICT" name="saveAndCloseExcel" finished-at="2020-12-14T12:03:34 ICT" duration-ms="47" status="PASS">
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T12:32:21 ICT" name="saveAndCloseExcel" finished-at="2020-12-14T12:32:21 ICT" duration-ms="34" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->

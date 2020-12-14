@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 import com.dienmayxanh.service.ExcelUtils;
 //@Listeners(com.dienmayxanh.listener.ListenerTest.class)
@@ -84,6 +86,9 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test (priority = 3)
 	public void testViewWithSortPriceDescending() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-03", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-VLP-03");
+		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		String category = ExcelUtils.getCellData(rowData + 1, 7);
 		chooseCategory(category);
@@ -106,6 +111,9 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test (priority = 4)
 	public void testViewWithSortPriceAscending() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-04", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-VLP-04");
+		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		String category = ExcelUtils.getCellData(rowData + 1, 7);
 		chooseCategory(category);
@@ -128,6 +136,9 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test (priority = 5)
 	public void testQuantity() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-05", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-VLP-05");
+		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		String category = ExcelUtils.getCellData(rowData + 1, 7);
 		chooseCategory(category);
@@ -139,6 +150,7 @@ public class ViewListProducts extends AbstractAnnotation {
 		int quantityTotal = getQuantityTotal();
 		Assert.assertEquals(quantityBreadcrumb, quantityProducts);
 		Assert.assertEquals(quantityTotal, quantityProducts);
+		
 	}
 	
 	private int getQuantityTotal() {

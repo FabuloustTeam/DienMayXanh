@@ -23,7 +23,7 @@ public abstract class AbstractAnnotation extends AbstractPath {
 
 	@AfterMethod
 	public void closeBrowser() throws Exception {
-		String Path = projPath + "//DienmayXANH-FunctionalTestExecution.xlsx";
+		String Path = getReportFilePath();
 		ExcelUtils.saveFile(Path);
 		driver.close();
 	}
@@ -37,7 +37,7 @@ public abstract class AbstractAnnotation extends AbstractPath {
 
 	@AfterClass
 	public void saveAndCloseExcel() throws Exception {
-		String Path = projPath + "//DienmayXANH-FunctionalTestExecution.xlsx";
+		String Path = getReportFilePath();
 		ExcelUtils.closeandsaveFile(Path);
 	}
 }

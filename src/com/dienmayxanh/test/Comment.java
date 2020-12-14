@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 import org.testng.annotations.Test;
 
@@ -36,7 +38,8 @@ public class Comment extends AbstractAnnotation {
 	@Test(priority = 1)
 	public void testWithoutCommentContent() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-02", 2);
-
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-BL-02");
 		// 3. Không nội dung bình luận
 		inputComment("");
 
@@ -66,6 +69,8 @@ public class Comment extends AbstractAnnotation {
 	@Test(priority = 2)
 	public void testOnlySpaceCommentContent() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-03", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-BL-03");
 		
 		// 3. Chỉ nhập khoảng trắng vào nội dung
 		inputComment("    ");
@@ -96,6 +101,8 @@ public class Comment extends AbstractAnnotation {
 	@Test(priority = 3)
 	public void testWithoutName() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-04", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-BL-04");
 		
 		/// 3. Nhập nội dung bình luận
 		String comment = ExcelUtils.getCellData(rowData+2, 7);
@@ -127,6 +134,8 @@ public class Comment extends AbstractAnnotation {
 	@Test(priority = 4)
 	public void testOnlySpaceName() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-05", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-BL-05");
 		
 		// 3. Nhập nội dung bình luận
 		String comment = ExcelUtils.getCellData(rowData+2, 7);
@@ -158,6 +167,8 @@ public class Comment extends AbstractAnnotation {
 	@Test(priority = 5)
 	public void testContentCommentIsLessThan10Characters() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-06", 2);
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("id", "TC-DMX-BL-06");
 		
 		// 3. Nhập nội dung bình luận ít hơn 10 ký tự
 		String comment = ExcelUtils.getCellData(rowData+2, 7);
