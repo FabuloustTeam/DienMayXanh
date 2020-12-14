@@ -3,13 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ViewProductThroughList">
+      <class name="TestCases.ChooseReceivedPlace">
         <methods>
-          <include name="testSuccessViewProductByList"/>
+          <include name="testFailWithoutChooseWard"/>
           <include name="closeBrowser"/>
+          <include name="beforeMethod"/>
+          <include name="saveAndCloseExcel"/>
+          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
+          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
+          <include name="testSuccessWithOnlyProvince"/>
+          <include name="testMainSFWithFullInfor"/>
+          <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="accessWebsite"/>
+          <include name="testSuccessUpdateByClickOnButonChange"/>
         </methods>
-      </class> <!-- ViewProductThroughList -->
+      </class> <!-- TestCases.ChooseReceivedPlace -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="url" value="https://www.dienmayxanh.com/"/>
-  <listeners>
-    <listener class-name="IListener.IListenerClass"/>
-  </listeners>
-  <test thread-count="5" name="runGroup(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.ViewProductThroughList">
+      <class name="TestCases.ChooseReceivedPlace">
         <methods>
+          <include name="testFailWithoutChooseWard"/>
           <include name="closeBrowser"/>
-          <include name="testSuccessViewProductByList"/>
+          <include name="beforeMethod"/>
+          <include name="saveAndCloseExcel"/>
+          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
+          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
+          <include name="testSuccessWithOnlyProvince"/>
+          <include name="testMainSFWithFullInfor"/>
+          <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="accessWebsite"/>
+          <include name="testSuccessUpdateByClickOnButonChange"/>
         </methods>
-      </class> <!-- TestCases.ViewProductThroughList -->
+      </class> <!-- TestCases.ChooseReceivedPlace -->
     </classes>
-  </test> <!-- runGroup(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

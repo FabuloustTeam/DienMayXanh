@@ -13,7 +13,7 @@ import org.testng.annotations.*;
 
 import AbstractAnnotation.AbstractClass;
 
-public class testViewListProducts extends AbstractClass {
+public class ViewListProducts extends AbstractClass {
 
 	
 	/**

@@ -1,10 +1,10 @@
 package IListener;
 
 import org.testng.*;
-import ActionsForITestListener.TakeSnapShot;
-import ActionsForITestListener.ExcelUtils;
+import ActionsForITestListener.*;
+import AbstractAnnotation.*;
 
-public class IListenerClass implements ITestListener {
+public class IListenerClass extends AbstractPath implements ITestListener {
 
 	@Override
 	public void onStart(ITestContext context) {
@@ -14,32 +14,56 @@ public class IListenerClass implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestStart(result);
+//		try {
+//			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+//			int row  = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 6);
+//			ExcelUtils.setCellData(row, 5, result.getName());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestSuccess(result);
-		// System.out.println(result.getName());
+		try {
+			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+			int row  = ExcelUtils.getRowContains(result.getName(), 4);
+			ExcelUtils.setCellData(row, 8, "Passed" );
+			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+			System.out.println(result.getAttribute("actualResult").toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}
 	
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestSkipped(result);
+		try {
+			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+			int row  = ExcelUtils.getRowContains(result.getName(), 4);
+			//ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+			ExcelUtils.setCellData(row, 8, "Skipped" );
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestFailure(result);
-		// System.out.println("The test case failed is " + result.getName());
-
-		String file = System.getProperty("user.dir") + "\\screenshots\\" + "ssfailedof" + (result.getName()) + ".png";
+		String file =  getScreenShotsFolderPath()+ "screenshot-" + (result.getName()) + ".png";
 		try {
 			TakeSnapShot.takeSnapShot(file);
+			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+			
+			int row = ExcelUtils.getRowContains(result.getName(), 4);
+			
+			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+			System.out.println(result.getAttribute("actualResult").toString());
+			
+			ExcelUtils.setCellData(row, 8, "Failed");
+			String[] subsStringFile = file.split("DienMayXanh");
+			String srcImage = "DienMayXanh"+subsStringFile[1];
+			ExcelUtils.setCellData(row, 9, srcImage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import AbstractAnnotation.AbstractClass;
 
-public class testContact extends AbstractClass{
+public class Contact extends AbstractClass{
 	// 1. Truy cập https://www.dienmayxanh.com/lien-he
 	public String baseUrl = "https://www.dienmayxanh.com/";
 	public WebDriver driver;
