@@ -17,7 +17,7 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.*;
 
-public class Comment {
+public class testComment {
 	WebDriver driver;
 	
 	@BeforeMethod

@@ -14,7 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Link {
+public class testLink {
 	public String baseUrl = "https://www.dienmayxanh.com";
 	public WebDriver driver;
 

@@ -16,7 +16,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ChooseReceivedPlace extends AbstractClass {
+public class testChooseReceivedPlace extends AbstractClass {
 	
 	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {

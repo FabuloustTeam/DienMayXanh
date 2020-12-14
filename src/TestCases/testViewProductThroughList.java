@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 import AbstractAnnotation.AbstractClass;
 
-public class ViewProductThroughList extends AbstractClass {
+public class testViewProductThroughList extends AbstractClass {
 
 	/**
 	 * Test requirement: TR-DMX-VPBLP-01 Test case: TC-DMX-VPBLP-01

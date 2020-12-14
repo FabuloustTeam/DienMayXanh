@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LogIn {
+public class testLogIn {
 	public String baseUrl = "https://www.dienmayxanh.com";
 	public WebDriver driver;
 

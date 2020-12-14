@@ -1,9 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/AbstractAnnotation/AbstractClass.java=UTF-8
-encoding//src/TestCases/ChooseReceivedPlace.java=UTF-8
-encoding//src/TestCases/Comment.java=UTF-8
-encoding//src/TestCases/Contact.java=UTF-8
-encoding//src/TestCases/Link.java=UTF-8
-encoding//src/TestCases/LogIn.java=UTF-8
-encoding//src/TestCases/ViewListProducts.java=UTF-8
-encoding//src/TestCases/ViewProductThroughList.java=UTF-8
+encoding//src/TestCases/testChooseReceivedPlace.java=UTF-8
+encoding//src/TestCases/testComment.java=UTF-8
+encoding//src/TestCases/testContact.java=UTF-8
+encoding//src/TestCases/testLink.java=UTF-8
+encoding//src/TestCases/testLogIn.java=UTF-8
+encoding//src/TestCases/testViewListProducts.java=UTF-8
+encoding//src/TestCases/testViewProductThroughList.java=UTF-8

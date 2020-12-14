@@ -1,14 +1,36 @@
 package IListener;
 
-import AbstractAnnotation.AbstractClass;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import java.io.*;
+import org.testng.*;
+import ActionsForITestListener.TakeSnapShot;
+import ActionsForITestListener.ExcelUtils;
 
 public class IListenerClass implements ITestListener {
 
+	@Override
+	public void onStart(ITestContext context) {
+		// TODO Auto-generated method stub
+		ITestListener.super.onStart(context);
+	}
+
+	@Override
+	public void onTestStart(ITestResult result) {
+		// TODO Auto-generated method stub
+		ITestListener.super.onTestStart(result);
+	}
+	
+	@Override
+	public void onTestSuccess(ITestResult result) {
+		// TODO Auto-generated method stub
+		ITestListener.super.onTestSuccess(result);
+		// System.out.println(result.getName());
+	}
+	
+	@Override
+	public void onTestSkipped(ITestResult result) {
+		// TODO Auto-generated method stub
+		ITestListener.super.onTestSkipped(result);
+	}
+	
 	@Override
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -17,19 +39,12 @@ public class IListenerClass implements ITestListener {
 
 		String file = System.getProperty("user.dir") + "\\screenshots\\" + "ssfailedof" + (result.getName()) + ".png";
 		try {
-			takeSnapShot(file);
+			TakeSnapShot.takeSnapShot(file);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		ITestListener.super.onTestSuccess(result);
-		// System.out.println(result.getName());
-	}
-
+	
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
@@ -42,14 +57,9 @@ public class IListenerClass implements ITestListener {
 		ITestListener.super.onTestFailedWithTimeout(result);
 	}
 
-	public static void takeSnapShot(String filePath) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) AbstractClass.driver);
-
-		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File DestFile = new File(filePath);
-
-		FileUtils.copyFile(SrcFile, DestFile);
-
+	@Override
+	public void onFinish(ITestContext context) {
+		// TODO Auto-generated method stub
+		ITestListener.super.onFinish(context);
 	}
-
 }
