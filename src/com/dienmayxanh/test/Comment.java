@@ -1,5 +1,8 @@
 package com.dienmayxanh.test;
+
 import com.dienmayxanh.abstractclass.*;
+import com.dienmayxanh.service.ExcelUtils;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,159 +21,181 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.*;
 
 public class Comment extends AbstractAnnotation {
-	
+
 	@BeforeMethod
 	public void beforeMethod() {
-		// 2. Ch�?n mục Gửi góp ý, khiếu nại ở footer
+		// 2. Chọn mục Gửi góp ý, khiếu nại ở footer
 		goToSendCommentPage();
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-02 - Test case ID: TC-DMX-BL-02
+	 * 
+	 * @throws Exception
 	 */
 	@Test(priority = 1)
-	public void testWithoutCommentContent() throws AWTException, InterruptedException {
+	public void testWithoutCommentContent() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-02", 2);
 
 		// 3. Không nội dung bình luận
 		inputComment("");
 
-		// 4. Nhập h�? tên
-		inputName("Nguyễn Thanh Tùng");
+		// 4. Nhập họ tên
+		String name = ExcelUtils.getCellData(rowData + 3, 7);
+		inputName(name);
 
-		// 5. Ch�?n gửi hình
+		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
-		inputEmail("tung@gmail.com");
+		String email = ExcelUtils.getCellData(rowData + 5, 7);
+		inputEmail(email);
 
-		// 7. Ch�?n gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
-		String expectedError = "Vui lòng nhập nội dung";
+		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-02 - Test case ID: TC-DMX-BL-03
+	 * @throws Exception 
 	 */
 	@Test(priority = 2)
-	public void testOnlySpaceCommentContent() throws AWTException, InterruptedException {
-
+	public void testOnlySpaceCommentContent() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-03", 2);
+		
 		// 3. Chỉ nhập khoảng trắng vào nội dung
 		inputComment("    ");
 
-		// 4. Nhập h�? tên
-		inputName("Nguyễn Thanh Tùng");
+		// 4. Nhập họ tên
+		String name = ExcelUtils.getCellData(rowData + 3, 7);
+		inputName(name);
 
-		// 5. Ch�?n gửi hình
+		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
-		inputEmail("tung@gmail.com");
+		String email = ExcelUtils.getCellData(rowData + 5, 7);
+		inputEmail(email);
 
-		// 7. Ch�?n gửi
+		// 7. Chọn gửi
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
-		String expectedError = "Vui lòng nhập nội dung";
+		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-04
+	 * @throws Exception 
 	 */
 	@Test(priority = 3)
-	public void testWithoutName() throws AWTException, InterruptedException {
-
+	public void testWithoutName() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-04", 2);
+		
 		/// 3. Nhập nội dung bình luận
-		inputComment("Cho h�?i con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
+		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		inputComment(comment);
 
-		// 4. Nhập h�? tên
+		// 4. Nhập họ tên
 		inputName("");
 
-		// 5. Ch�?n gửi hình
+		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
-		inputEmail("tung@gmail.com");
+		String email = ExcelUtils.getCellData(rowData + 5, 7);
+		inputEmail(email);
 
-		// 7. Ch�?n gửi
+		// 7. Chọn gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
-		String expectedError = "Vui lòng nhập h�? tên.";
+		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-05
+	 * @throws Exception 
 	 */
 	@Test(priority = 4)
-	public void testOnlySpaceName() throws AWTException, InterruptedException {
-
+	public void testOnlySpaceName() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-05", 2);
+		
 		// 3. Nhập nội dung bình luận
-		inputComment("Cho h�?i con e ném ổ khóa bể màn hình tivi 43inch hiệu TCL. Mới mua ạ");
+		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		inputComment(comment);
 
-		// 4. Nhập h�? tên
+		// 4. Nhập họ tên
 		inputName("      ");
 
-		// 5. Ch�?n gửi hình
+		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
+		String email = ExcelUtils.getCellData(rowData+5, 7);
 		inputEmail("tung@gmail.com");
 
-		// 7. Ch�?n gửi
+		// 7. Chọn gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
-		String expectedError = "Vui lòng nhập h�? tên.";
+		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-04 - Test case ID: TC-DMX-BL-06
+	 * @throws Exception 
 	 */
 	@Test(priority = 5)
-	public void testContentCommentIsLessThan10Characters() throws AWTException, InterruptedException {
-
+	public void testContentCommentIsLessThan10Characters() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-06", 2);
+		
 		// 3. Nhập nội dung bình luận ít hơn 10 ký tự
-		inputComment("Cho h�?i");
+		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		inputComment(comment);
 
-		// 4. Nhập h�? tên
-		inputName("Nguyễn Thanh Tùng");
+		// 4. Nhập họ tên
+		String name = ExcelUtils.getCellData(rowData+3, 7);
+		inputName(name);
 
-		// 5. Ch�?n gửi hình
+		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
-		inputEmail("tung@gmail.com");
+		String email = ExcelUtils.getCellData(rowData+5, 7);
+		inputEmail(email);
 
-		// 7. Ch�?n gửi
+		// 7. Ch�?n gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
-		String expectedError = "Nội dung bình luận quá ngắn";
+		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	private void goToSendCommentPage() {
 		WebElement linkCommentPage = waitForElementClickable(By.xpath("//footer//a[text()='Gửi góp ý, khiếu nại']"));
-		JavascriptExecutor js = (JavascriptExecutor) this.driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		linkCommentPage.click();
 	}
 
 	private void inputComment(String comment) throws AWTException, InterruptedException {
 		WebElement maskComment = waitForElementClickable(
-				By.xpath("//textarea[@placeholder='M�?i bạn thảo luận, vui lòng nhập tiếng Việt có dấu']"));
+				By.xpath("//textarea[@placeholder='Mời bạn thảo luận, vui lòng nhập tiếng Việt có dấu']"));
 
 		Thread.sleep(5000);
-		Actions builder = new Actions(this.driver);
+		Actions builder = new Actions(driver);
 		builder.moveToElement(maskComment, 1, 1).click().build().perform();
 
 		WebElement txtBoxComment = waitForElementClickable(By.id("content"));
@@ -178,7 +203,7 @@ public class Comment extends AbstractAnnotation {
 	}
 
 	private void inputName(String name) {
-		WebElement txtBoxName = waitForElementClickable(By.xpath("//input[@placeholder='H�? tên (bắt buộc)']"));
+		WebElement txtBoxName = waitForElementClickable(By.xpath("//input[@placeholder='Họ tên (bắt buộc)']"));
 		txtBoxName.sendKeys(name);
 	}
 
@@ -223,18 +248,18 @@ public class Comment extends AbstractAnnotation {
 
 	private String getAlertMessage() {
 		waitForAlert();
-		String alertMessage = this.driver.switchTo().alert().getText();
+		String alertMessage = driver.switchTo().alert().getText();
 		this.driver.switchTo().alert().accept();
 		return alertMessage;
 	}
 
 	private void waitForAlert() {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.alertIsPresent());
 	}
 
 	private void waitForTextElement(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				return d.findElement(locator).getText().trim().length() != 0;
@@ -243,12 +268,12 @@ public class Comment extends AbstractAnnotation {
 	}
 
 	private WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
 	private WebElement getElement(By locator) {
-		WebElement element = this.driver.findElement(locator);
+		WebElement element = driver.findElement(locator);
 		return element;
 	}
 }

@@ -6,24 +6,29 @@
 	<listeners>
 		<listener class-name="com.dienmayxanh.listener.ListenerTest" />
 	</listeners>
-	<test name="test view list products">
-		<parameter name="testCaseName" value="ViewListProducts" />
-		<classes>
+<!-- 	<test name="test view list products"> -->
+<!-- 		<parameter name="testCaseName" value="ViewListProducts" /> -->
+<!-- 		<classes> -->
 			<!-- <class name="com.dienmayxanh.test.ViewListProducts" /> -->
-			<class name="com.dienmayxanh.test.ViewListProducts">
-				<methods>
-					<include name="testViewWithSortPriceDescending" />
-					<include name="testViewWithSortPriceAscending" />
-					<include name="testQuantity" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 			<class name="com.dienmayxanh.test.ViewListProducts"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="testViewWithSortPriceDescending" /> -->
+<!-- 					<include name="testViewWithSortPriceAscending" /> -->
+<!-- 					<include name="testQuantity" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 	<test name="test comment">
 		<parameter name="testCaseName" value="Comment" />
 		<classes>
 			<class name="com.dienmayxanh.test.Comment" />
+<!-- 			<class name="com.dienmayxanh.test.Comment" > -->
+<!-- 				<methods> -->
+<!-- 					<include name="testWithoutCommentContent" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
 		</classes>
 	</test>
 </suite>
