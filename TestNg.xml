@@ -9,9 +9,6 @@
         <class name = "LogIn">
          </class>
          <class name = "Link">
-         	<methods>
-         		<include name="LinkYoutube"/>
-         	</methods>
          </class>
       </classes>
    </test>

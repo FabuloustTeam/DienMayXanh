@@ -9,76 +9,14 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">test login</th></tr>
-<tr><td><a href="#t0">login</a></td><td class="num">10</td><td class="num attn">1</td><td class="num">0</td><td class="num attn">3</td><td class="num">271,988</td><td></td><td></td></tr>
+<tr><td><a href="#t0">login</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">22,154</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">test login</th></tr></tbody><tbody id="t0"><tr><th colspan="4">login &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">Link</td><td><a href="#m0">launchBrowser</a></td><td rowspan="1">1607846236204</td><td rowspan="1">50</td></tr><tr><th colspan="4">login &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">LogIn</td><td><a href="#m1">NhapKhongDuSo</a></td><td rowspan="1">1607846343199</td><td rowspan="1">14963</td></tr><tr class="failedeven"><td><a href="#m2">NhapSaiMaOTP</a></td><td rowspan="1">1607846295714</td><td rowspan="1">15115</td></tr><tr class="failedeven"><td><a href="#m3">ThongBaoGuiLaiMa</a></td><td rowspan="1">1607846438403</td><td rowspan="1">51642</td></tr><tr><th colspan="4">login &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">Link</td><td><a href="#m4">terminateBrowser</a></td><td rowspan="1">1607846508186</td><td rowspan="1">-1607846508186</td></tr><tr><th colspan="4">login &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">Link</td><td><a href="#m5">LinkYoutube</a></td><td rowspan="1">1607846508182</td><td rowspan="1">0</td></tr><tr><th colspan="4">login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="10">LogIn</td><td><a href="#m6">BoTrongOTP</a></td><td rowspan="1">1607846425768</td><td rowspan="1">7976</td></tr><tr class="passedeven"><td><a href="#m7">ChuaKiTuDacBiet</a></td><td rowspan="1">1607846251546</td><td rowspan="1">6679</td></tr><tr class="passedeven"><td><a href="#m8">KhongNhapSDT</a></td><td rowspan="1">1607846273778</td><td rowspan="1">7000</td></tr><tr class="passedeven"><td><a href="#m9">NhapKhoangTrang</a></td><td rowspan="1">1607846285498</td><td rowspan="1">6111</td></tr><tr class="passedeven"><td><a href="#m10">NhapSDTChuaChuCai</a></td><td rowspan="1">1607846240323</td><td rowspan="1">6335</td></tr><tr class="passedeven"><td><a href="#m11">OTPChuaChuCai</a></td><td rowspan="1">1607846392484</td><td rowspan="1">6658</td></tr><tr class="passedeven"><td><a href="#m12">OTPChuaKiTuDacBiet</a></td><td rowspan="1">1607846403210</td><td rowspan="1">7538</td></tr><tr class="passedeven"><td><a href="#m13">OTPNhapKhoangTrang</a></td><td rowspan="1">1607846415244</td><td rowspan="1">6454</td></tr><tr class="passedeven"><td><a href="#m14">SaiSDT</a></td><td rowspan="1">1607846262473</td><td rowspan="1">7295</td></tr><tr class="passedeven"><td><a href="#m15">TestTitle</a></td><td rowspan="1">1607846503204</td><td rowspan="1">4892</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">test login</th></tr></tbody><tbody id="t0"><tr><th colspan="4">login &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">Link</td><td><a href="#m0">LinkBachhoaXanh</a></td><td rowspan="1">1607957058667</td><td rowspan="1">2228</td></tr><tr class="passedeven"><td><a href="#m1">LinkFacebook</a></td><td rowspan="1">1607957043971</td><td rowspan="1">5153</td></tr><tr class="passedeven"><td><a href="#m2">LinkMaiAm</a></td><td rowspan="1">1607957054054</td><td rowspan="1">2256</td></tr><tr class="passedeven"><td><a href="#m3">LinkTgdd</a></td><td rowspan="1">1607957056367</td><td rowspan="1">2250</td></tr><tr class="passedeven"><td><a href="#m4">LinkYoutube</a></td><td rowspan="1">1607957050310</td><td rowspan="1">3624</td></tr></tbody>
 </table>
-<h2>login</h2><h3 id="m0">Link#launchBrowser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:134)
-	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:35)
-	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:159)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:94)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:123)
-	at AbstractClass.abstractLink.launchBrowser(abstractLink.java:15)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">LogIn#NhapKhongDuSo</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name=&apos;txtOTP&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
-System info: host: &apos;DESKTOP-L3BED2A&apos;, ip: &apos;192.168.1.201&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Phuong\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 30f6c2d172d895c4f87ecd261d95c7fb
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at LogIn.waitForElementClickable(LogIn.java:390)
-	at LogIn.NhapKhongDuSo(LogIn.java:196)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">LogIn#NhapSaiMaOTP</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name=&apos;txtOTP&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
-System info: host: &apos;DESKTOP-L3BED2A&apos;, ip: &apos;192.168.1.201&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Phuong\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63787}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 885efc426d23ad51eb626cb93b6d4cc9
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at LogIn.waitForElementClickable(LogIn.java:390)
-	at LogIn.NhapSaiMaOTP(LogIn.java:163)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">LogIn#ThongBaoGuiLaiMa</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //a[@class=&apos;resend-sms&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
-System info: host: &apos;DESKTOP-L3BED2A&apos;, ip: &apos;192.168.1.201&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\Users\Phuong\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64208}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 1e576ee967edfaff495d99a74aa31595
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at LogIn.waitForElementClickable(LogIn.java:390)
-	at LogIn.ThongBaoGuiLaiMa(LogIn.java:361)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">Link#terminateBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">Link#LinkYoutube</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.chrome.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:134)
-	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:35)
-	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:159)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:94)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:123)
-	at AbstractClass.abstractLink.launchBrowser(abstractLink.java:15)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">LogIn#BoTrongOTP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">LogIn#ChuaKiTuDacBiet</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">LogIn#KhongNhapSDT</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">LogIn#NhapKhoangTrang</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">LogIn#NhapSDTChuaChuCai</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">LogIn#OTPChuaChuCai</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">LogIn#OTPChuaKiTuDacBiet</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m13">LogIn#OTPNhapKhoangTrang</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">LogIn#SaiSDT</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m15">LogIn#TestTitle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>login</h2><h3 id="m0">Link#LinkBachhoaXanh</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">Link#LinkFacebook</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">Link#LinkMaiAm</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">Link#LinkTgdd</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">Link#LinkYoutube</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

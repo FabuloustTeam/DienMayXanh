@@ -1,5 +1,6 @@
 package ilistener;
 import java.io.File;
+
 import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
@@ -11,26 +12,11 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import AbstractClass.abstractLogin;
+import AbstractClass.abstractLink;
+import BaseClass.ExcelUtils;
 
 
 public class ListenerTest implements ITestListener {
-	 @Override		
-	    public void onFinish(ITestContext arg0) {					
-	        // TODO Auto-generated method stub				
-	        		
-	    }		
-
-	    @Override		
-	    public void onStart(ITestContext arg0) {					
-	        // TODO Auto-generated method stub				
-	        		
-	    }		
-
-	    @Override		
-	    public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {					
-	        // TODO Auto-generated method stub				
-	        		
-	    }		
 
 	    @Override		
 	    public void onTestFailure(ITestResult Result) {	
@@ -40,26 +26,43 @@ public class ListenerTest implements ITestListener {
 	    	
 	    	try {
 	    		takeSnapShot(file);
+	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Sheet1");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
+	    		ExcelUtils.setCellData(row, 3, "fail");
+	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();
 	    	}
 	    }		
 
 	    @Override		
-	    public void onTestSkipped(ITestResult arg0) {					
+	    public void onTestSkipped(ITestResult Result) {					
 	        // TODO Auto-generated method stub				
-	        		
+	    	try {
+	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Sheet1");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
+	    		ExcelUtils.setCellData(row, 3, "skip");
+	    		ExcelUtils.closeandsaveFile(path);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}	
 	    }		
 
-	    @Override		
-	    public void onTestStart(ITestResult arg0) {					
-	        // TODO Auto-generated method stub				
-	        		
-	    }		
 
 	    @Override		
-	    public void onTestSuccess(ITestResult arg0) {					
-	        // TODO Auto-generated method stub				
+	    public void onTestSuccess(ITestResult Result) {					
+	        // TODO Auto-generated method stub		
+	    	try {
+	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Sheet1");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
+	    		ExcelUtils.setCellData(row, 3, "success");
+	    		ExcelUtils.closeandsaveFile(path);
+	    	} catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
 	        		
 	    }	
 	    

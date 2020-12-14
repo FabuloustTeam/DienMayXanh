@@ -8,20 +8,11 @@
     <classes>
       <class name="LogIn">
         <methods>
+          <include name="OTPHasSpecialCharacters"/>
           <include name="terminateBrowser"/>
-          <include name="NhapKhongDuSo"/>
           <include name="launchBrowser"/>
-          <include name="NhapSaiMaOTP"/>
-          <include name="ThongBaoGuiLaiMa"/>
         </methods>
       </class> <!-- LogIn -->
-      <class name="Link">
-        <methods>
-          <include name="LinkYoutube"/>
-          <include name="launchBrowser"/>
-          <include name="terminateBrowser"/>
-        </methods>
-      </class> <!-- Link -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [test login] -->
