@@ -17,9 +17,12 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 		String file = getScreenShotsFolderPath() + fileName;
 		try {
 			TakeSnapShot.takeSnapShot(file);
+			
 			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 6);
+			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 5);
 			ExcelUtils.setCellData(row, 8, "Failed");
+			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+			ExcelUtils.setCellData(row, 9, "DienMayXanh\\screenshots\\"+fileName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -31,8 +34,9 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 		// TODO Auto-generated method stub
 		try {
 			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 6);
+			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 5);
 			ExcelUtils.setCellData(row, 8, "Passed");
+			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,8 +48,9 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 		// TODO Auto-generated method stub
 		try {
 			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 6);
+			int row = ExcelUtils.getRowContains(result.getAttribute("id").toString(), 5);
 			ExcelUtils.setCellData(row, 8, "Skipped");
+			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -6,19 +6,18 @@
   <listeners>
     <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="test comment(failed)">
-    <parameter name="testCaseName" value="Comment"/>
+  <test thread-count="5" name="test view list products(failed)">
+    <parameter name="testCaseName" value="ViewListProducts"/>
     <classes>
-      <class name="com.dienmayxanh.test.Comment">
+      <class name="com.dienmayxanh.test.ViewListProducts">
         <methods>
           <include name="accessWebsite"/>
-          <include name="testWithoutCommentContent"/>
           <include name="setExcel"/>
-          <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
           <include name="closeBrowser"/>
+          <include name="testQuantity"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.Comment -->
+      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
     </classes>
-  </test> <!-- test comment(failed) -->
+  </test> <!-- test view list products(failed) -->
 </suite> <!-- Failed suite [testing list product] -->

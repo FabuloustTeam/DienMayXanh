@@ -58,20 +58,23 @@ public class Comment extends AbstractAnnotation {
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
+		result.setAttribute("actualResult", actualError);
+
 		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-02 - Test case ID: TC-DMX-BL-03
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	@Test(priority = 2)
 	public void testOnlySpaceCommentContent() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-03", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-BL-03");
-		
+
 		// 3. Chỉ nhập khoảng trắng vào nội dung
 		inputComment("    ");
 
@@ -90,22 +93,25 @@ public class Comment extends AbstractAnnotation {
 		pressSend();
 
 		String actualError = getErrorTextCommentContent();
+		result.setAttribute("actualResult", actualError);
+
 		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 		Assert.assertEquals(actualError, expectedError);
 	}
 
 	/**
 	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-04
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	@Test(priority = 3)
 	public void testWithoutName() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-04", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-BL-04");
-		
+
 		/// 3. Nhập nội dung bình luận
-		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		String comment = ExcelUtils.getCellData(rowData + 2, 7);
 		inputComment(comment);
 
 		// 4. Nhập họ tên
@@ -122,6 +128,8 @@ public class Comment extends AbstractAnnotation {
 		pressSend();
 
 		String actualError = getAlertMessage();
+		result.setAttribute("actualResult", actualError);
+
 		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);
@@ -129,16 +137,17 @@ public class Comment extends AbstractAnnotation {
 
 	/**
 	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-05
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	@Test(priority = 4)
 	public void testOnlySpaceName() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-05", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-BL-05");
-		
+
 		// 3. Nhập nội dung bình luận
-		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		String comment = ExcelUtils.getCellData(rowData + 2, 7);
 		inputComment(comment);
 
 		// 4. Nhập họ tên
@@ -148,13 +157,15 @@ public class Comment extends AbstractAnnotation {
 		inputImage();
 
 		// 6. Nhập email
-		String email = ExcelUtils.getCellData(rowData+5, 7);
-		inputEmail("tung@gmail.com");
+		String email = ExcelUtils.getCellData(rowData + 5, 7);
+		inputEmail(email);
 
 		// 7. Chọn gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
+		result.setAttribute("actualResult", actualError);
+
 		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);
@@ -162,33 +173,36 @@ public class Comment extends AbstractAnnotation {
 
 	/**
 	 * Test requirement: TR-DMX-BL-04 - Test case ID: TC-DMX-BL-06
-	 * @throws Exception 
+	 * 
+	 * @throws Exception
 	 */
 	@Test(priority = 5)
 	public void testContentCommentIsLessThan10Characters() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-06", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-BL-06");
-		
+
 		// 3. Nhập nội dung bình luận ít hơn 10 ký tự
-		String comment = ExcelUtils.getCellData(rowData+2, 7);
+		String comment = ExcelUtils.getCellData(rowData + 2, 7);
 		inputComment(comment);
 
 		// 4. Nhập họ tên
-		String name = ExcelUtils.getCellData(rowData+3, 7);
+		String name = ExcelUtils.getCellData(rowData + 3, 7);
 		inputName(name);
 
 		// 5. Chọn gửi hình
 		inputImage();
 
 		// 6. Nhập email
-		String email = ExcelUtils.getCellData(rowData+5, 7);
+		String email = ExcelUtils.getCellData(rowData + 5, 7);
 		inputEmail(email);
 
-		// 7. Ch�?n gửi
+		// 7. Chọn gửi
 		pressSend();
 
 		String actualError = getAlertMessage();
+		result.setAttribute("actualResult", actualError);
+
 		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
 
 		Assert.assertEquals(actualError, expectedError);

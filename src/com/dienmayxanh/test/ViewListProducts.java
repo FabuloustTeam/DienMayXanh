@@ -101,6 +101,14 @@ public class ViewListProducts extends AbstractAnnotation {
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkDescending(dataTable);
+		String actualResult = "";
+		if(actual)
+			actualResult = "Hệ thống hiển thị toàn bộ sản phẩm lọc nước hiện có với sắp xếp theo giá tiền từ cao đến thấp";
+		else
+			actualResult = "Hệ thống không hiển thị đúng";
+		
+		result.setAttribute("actualResult", actualResult);
+		
 		Assert.assertEquals(actual, true);
 	}
 	
@@ -126,6 +134,15 @@ public class ViewListProducts extends AbstractAnnotation {
 
 		WebElement[][] dataTable = getTable();
 		boolean actual = checkAscending(dataTable);
+		
+		String actualResult = "";
+		if(actual)
+			actualResult = "Hệ thống hiển thị toàn bộ sản phẩm lọc nước hiện có với sắp xếp theo giá tiền từ thấp đến cao";
+		else
+			actualResult = "Hệ thống không hiển thị đúng";
+		
+		result.setAttribute("actualResult", actualResult);
+		
 		Assert.assertEquals(actual, true);
 	}
 	
@@ -148,9 +165,22 @@ public class ViewListProducts extends AbstractAnnotation {
 		int quantityBreadcrumb = getQuantityBreadcrumb();
 		int quantityProducts = getQuantityProducts();
 		int quantityTotal = getQuantityTotal();
+		String actualResult = "";
+		if(quantityBreadcrumb == quantityProducts && quantityBreadcrumb == quantityTotal)
+			actualResult = "Hệ thống hiển thị breadcrumb và ở trước filter có số lượng bằng số lượng sản phẩm đang hiển thị";
+		else if(quantityBreadcrumb != quantityProducts)
+			actualResult = "Hệ thống hiển thị breadcrumb và số lượng sản phẩm đang hiển thị khác nhau";
+		else if(quantityTotal != quantityProducts)
+			actualResult = "Hệ thống hiển thị ở trước filter và số lượng sản phẩm đang hiển thị khác nhau";
+		else if(quantityBreadcrumb != quantityTotal)
+			actualResult = "Hệ thống hiển thị ở trước filter và breadcrumb khác nhau";
+		else
+			actualResult = "Hệ thống hiển thị breadcrumb, ở trước filter và số lượng sản phẩm đang hiển thị khác nhau";
+		
+		result.setAttribute("actualResult", actualResult);
 		Assert.assertEquals(quantityBreadcrumb, quantityProducts);
 		Assert.assertEquals(quantityTotal, quantityProducts);
-		
+//		Assert.assertEquals(false, true);
 	}
 	
 	private int getQuantityTotal() {
