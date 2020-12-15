@@ -6,7 +6,7 @@
   <listeners>
     <listener class-name="IListener.IListenerClass"/>
   </listeners>
-  <test thread-count="5" name="runGroup(failed)">
+  <test thread-count="5" name="choosereceived(failed)">
     <parameter name="testcaseName" value="ChooseReceivedPlace"/>
     <classes>
       <class name="TestCases.ChooseReceivedPlace">
@@ -14,11 +14,10 @@
           <include name="closeBrowser"/>
           <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
-          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
+          <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="accessWebsite"/>
-          <include name="testSuccessUpdateByClickOnButonChange"/>
         </methods>
       </class> <!-- TestCases.ChooseReceivedPlace -->
     </classes>
-  </test> <!-- runGroup(failed) -->
+  </test> <!-- choosereceived(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -2,28 +2,43 @@ package TestCases;
 
 import java.util.List;
 import org.openqa.selenium.*;
+import org.testng.Reporter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import AbstractAnnotation.AbstractClass;
+import ActionsForITestListener.ExcelUtils;
 
 public class ViewProductThroughList extends AbstractClass {
 
 	/**
 	 * Test requirement: TR-DMX-VPBLP-01 Test case: TC-DMX-VPBLP-01
+	 * @throws Exception 
 	 */
 	@Test(groups = { "viewByName" })
-	public void testSuccessViewProductByList() {
+	public void testSuccessViewProductByList() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-VPBLP-01", 2);
 		// Step 2 Nhấn chọn loại sản phẩm muốn xem trong danh mục
-		chooseCategory("Lọc nước");
+		String category = ExcelUtils.getCellData(rowData+1, 7);
+		chooseCategory(category);
 		// Step 3 Nhấn chọn vào hãng muốn xem của sản phẩm đó
-		chooseManufacture("Kangaroo");
+		String manufacture = ExcelUtils.getCellData(rowData+2, 7);
+		chooseManufacture(manufacture);
 		// Step 4 Nhấn chọn vào sản phẩm muốn xem
-		getProduct("Máy lọc nước RO hydrogen ion kiềm Kangaroo 7 lõi KG100E0");
+		String product = ExcelUtils.getCellData(rowData+3, 7);
+		getProduct(product);
 
-		comfirmResult("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
+		//compareTitle("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
+		String expectedResult = ExcelUtils.getCellData(rowData+3, 8);
+		String actualResult = compareTitle("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("actualResult", actualResult);
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 
 	private void chooseCategory(String category) {
@@ -102,9 +117,12 @@ public class ViewProductThroughList extends AbstractClass {
 		js.executeScript("window.scrollBy(0,-185)");
 	}
 
-	private void comfirmResult(String expected) {
+	private String compareTitle(String expected) {
 		String actual = driver.findElement(By.xpath("//section[@id='main-container']//child::h1")).getText();
-		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected))
+			return "Hệ thống hiển thị đúng thông tin chi tiết sản phẩm đó";
+		else
+			return "Hệ thống hiển thị không đúng thông tin chi tiết sản phẩm đó";
 	}
 
 	private WebElement waitForElement(By locator) {

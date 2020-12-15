@@ -290,7 +290,7 @@ public class ChooseReceivedPlace extends AbstractClass {
 		WebElement submit = waitForElementClickable(By.id("lc_btn-Confirm"));
 		submit.click();
 		Thread.sleep(1000);
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
 	private void chooseProvince(String province) throws InterruptedException {

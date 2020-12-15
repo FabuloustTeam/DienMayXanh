@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -56,12 +56,12 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>4 groups</span>
+                    <span>5 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="TestCases.ChooseReceivedPlace" class="method navigator-link" hash-for-method="testSuccessWithoutFillTextboxAddress">testSuccessWithoutFillTextboxAddress</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -129,12 +143,12 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.ChooseReceivedPlace" class="method navigator-link" hash-for-method="testSuccessWithOnlyProvince">testSuccessWithOnlyProvince</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.ViewProductThroughList" class="method navigator-link" hash-for-method="testSuccessViewProductByList">testSuccessViewProductByList</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestCases.ChooseReceivedPlace" class="method navigator-link" hash-for-method="testSuccessWithoutFillTextboxAddress">testSuccessWithoutFillTextboxAddress</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestCases.ChooseReceivedPlace" class="method navigator-link" hash-for-method="testSuccessWithOnlyProvince">testSuccessWithOnlyProvince</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -149,6 +163,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestCases.ChooseReceivedPlace</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSuccessWithoutFillTextboxAddress">
+                  </a> <!-- testSuccessWithoutFillTextboxAddress -->
+                  <span class="method-name">testSuccessWithoutFillTextboxAddress</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Phường 15, Quận Bình Thạnh, Hồ Chí Minh] but found [TP. Hồ Chí Minh]
+	at TestCases.ChooseReceivedPlace.testSuccessWithoutFillTextboxAddress(ChooseReceivedPlace.java:107)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">TestCases.ViewProductThroughList</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSuccessViewProductByList">
+                  </a> <!-- testSuccessViewProductByList -->
+                  <span class="method-name">testSuccessViewProductByList</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -197,13 +246,6 @@
                   <span class="method-name">testSuccessWithOnlyProvince</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSuccessWithoutFillTextboxAddress">
-                  </a> <!-- testSuccessWithoutFillTextboxAddress -->
-                  <span class="method-name">testSuccessWithoutFillTextboxAddress</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
@@ -221,12 +263,18 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;IListener.IListenerClass&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;runGroup&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;choosereceived&quot;&gt;
     &lt;parameter name=&quot;testcaseName&quot; value=&quot;ChooseReceivedPlace&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;TestCases.ChooseReceivedPlace&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- runGroup --&gt;
+  &lt;/test&gt; &lt;!-- choosereceived --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;viewproduct&quot;&gt;
+    &lt;parameter name=&quot;testcaseName&quot; value=&quot;ViewProductByListProduct&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;TestCases.ViewProductThroughList&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- viewproduct --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -238,7 +286,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">runGroup (1 class)</span>
+                <span class="test-name">choosereceived (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">viewproduct (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -292,6 +343,14 @@
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">viewByName</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testSuccessViewProductByList</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -308,40 +367,44 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(8);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testSuccessUpdateByClickOnButonChange')
+data.setCell(0, 1, 'testSuccessUpdateByClickOnDropBoxProvince')
 data.setCell(0, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(0, 3, 8007);
+data.setCell(0, 3, 21257);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testSuccessUpdateByClickOnDropBoxProvince')
-data.setCell(1, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(1, 3, 7467);
+data.setCell(1, 1, 'testSuccessViewProductByList')
+data.setCell(1, 2, 'TestCases.ViewProductThroughList')
+data.setCell(1, 3, 11878);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testSuccessUpdateWithOnlyProvinceSubmitBefor')
+data.setCell(2, 1, 'testSuccessUpdateByClickOnButonChange')
 data.setCell(2, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(2, 3, 5563);
+data.setCell(2, 3, 9180);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testSuccessWithoutFillTextboxAddress')
+data.setCell(3, 1, 'testSuccessUpdateWithOnlyProvinceSubmitBefor')
 data.setCell(3, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(3, 3, 4593);
+data.setCell(3, 3, 7114);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testMainSFWithFullInfor')
 data.setCell(4, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(4, 3, 3148);
+data.setCell(4, 3, 5294);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testFailWithoutChooseWard')
 data.setCell(5, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(5, 3, 3140);
+data.setCell(5, 3, 4503);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testSuccessWithOnlyProvince')
+data.setCell(6, 1, 'testSuccessWithoutFillTextboxAddress')
 data.setCell(6, 2, 'TestCases.ChooseReceivedPlace')
-data.setCell(6, 3, 2314);
+data.setCell(6, 3, 4084);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testSuccessWithOnlyProvince')
+data.setCell(7, 2, 'TestCases.ChooseReceivedPlace')
+data.setCell(7, 3, 2666);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -374,115 +437,136 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7757 ms</span>
+                <span class="method-start">9712 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testMainSFWithFullInfor</span>
-                <span class="method-start">7876 ms</span>
+                <span class="method-start">9861 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">11280 ms</span>
+                <span class="method-start">15635 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">11605 ms</span>
+                <span class="method-start">16145 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">18581 ms</span>
+                <span class="method-start">25862 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSuccessWithOnlyProvince</span>
-                <span class="method-start">18682 ms</span>
+                <span class="method-start">25988 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">21113 ms</span>
+                <span class="method-start">28818 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">21296 ms</span>
+                <span class="method-start">29033 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">27392 ms</span>
+                <span class="method-start">37581 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testSuccessWithoutFillTextboxAddress</span>
-                <span class="method-start">27495 ms</span>
+                <span class="method-start">37723 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">32276 ms</span>
+                <span class="method-start">42820 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">32449 ms</span>
+                <span class="method-start">42997 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">40475 ms</span>
+                <span class="method-start">51619 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testFailWithoutChooseWard</span>
-                <span class="method-start">40593 ms</span>
+                <span class="method-start">51731 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">43854 ms</span>
+                <span class="method-start">56320 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">44011 ms</span>
+                <span class="method-start">56493 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">50186 ms</span>
+                <span class="method-start">66439 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSuccessUpdateWithOnlyProvinceSubmitBefor</span>
-                <span class="method-start">50282 ms</span>
+                <span class="method-start">66579 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">56004 ms</span>
+                <span class="method-start">73832 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">56143 ms</span>
+                <span class="method-start">73972 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">62376 ms</span>
+                <span class="method-start">85447 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSuccessUpdateByClickOnButonChange</span>
-                <span class="method-start">62468 ms</span>
+                <span class="method-start">85587 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">70563 ms</span>
+                <span class="method-start">94889 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ChooseReceivedPlace, Test Case)</span>
-                <span class="method-start">70648 ms</span>
+                <span class="method-start">95084 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">76725 ms</span>
+                <span class="method-start">107386 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testSuccessUpdateByClickOnDropBoxProvince</span>
-                <span class="method-start">76834 ms</span>
+                <span class="method-start">107586 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">84460 ms</span>
+                <span class="method-start">129043 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">saveAndCloseExcel</span>
-                <span class="method-start">84599 ms</span>
+                <span class="method-start">129207 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.ViewProductThroughList</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">accessWebsite(https://www.dienmayxanh.com/, ViewProductByListProduct, Test Case)</span>
+                <span class="method-start">129339 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testSuccessViewProductByList</span>
+                <span class="method-start">140494 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">152503 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">saveAndCloseExcel</span>
+                <span class="method-start">152629 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

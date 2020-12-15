@@ -30,7 +30,7 @@ public class IListenerClass extends AbstractPath implements ITestListener {
 			int row  = ExcelUtils.getRowContains(result.getName(), 4);
 			ExcelUtils.setCellData(row, 8, "Passed" );
 			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
-			System.out.println(result.getAttribute("actualResult").toString());
+			//System.out.println(result.getAttribute("actualResult").toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
@@ -41,7 +41,6 @@ public class IListenerClass extends AbstractPath implements ITestListener {
 		try {
 			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
 			int row  = ExcelUtils.getRowContains(result.getName(), 4);
-			//ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
 			ExcelUtils.setCellData(row, 8, "Skipped" );
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -54,14 +53,16 @@ public class IListenerClass extends AbstractPath implements ITestListener {
 		try {
 			TakeSnapShot.takeSnapShot(file);
 			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+			int row = ExcelUtils.getRowContains(result.getName(), 4);			
 			
-			int row = ExcelUtils.getRowContains(result.getName(), 4);
-			
-			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
-			System.out.println(result.getAttribute("actualResult").toString());
+			if(result.getAttribute("actualResult").toString()!=null) {
+				ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+				System.out.println(result.getAttribute("actualResult").toString());
+			}
 			
 			ExcelUtils.setCellData(row, 8, "Failed");
 			String[] subsStringFile = file.split("DienMayXanh");
+					
 			String srcImage = "DienMayXanh"+subsStringFile[1];
 			ExcelUtils.setCellData(row, 9, srcImage);
 		} catch (Exception e) {
