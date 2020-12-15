@@ -6,8 +6,14 @@
 </listeners>
    <test name = "login">
       <classes>
-        <class name = "testcase.Link">
+        <class name = "testcase.LogIn">
+        <methods>
+        	<include name = "testPhoneNumberWithSpecialCharacters"/>
+        	<include name = "testWrongPhoneNumber"/>        	
+        </methods>
          </class>
+         <class name = "testcase.Link">
+          </class>
       </classes>
    </test>
 </suite>

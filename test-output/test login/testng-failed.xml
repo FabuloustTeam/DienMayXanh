@@ -8,8 +8,8 @@
     <classes>
       <class name="testcase.LogIn">
         <methods>
-          <include name="terminateBrowser"/>
-          <include name="testPhoneNumbersWithLetters"/>
+          <include name="testEnterSpace"/>
+          <include name="closeBrowser"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- testcase.LogIn -->

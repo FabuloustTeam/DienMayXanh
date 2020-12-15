@@ -59,6 +59,7 @@ public class ListenerTest implements ITestListener {
 	    		ExcelUtils.setExcelFile(path, "Detailed status");
 	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
 	    		ExcelUtils.setCellData(row, 8, "Success");
+	    		ExcelUtils.setCellData(row, 6, Result.getAttribute("error").toString());
 	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();

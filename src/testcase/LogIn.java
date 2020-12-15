@@ -9,6 +9,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import BaseClass.ExcelUtils;
 
@@ -24,9 +26,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=1)
 	public void testPhoneNumbersWithLetters() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-02", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -51,9 +51,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=2)
 	public void testPhoneNumberWithSpecialCharacters() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-03", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -66,9 +64,10 @@ public class LogIn extends abstractLogin {
 
 		String expectedError = ExcelUtils.getCellData(rowData ,9);
 		String error = waitForElementClickable(By.xpath("//*[@name='txtPhoneNumber']//following::label[1]")).getText();
+		ITestResult result = Reporter.getCurrentTestResult();
+		result.setAttribute("error", error);
 		Assert.assertEquals(error, expectedError);
 
-		driver.close();
 	}
 
 	/**
@@ -77,9 +76,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=3)
 	public void testWrongPhoneNumber() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-04", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -94,7 +91,6 @@ public class LogIn extends abstractLogin {
 		String error = waitForElementClickable(By.xpath("//*[@name='txtPhoneNumber']//following::label[1]")).getText();
 		Assert.assertEquals(error, expectedError);
 
-		driver.close();
 	}
 
 	/**
@@ -103,9 +99,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=4)
 	public void testDoNotEnterPhoneNumber() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-05", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -129,9 +123,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=5)
 	public void testEnterSpace() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-06", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -155,9 +147,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=6)
 	public void testWrongOTP() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-07", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -189,9 +179,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=7)
 	public void testDoNotEnterEnoughOTP() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-08", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -223,9 +211,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=8)
 	public void testOTPHasLetters() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-09", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -257,9 +243,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=9)
 	public void testOTPHasSpecialCharacters() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-010", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -291,9 +275,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=10)
 	public void testOTPEntersSpace() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-011", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -325,9 +307,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=11)
 	public void testDoNotEnterOTP() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-012", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -359,9 +339,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=12)
 	public void testNoticeOfResendingOTP() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-013", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
@@ -385,9 +363,7 @@ public class LogIn extends abstractLogin {
 	 */
 	@Test(priority=13)
 	public void testTitle() throws Exception {
-		System.out.println("lauching chrome browser");
 		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
 		int rowData = ExcelUtils.getRowContains("TC-DMX-Login-015", 2);
 		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
 		weblogin.click();
