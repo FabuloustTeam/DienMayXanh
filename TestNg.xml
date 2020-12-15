@@ -6,9 +6,7 @@
 </listeners>
    <test name = "login">
       <classes>
-        <class name = "LogIn">
-         </class>
-         <class name = "Link">
+        <class name = "testcase.Link">
          </class>
       </classes>
    </test>

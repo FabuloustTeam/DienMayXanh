@@ -1,3 +1,4 @@
+package testcase;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -12,6 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import BaseClass.ExcelUtils;
 
 import AbstractClass.abstractLink;
 
@@ -21,7 +23,7 @@ public class Link extends abstractLink{
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-01
 	 */
 	@Test (priority=1)
-	public void LinkFacebook() {
+	public void testLinkFacebook() {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -50,7 +52,7 @@ public class Link extends abstractLink{
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-02
 	 */
 	@Test (priority=2)
-	public void LinkYoutube() {
+	public void testLinkYoutube() {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -79,7 +81,7 @@ public class Link extends abstractLink{
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-03
 	 */
 	@Test (priority=3)
-	public void LinkMaiAm() {
+	public void testLinkMaiAm() {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -108,7 +110,7 @@ public class Link extends abstractLink{
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-04
 	 */
 	@Test (priority=4)
-	public void LinkTgdd() {
+	public void testLinkTgdd() {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -137,7 +139,7 @@ public class Link extends abstractLink{
 	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-05
 	 */
 	@Test (priority=5)
-	public void LinkBachhoaXanh() {
+	public void testLinkBachhoaXanh() {
 		// Cuộn xuống cuối trang
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");

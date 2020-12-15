@@ -26,10 +26,10 @@ public class ListenerTest implements ITestListener {
 	    	
 	    	try {
 	    		takeSnapShot(file);
-	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Sheet1");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
-	    		ExcelUtils.setCellData(row, 3, "fail");
+	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Detailed status");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
+	    		ExcelUtils.setCellData(row, 8, "Failed");
 	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();
@@ -40,10 +40,10 @@ public class ListenerTest implements ITestListener {
 	    public void onTestSkipped(ITestResult Result) {					
 	        // TODO Auto-generated method stub				
 	    	try {
-	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Sheet1");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
-	    		ExcelUtils.setCellData(row, 3, "skip");
+	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Detailed status");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
+	    		ExcelUtils.setCellData(row, 8, "Skipped");
 	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();
@@ -55,10 +55,10 @@ public class ListenerTest implements ITestListener {
 	    public void onTestSuccess(ITestResult Result) {					
 	        // TODO Auto-generated method stub		
 	    	try {
-	    		String path = System.getProperty("user.dir")+"\\InputLogin.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Sheet1");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 0);
-	    		ExcelUtils.setCellData(row, 3, "success");
+	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+	    		ExcelUtils.setExcelFile(path, "Detailed status");
+	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
+	    		ExcelUtils.setCellData(row, 8, "Success");
 	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();

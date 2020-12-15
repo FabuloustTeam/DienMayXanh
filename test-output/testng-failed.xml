@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="login(failed)">
     <classes>
-      <class name="LogIn">
+      <class name="testcase.LogIn">
         <methods>
-          <include name="OTPHasSpecialCharacters"/>
           <include name="terminateBrowser"/>
+          <include name="testPhoneNumbersWithLetters"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- LogIn -->
+      </class> <!-- testcase.LogIn -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [test login] -->
