@@ -28,14 +28,7 @@ public abstract class AbstractAnnotation extends AbstractPath {
 		driver.close();
 	}
 
-	@BeforeClass
-	@Parameters({ "testCaseName", "SheetName" })
-	public void setExcel(String testCaseName, String SheetName) throws Exception {
-		String Path = getTestCasesFolderPath() + "DienmayXANH-" + testCaseName + ".xlsx";
-		ExcelUtils.setExcelFile(Path, SheetName);
-	}
-
-	@AfterClass
+	@AfterSuite
 	public void saveAndCloseExcel() throws Exception {
 		String Path = getReportFilePath();
 		ExcelUtils.closeandsaveFile(Path);

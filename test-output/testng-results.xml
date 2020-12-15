@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="10" passed="7" failed="1" skipped="0">
+<testng-results ignored="2" total="10" passed="2" failed="6" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-14T21:14:14 ICT" name="testing list product" finished-at="2020-12-14T21:17:23 ICT" duration-ms="188884">
+  <suite started-at="2020-12-15T10:55:12 ICT" name="testing list product" finished-at="2020-12-15T10:58:57 ICT" duration-ms="224912">
     <groups>
     </groups>
-    <test started-at="2020-12-14T21:14:14 ICT" name="test view list products" finished-at="2020-12-14T21:15:40 ICT" duration-ms="85897">
+    <test started-at="2020-12-15T10:55:12 ICT" name="test view list products" finished-at="2020-12-15T10:56:23 ICT" duration-ms="70798">
       <class name="com.dienmayxanh.test.ViewListProducts">
-        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:14 ICT" name="setExcel" finished-at="2020-12-14T21:14:14 ICT" duration-ms="611" status="PASS">
+        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:55:12 ICT" name="setExcel" finished-at="2020-12-15T10:55:13 ICT" duration-ms="1436" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,7 +23,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcel -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:14 ICT" name="accessWebsite" finished-at="2020-12-14T21:14:21 ICT" duration-ms="6500" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:55:13 ICT" name="accessWebsite" finished-at="2020-12-15T10:55:24 ICT" duration-ms="10329" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,15 +44,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:21 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-14T21:14:43 ICT" duration-ms="21865" status="PASS">
+        <test-method signature="testViewWithSortPriceDescending()[pri:3, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:55:24 ICT" name="testViewWithSortPriceDescending" finished-at="2020-12-15T10:55:53 ICT" duration-ms="29126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testViewWithSortPriceDescending -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:43 ICT" name="closeBrowser" finished-at="2020-12-14T21:14:44 ICT" duration-ms="517" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:55:53 ICT" name="closeBrowser" finished-at="2020-12-15T10:55:54 ICT" duration-ms="548" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:44 ICT" name="accessWebsite" finished-at="2020-12-14T21:14:53 ICT" duration-ms="9809" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:55:54 ICT" name="accessWebsite" finished-at="2020-12-15T10:56:06 ICT" duration-ms="12350" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -73,49 +73,40 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:14:53 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-14T21:15:15 ICT" duration-ms="21586" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testViewWithSortPriceAscending -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:15:15 ICT" name="closeBrowser" finished-at="2020-12-14T21:15:16 ICT" duration-ms="228" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:15:16 ICT" name="accessWebsite" finished-at="2020-12-14T21:15:22 ICT" duration-ms="6351" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://www.dienmayxanh.com/]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ViewListProducts]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Test Case]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessWebsite -->
-        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:15:22 ICT" name="testQuantity" finished-at="2020-12-14T21:15:38 ICT" duration-ms="16566" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="testViewWithSortPriceAscending()[pri:4, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:06 ICT" name="testViewWithSortPriceAscending" finished-at="2020-12-15T10:56:06 ICT" duration-ms="218" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61043}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0a4dfb84c1a949fdba2b69fbbd082bcc]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:819)
-at org.testng.Assert.assertEquals(Assert.java:829)
-at com.dienmayxanh.test.ViewListProducts.testQuantity(ViewListProducts.java:183)
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61043}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0a4dfb84c1a949fdba2b69fbbd082bcc
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.dienmayxanh.test.ViewListProducts.chooseCategory(ViewListProducts.java:348)
+at com.dienmayxanh.test.ViewListProducts.testViewWithSortPriceAscending(ViewListProducts.java:127)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,23 +137,116 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuantity -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:15:39 ICT" name="closeBrowser" finished-at="2020-12-14T21:15:40 ICT" duration-ms="172" status="PASS">
+        </test-method> <!-- testViewWithSortPriceAscending -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:08 ICT" name="closeBrowser" finished-at="2020-12-15T10:56:08 ICT" duration-ms="196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-14T21:15:40 ICT" name="saveAndCloseExcel" finished-at="2020-12-14T21:15:40 ICT" duration-ms="84" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:08 ICT" name="accessWebsite" finished-at="2020-12-15T10:56:21 ICT" duration-ms="12691" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ViewListProducts]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Test Case]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testQuantity()[pri:5, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:21 ICT" name="testQuantity" finished-at="2020-12-15T10:56:21 ICT" duration-ms="339" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61120}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ab147e0598c6784833917914e29d2879]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61120}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ab147e0598c6784833917914e29d2879
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.dienmayxanh.test.ViewListProducts.chooseCategory(ViewListProducts.java:348)
+at com.dienmayxanh.test.ViewListProducts.testQuantity(ViewListProducts.java:161)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuantity -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:22 ICT" name="closeBrowser" finished-at="2020-12-15T10:56:23 ICT" duration-ms="256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@44c73c26]" started-at="2020-12-15T10:56:23 ICT" name="saveAndCloseExcel" finished-at="2020-12-15T10:56:23 ICT" duration-ms="88" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->
       </class> <!-- com.dienmayxanh.test.ViewListProducts -->
     </test> <!-- test view list products -->
-    <test started-at="2020-12-14T21:15:40 ICT" name="test comment" finished-at="2020-12-14T21:17:23 ICT" duration-ms="102961">
+    <test started-at="2020-12-15T10:56:23 ICT" name="test comment" finished-at="2020-12-15T10:58:57 ICT" duration-ms="154077">
       <class name="com.dienmayxanh.test.Comment">
-        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:15:40 ICT" name="setExcel" finished-at="2020-12-14T21:15:40 ICT" duration-ms="40" status="PASS">
+        <test-method is-config="true" signature="setExcel(java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:23 ICT" name="setExcel" finished-at="2020-12-15T10:56:23 ICT" duration-ms="35" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -178,7 +262,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcel -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:15:40 ICT" name="accessWebsite" finished-at="2020-12-14T21:15:49 ICT" duration-ms="9235" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:23 ICT" name="accessWebsite" finished-at="2020-12-15T10:56:33 ICT" duration-ms="10025" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -199,19 +283,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:15:49 ICT" name="beforeMethod" finished-at="2020-12-14T21:15:50 ICT" duration-ms="1542" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:33 ICT" name="beforeMethod" finished-at="2020-12-15T10:56:36 ICT" duration-ms="3067" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testWithoutCommentContent()[pri:1, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:15:50 ICT" name="testWithoutCommentContent" finished-at="2020-12-14T21:16:00 ICT" duration-ms="9547" status="PASS">
+        <test-method signature="testWithoutCommentContent()[pri:1, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:36 ICT" name="testWithoutCommentContent" finished-at="2020-12-15T10:56:45 ICT" duration-ms="9501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWithoutCommentContent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:00 ICT" name="closeBrowser" finished-at="2020-12-14T21:16:00 ICT" duration-ms="143" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:46 ICT" name="closeBrowser" finished-at="2020-12-15T10:56:46 ICT" duration-ms="167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:00 ICT" name="accessWebsite" finished-at="2020-12-14T21:16:07 ICT" duration-ms="6286" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:46 ICT" name="accessWebsite" finished-at="2020-12-15T10:56:58 ICT" duration-ms="12592" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -232,19 +316,85 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:07 ICT" name="beforeMethod" finished-at="2020-12-14T21:16:10 ICT" duration-ms="3665" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:56:58 ICT" name="beforeMethod" finished-at="2020-12-15T10:57:01 ICT" duration-ms="2258" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testOnlySpaceCommentContent()[pri:2, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:10 ICT" name="testOnlySpaceCommentContent" finished-at="2020-12-14T21:16:21 ICT" duration-ms="10309" status="PASS">
+        <test-method signature="testOnlySpaceCommentContent()[pri:2, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:01 ICT" name="testOnlySpaceCommentContent" finished-at="2020-12-15T10:57:10 ICT" duration-ms="9540" status="FAIL">
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+            <message>
+              <![CDATA[unexpected alert open: {Alert text : Vui lòng nhập họ tên.}
+  (Session info: chrome=87.0.4280.88): Vui lòng nhập họ tên.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61272}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0ac876d085c0afc0b0eb21a58833e312
+*** Element info: {Using=id, value=content}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Vui lòng nhập họ tên.}
+  (Session info: chrome=87.0.4280.88): Vui lòng nhập họ tên.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61272}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 0ac876d085c0afc0b0eb21a58833e312
+*** Element info: {Using=id, value=content}
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.dienmayxanh.test.Comment$1.apply(Comment.java:290)
+at com.dienmayxanh.test.Comment$1.apply(Comment.java:1)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com.dienmayxanh.test.Comment.waitForTextElement(Comment.java:288)
+at com.dienmayxanh.test.Comment.getErrorTextCommentContent(Comment.java:268)
+at com.dienmayxanh.test.Comment.testOnlySpaceCommentContent(Comment.java:95)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOnlySpaceCommentContent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:21 ICT" name="closeBrowser" finished-at="2020-12-14T21:16:21 ICT" duration-ms="169" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:11 ICT" name="closeBrowser" finished-at="2020-12-15T10:57:11 ICT" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:21 ICT" name="accessWebsite" finished-at="2020-12-14T21:16:27 ICT" duration-ms="6235" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:11 ICT" name="accessWebsite" finished-at="2020-12-15T10:57:21 ICT" duration-ms="10443" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -265,19 +415,71 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:27 ICT" name="beforeMethod" finished-at="2020-12-14T21:16:31 ICT" duration-ms="3737" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:21 ICT" name="beforeMethod" finished-at="2020-12-15T10:57:25 ICT" duration-ms="3343" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testWithoutName()[pri:3, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:31 ICT" name="testWithoutName" finished-at="2020-12-14T21:16:41 ICT" duration-ms="9939" status="PASS">
+        <test-method signature="testWithoutName()[pri:3, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:25 ICT" name="testWithoutName" finished-at="2020-12-15T10:57:44 ICT" duration-ms="19616" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61367}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: b0a17758ce831efc017cc7fe7b32e2e2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61367}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: b0a17758ce831efc017cc7fe7b32e2e2
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.dienmayxanh.test.Comment.waitForAlert(Comment.java:283)
+at com.dienmayxanh.test.Comment.getAlertMessage(Comment.java:275)
+at com.dienmayxanh.test.Comment.testWithoutName(Comment.java:130)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testWithoutName -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:41 ICT" name="closeBrowser" finished-at="2020-12-14T21:16:41 ICT" duration-ms="141" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:45 ICT" name="closeBrowser" finished-at="2020-12-15T10:57:45 ICT" duration-ms="155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:41 ICT" name="accessWebsite" finished-at="2020-12-14T21:16:51 ICT" duration-ms="9970" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:45 ICT" name="accessWebsite" finished-at="2020-12-15T10:57:58 ICT" duration-ms="12570" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -298,19 +500,71 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:51 ICT" name="beforeMethod" finished-at="2020-12-14T21:16:52 ICT" duration-ms="765" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:57:58 ICT" name="beforeMethod" finished-at="2020-12-15T10:58:01 ICT" duration-ms="3076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testOnlySpaceName()[pri:4, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:16:52 ICT" name="testOnlySpaceName" finished-at="2020-12-14T21:17:01 ICT" duration-ms="9159" status="PASS">
+        <test-method signature="testOnlySpaceName()[pri:4, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:01 ICT" name="testOnlySpaceName" finished-at="2020-12-15T10:58:20 ICT" duration-ms="19100" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61470}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 1dfaf2e95d625185e1ec81cde26ed39f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61470}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 1dfaf2e95d625185e1ec81cde26ed39f
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.dienmayxanh.test.Comment.waitForAlert(Comment.java:283)
+at com.dienmayxanh.test.Comment.getAlertMessage(Comment.java:275)
+at com.dienmayxanh.test.Comment.testOnlySpaceName(Comment.java:166)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testOnlySpaceName -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:01 ICT" name="closeBrowser" finished-at="2020-12-14T21:17:01 ICT" duration-ms="174" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:21 ICT" name="closeBrowser" finished-at="2020-12-15T10:58:21 ICT" duration-ms="140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:01 ICT" name="accessWebsite" finished-at="2020-12-14T21:17:08 ICT" duration-ms="6221" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:21 ICT" name="accessWebsite" finished-at="2020-12-15T10:58:33 ICT" duration-ms="12268" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -331,19 +585,71 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:08 ICT" name="beforeMethod" finished-at="2020-12-14T21:17:11 ICT" duration-ms="3368" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:33 ICT" name="beforeMethod" finished-at="2020-12-15T10:58:37 ICT" duration-ms="3566" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testContentCommentIsLessThan10Characters()[pri:5, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:11 ICT" name="testContentCommentIsLessThan10Characters" finished-at="2020-12-14T21:17:22 ICT" duration-ms="11195" status="PASS">
+        <test-method signature="testContentCommentIsLessThan10Characters()[pri:5, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:37 ICT" name="testContentCommentIsLessThan10Characters" finished-at="2020-12-15T10:58:56 ICT" duration-ms="19126" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 25e93122e47eeccee8771ab6bdadc822]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for alert to be present (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.92', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61584}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 25e93122e47eeccee8771ab6bdadc822
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.dienmayxanh.test.Comment.waitForAlert(Comment.java:283)
+at com.dienmayxanh.test.Comment.getAlertMessage(Comment.java:275)
+at com.dienmayxanh.test.Comment.testContentCommentIsLessThan10Characters(Comment.java:203)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testContentCommentIsLessThan10Characters -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:22 ICT" name="closeBrowser" finished-at="2020-12-14T21:17:23 ICT" duration-ms="124" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:57 ICT" name="closeBrowser" finished-at="2020-12-15T10:58:57 ICT" duration-ms="168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-14T21:17:23 ICT" name="saveAndCloseExcel" finished-at="2020-12-14T21:17:23 ICT" duration-ms="53" status="PASS">
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.Comment@73302995]" started-at="2020-12-15T10:58:57 ICT" name="saveAndCloseExcel" finished-at="2020-12-15T10:58:57 ICT" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->
