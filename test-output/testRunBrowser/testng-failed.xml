@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="viewlistproduct(failed)">
     <classes>
-      <class name="ViewListProducts">
+      <class name="Contact">
         <methods>
           <include name="accessWebsite"/>
-          <include name="ShowAllProduct"/>
+          <include name="testDoNotChooseGentle"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- ViewListProducts -->
+      </class> <!-- Contact -->
     </classes>
   </test> <!-- viewlistproduct(failed) -->
 </suite> <!-- Failed suite [testRunBrowser] -->

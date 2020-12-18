@@ -6,20 +6,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import AbstractClasses.AbstractBOT;
+import BaseClass.ExcelUtils;
 
 public class Contact extends AbstractBOT {
 //	// 1. Truy cập https://www.dienmayxanh.com/lien-he
 //	public String baseUrl = "https://www.dienmayxanh.com/";
 //	public WebDriver driver;
 
+	
 	/**
 	 * Test requirement: TR-DMX-CMCT-01 Test case ID: TC-DMX-CMCT-01
+	 * @throws Exception 
 	 */
 	@Test
-	public void Lienhethanhcong() {
+	public void testContactSusseccful() throws Exception {
+		
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-01", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -27,7 +33,7 @@ public class Contact extends AbstractBOT {
 		// 2. Nhấn chọn "Góp ý, liên hệ" trên thanh Footer
 		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
 		contact.click();
-
+		
 		waitForElementClickable(By.id("message"));
 		WebElement textarea = driver.findElement(By.id("message"));
 		
@@ -47,7 +53,7 @@ public class Contact extends AbstractBOT {
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		// 6. Nhập số điện thoại
-		phonenumber.sendKeys("0907978025");
+		phonenumber.sendKeys(ExcelUtils.getCellData(8, 7));
 
 		// 7. Nhập email
 		waitForElementClickable(By.id("conemail"));
@@ -73,8 +79,10 @@ public class Contact extends AbstractBOT {
 	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-02
 	 */
 	@Test
-	public void SaiTruongSDT() {
-//		
+	public void testFailWithoutNumberPhone() throws Exception {
+		
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-02", 2);
+		
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -95,7 +103,7 @@ public class Contact extends AbstractBOT {
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		
 		// 3. Nhập số vào trường có 'Nhập số điện thoại'
-		phonenumber.sendKeys("0907898mbcd");
+		phonenumber.sendKeys(ExcelUtils.getCellData(15, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -114,7 +122,8 @@ public class Contact extends AbstractBOT {
 	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-03
 	 */
 	@Test
-	public void NhapkytudacbiettruongSDT() {
+	public void testSpecialCharacterNumberPhone() throws Exception{
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-03", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -132,7 +141,7 @@ public class Contact extends AbstractBOT {
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
 		// 3. Nhập ký tự đặc biệt vào trường "số điện thoại"
-		phonenumber.sendKeys("090943432!./?");
+		phonenumber.sendKeys(ExcelUtils.getCellData(23, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -141,6 +150,7 @@ public class Contact extends AbstractBOT {
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
 
+		
 //		driver.close();
 
 	}
@@ -149,7 +159,9 @@ public class Contact extends AbstractBOT {
 	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-04
 	 */
 	@Test
-	public void SDTkhonghople() {
+	public void testWrongNumberPhone() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-04", 2);
+		
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -168,7 +180,7 @@ public class Contact extends AbstractBOT {
 		// 3. Nhập số điện thoại không có thật vào trường 'Nhập số điện thoại mua hàng
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("0542344234");
+		phonenumber.sendKeys(ExcelUtils.getCellData(8, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -181,8 +193,8 @@ public class Contact extends AbstractBOT {
 		String actual = driver.switchTo().alert().getText();
 		driver.switchTo().alert().accept();
 
-		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
-		Assert.assertEquals(actual, expected);
+//		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
+//		Assert.assertEquals(actual, expected);
 
 //		driver.close();
 	}
@@ -191,7 +203,8 @@ public class Contact extends AbstractBOT {
 	 * Test requirement: TR-DMX-CMCT-03 Test case ID: TC-DMX-CMCT-05
 	 */
 	@Test
-	public void Chuachongioitinh() {
+	public void testDoNotChooseGentle() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-05", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -208,7 +221,7 @@ public class Contact extends AbstractBOT {
 		fullname.sendKeys("Jônh Aná");
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("");
+		phonenumber.sendKeys(ExcelUtils.getCellData(8, 7));
 
 		// 3. Bỏ trống không chọn nút "Anh", " Chị"
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
@@ -225,9 +238,11 @@ public class Contact extends AbstractBOT {
 
 	/**
 	 * Test requirement: TR-DMX-CMCT-04 Test case ID: TC-DMX-CMCT-06
+	 * @throws Exception
 	 */
 	@Test
-	public void BotrongtruongHvT() {
+	public void testDoNotEnterName() throws Exception {
+		
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -238,7 +253,7 @@ public class Contact extends AbstractBOT {
 
 		waitForElementClickable(By.id("message"));
 		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
+		textarea.sendKeys(ExcelUtils.getCellData(42, 7));
 		waitForElementClickable(By.id("fullname"));
 		WebElement fullname = driver.findElement(By.id("fullname"));
 		// 3. Bỏ trống trường họ và tên vào trường 'Nhập họ và tên'.
@@ -246,7 +261,7 @@ public class Contact extends AbstractBOT {
 
 		waitForElementClickable(By.id("contel"));
 		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("0907972811");
+		phonenumber.sendKeys(ExcelUtils.getCellData(44, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -254,16 +269,21 @@ public class Contact extends AbstractBOT {
 		WebElement submit = driver.findElement(By.id("submit"));
 		// 4. Nhấn "Gửi liên hệ"
 		submit.click();
-
+		
+//		String expectedError =  ExcelUtils.getCellData(rowData, 9);
+//		String error = waitForElementClickable(By.xpath("//*[text()='Vui lòng nhập họ tên !']")).getText();
+//		Assert.assertEquals(error, expectedError);
 //		driver.close();
 
 	}
 
 	/**
 	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-07
+	 * @throws Exception 
 	 */
 	@Test
-	public void NhapchuhoavaotruognEmail() {
+	public void testEnterCaptainEmail() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-07", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -281,7 +301,7 @@ public class Contact extends AbstractBOT {
 		// 3. Nhập chữ vào trường 'Email'.
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
-		email.sendKeys("Thanhnhan@gmail.com");
+		email.sendKeys(ExcelUtils.getCellData(52, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -303,9 +323,11 @@ public class Contact extends AbstractBOT {
 
 	/**
 	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-08
+	 * @throws Exception 
 	 */
 	@Test
-	public void NhapkytudacbietvaotruongEmail() {
+	public void testSpecialCharacterMail() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-08", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -324,7 +346,7 @@ public class Contact extends AbstractBOT {
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
 		// 3. Nhập kí tự đặc biệt vào trường 'Email'.
-		email.sendKeys("thanhnhan?..'`@gmail.com");
+		email.sendKeys(ExcelUtils.getCellData(60, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
@@ -339,9 +361,11 @@ public class Contact extends AbstractBOT {
 
 	/**
 	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-09
+	 * @throws Exception 
 	 */
 	@Test
-	public void NhapEmailkhonghople() {
+	public void testWrongMail() throws Exception {
+		int rowData = ExcelUtils.getRowContains("TC-DMX-CMCT-09", 2);
 //		// 1. Truy cập vào website: https://www.dienmayxanh.com
 //		System.out.print("Launching chrome browser");
 //		driver = new ChromeDriver();
@@ -361,7 +385,7 @@ public class Contact extends AbstractBOT {
 		waitForElementClickable(By.id("conemail"));
 		WebElement email = driver.findElement(By.id("conemail"));
 		// 3. Nhập email không có thật vào trường 'Email'.
-		email.sendKeys("motconvitxoa2caichan@gmail.com");
+		email.sendKeys(ExcelUtils.getCellData(68, 7));
 
 		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
 		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
