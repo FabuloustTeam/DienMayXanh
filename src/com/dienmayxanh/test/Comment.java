@@ -19,6 +19,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 import com.dienmayxanh.Enum.*;
@@ -32,7 +33,7 @@ public class Comment extends AbstractAnnotation {
 	private final int COL_INPUT_NAME = 6;
 	private final int COL_INPUT_IMAGE = 7;
 	private final int COL_INPUT_EMAIL = 8;
-	private final int COL_INPUT_TYPE = 9;
+	private final int COL_TYPE = 9;
 	private final int START_ROW = 2;
 	private final int COL_TESTNAME = 1;
 	private int iTestCaseRow;
@@ -44,12 +45,6 @@ public class Comment extends AbstractAnnotation {
 	private String email = "";
 	private String actual = "";
 	private String expected = "";
-	
-//	@BeforeMethod
-//	public void beforeMethod() {
-//		// 2. Chọn mục Gửi góp ý, khiếu nại ở footer
-//		goToSendCommentPage();
-//	}
 
 	@Parameters({ "url" })
 	@Test(priority = 1)
@@ -57,11 +52,8 @@ public class Comment extends AbstractAnnotation {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for(int i = START_ROW; i <= iTestCaseRow; i++) {
 			caseValue = ExcelUtils.getCellData(i, COL_CASE);
-			typeValue = ExcelUtils.getCellData(i, COL_INPUT_TYPE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
 			if(caseValue.equals(Case.UNSUCCESSFULLY.toString()) && typeValue.equals(Type.ERROR.toString())) {
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-				driver.get(url);
 				goToSendCommentPage();
 				
 				comment = ExcelUtils.getCellData(i, COL_INPUT_COMMENT);
@@ -78,17 +70,30 @@ public class Comment extends AbstractAnnotation {
 				
 				pressSend();
 				
-				actual = getErrorTextCommentContent();
+				while(true) {
+					try {
+						actual = getErrorTextCommentContent();
+						if(!actual.equals("")) 
+							break;
+					} catch (Exception e) {
+						pressSend();
+					}
+				}
+				
 				expected = ExcelUtils.getCellData(i, COL_EXPECT);
 				
 				ITestResult result = Reporter.getCurrentTestResult();
-				result.setAttribute("id", ExcelUtils.getCellData(i, COL_TESTNAME));
+				result.setAttribute("testname", ExcelUtils.getCellData(i, COL_TESTNAME));
 				if(actual.equals(expected)) {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
-				driver.close();
+				
+				Robot robo = new Robot();
+				robo.keyPress(KeyEvent.VK_F5);
+				robo.keyRelease(KeyEvent.VK_F5);
+				waitForPageLoad();
 			}
 		}
 	}
@@ -99,11 +104,8 @@ public class Comment extends AbstractAnnotation {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for(int i = START_ROW; i <= iTestCaseRow; i++) {
 			caseValue = ExcelUtils.getCellData(i, COL_CASE);
-			typeValue = ExcelUtils.getCellData(i, COL_INPUT_TYPE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
 			if(caseValue.equals(Case.UNSUCCESSFULLY.toString()) && typeValue.equals(Type.ALERT.toString())) {
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-				driver.get(url);
 				goToSendCommentPage();
 				
 				comment = ExcelUtils.getCellData(i, COL_INPUT_COMMENT);
@@ -124,199 +126,20 @@ public class Comment extends AbstractAnnotation {
 				expected = ExcelUtils.getCellData(i, COL_EXPECT);
 				
 				ITestResult result = Reporter.getCurrentTestResult();
-				result.setAttribute("id", ExcelUtils.getCellData(i, COL_TESTNAME));
+				result.setAttribute("testname", ExcelUtils.getCellData(i, COL_TESTNAME));
 				if(actual.equals(expected)) {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
-				driver.close();
+				
+				Robot robo = new Robot();
+				robo.keyPress(KeyEvent.VK_F5);
+				robo.keyRelease(KeyEvent.VK_F5);
+				waitForPageLoad();
 			}
 		}
 	}
-	
-//	@Test(priority = 1)
-//	public void test() throws Exception {
-//		inputComment("");
-//	}
-	
-//	/**
-//	 * Test requirement: TR-DMX-BL-02 - Test case ID: TC-DMX-BL-02
-//	 * 
-//	 * @throws Exception
-//	 */
-//	@Test(priority = 1)
-//	public void Comment_BlankComment() throws Exception {
-//		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-02", 2);
-//		ITestResult result = Reporter.getCurrentTestResult();
-//		result.setAttribute("id", "TC-DMX-BL-02");
-//		// 3. Không nội dung bình luận
-//		inputComment("");
-//
-//		// 4. Nhập họ tên
-//		String name = ExcelUtils.getCellData(rowData + 3, 7);
-//		inputName(name);
-//
-//		// 5. Chọn gửi hình
-//		inputImage();
-//
-//		// 6. Nhập email
-//		String email = ExcelUtils.getCellData(rowData + 5, 7);
-//		inputEmail(email);
-//
-//		// 7. Ch�?n gửi
-//		pressSend();
-//
-//		String actualError = getErrorTextCommentContent();
-//		result.setAttribute("actualResult", actualError);
-//
-//		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
-//		Assert.assertEquals(actualError, expectedError);
-//	}
-//
-//	/**
-//	 * Test requirement: TR-DMX-BL-02 - Test case ID: TC-DMX-BL-03
-//	 * 
-//	 * @throws Exception
-//	 */
-//	@Test(priority = 2)
-//	public void Comment_OnlySpaceComment() throws Exception {
-//		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-03", 2);
-//		ITestResult result = Reporter.getCurrentTestResult();
-//		result.setAttribute("id", "TC-DMX-BL-03");
-//
-//		// 3. Chỉ nhập khoảng trắng vào nội dung
-//		inputComment("    ");
-//
-//		// 4. Nhập họ tên
-//		String name = ExcelUtils.getCellData(rowData + 3, 7);
-//		inputName(name);
-//
-//		// 5. Chọn gửi hình
-//		inputImage();
-//
-//		// 6. Nhập email
-//		String email = ExcelUtils.getCellData(rowData + 5, 7);
-//		inputEmail(email);
-//
-//		// 7. Chọn gửi
-//		pressSend();
-//
-//		String actualError = getErrorTextCommentContent();
-//		result.setAttribute("actualResult", actualError);
-//
-//		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
-//		Assert.assertEquals(actualError, expectedError);
-//	}
-//
-//	/**
-//	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-04
-//	 * 
-//	 * @throws Exception
-//	 */
-//	@Test(priority = 3)
-//	public void Comment_BlankName() throws Exception {
-//		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-04", 2);
-//		ITestResult result = Reporter.getCurrentTestResult();
-//		result.setAttribute("id", "TC-DMX-BL-04");
-//
-//		/// 3. Nhập nội dung bình luận
-//		String comment = ExcelUtils.getCellData(rowData + 2, 7);
-//		inputComment(comment);
-//
-//		// 4. Nhập họ tên
-//		inputName("");
-//
-//		// 5. Chọn gửi hình
-//		inputImage();
-//
-//		// 6. Nhập email
-//		String email = ExcelUtils.getCellData(rowData + 5, 7);
-//		inputEmail(email);
-//
-//		// 7. Chọn gửi
-//		pressSend();
-//
-//		String actualError = getAlertMessage();
-//		result.setAttribute("actualResult", actualError);
-//
-//		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
-//
-//		Assert.assertEquals(actualError, expectedError);
-//	}
-//
-//	/**
-//	 * Test requirement: TR-DMX-BL-03 - Test case ID: TC-DMX-BL-05
-//	 * 
-//	 * @throws Exception
-//	 */
-//	@Test(priority = 4)
-//	public void Comment_OnlySpaceName() throws Exception {
-//		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-05", 2);
-//		ITestResult result = Reporter.getCurrentTestResult();
-//		result.setAttribute("id", "TC-DMX-BL-05");
-//
-//		// 3. Nhập nội dung bình luận
-//		String comment = ExcelUtils.getCellData(rowData + 2, 7);
-//		inputComment(comment);
-//
-//		// 4. Nhập họ tên
-//		inputName("      ");
-//
-//		// 5. Chọn gửi hình
-//		inputImage();
-//
-//		// 6. Nhập email
-//		String email = ExcelUtils.getCellData(rowData + 5, 7);
-//		inputEmail(email);
-//
-//		// 7. Chọn gửi
-//		pressSend();
-//
-//		String actualError = getAlertMessage();
-//		result.setAttribute("actualResult", actualError);
-//
-//		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
-//
-//		Assert.assertEquals(actualError, expectedError);
-//	}
-//
-//	/**
-//	 * Test requirement: TR-DMX-BL-04 - Test case ID: TC-DMX-BL-06
-//	 * 
-//	 * @throws Exception
-//	 */
-//	@Test(priority = 5)
-//	public void Comment_CommentLessThan10Chars() throws Exception {
-//		int rowData = ExcelUtils.getRowContains("TC-DMX-BL-06", 2);
-//		ITestResult result = Reporter.getCurrentTestResult();
-//		result.setAttribute("id", "TC-DMX-BL-06");
-//
-//		// 3. Nhập nội dung bình luận ít hơn 10 ký tự
-//		String comment = ExcelUtils.getCellData(rowData + 2, 7);
-//		inputComment(comment);
-//
-//		// 4. Nhập họ tên
-//		String name = ExcelUtils.getCellData(rowData + 3, 7);
-//		inputName(name);
-//
-//		// 5. Chọn gửi hình
-//		inputImage();
-//
-//		// 6. Nhập email
-//		String email = ExcelUtils.getCellData(rowData + 5, 7);
-//		inputEmail(email);
-//
-//		// 7. Chọn gửi
-//		pressSend();
-//
-//		String actualError = getAlertMessage();
-//		result.setAttribute("actualResult", actualError);
-//
-//		String expectedError = ExcelUtils.getCellData(rowData + 6, 9);
-//
-//		Assert.assertEquals(actualError, expectedError);
-//	}
 
 	private void goToSendCommentPage() {
 		WebElement linkCommentPage = waitForElementClickable(By.xpath("//footer//a[text()='Gửi góp ý, khiếu nại']"));
@@ -384,7 +207,7 @@ public class Comment extends AbstractAnnotation {
 	private String getAlertMessage() {
 		waitForAlert();
 		String alertMessage = driver.switchTo().alert().getText();
-		this.driver.switchTo().alert().accept();
+		driver.switchTo().alert().accept();
 		return alertMessage;
 	}
 
@@ -394,7 +217,7 @@ public class Comment extends AbstractAnnotation {
 	}
 
 	private void waitForTextElement(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver d) {
 				return d.findElement(locator).getText().trim().length() != 0;
@@ -410,5 +233,9 @@ public class Comment extends AbstractAnnotation {
 	private WebElement getElement(By locator) {
 		WebElement element = driver.findElement(locator);
 		return element;
+	}
+	
+	private void waitForPageLoad() {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 }

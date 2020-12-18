@@ -2,11 +2,15 @@ package com.dienmayxanh.test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import com.dienmayxanh.Enum.Case;
+import com.dienmayxanh.Enum.Result;
+import com.dienmayxanh.Enum.Type;
 import com.dienmayxanh.abstractclass.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,15 +19,35 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 import com.dienmayxanh.service.ExcelUtils;
-//@Listeners(com.dienmayxanh.listener.ListenerTest.class)
 
 public class ViewListProducts extends AbstractAnnotation {
+	
+	private final int COL_CASE = 2;
+	private final int COL_EXPECT = 3;
+	private final int COL_RESULT = 4;
+	private final int COL_INPUT_CATEGORY = 5;
+	private final int COL_INPUT_BRAND = 6;
+	private final int COL_INPUT_SORTTYPE = 7;
+	private final int START_ROW = 2;
+	private final int COL_TESTNAME = 1;
+	private final int COL_TYPE = 8;
+	private int iTestCaseRow;
+	private String caseValue = "";
+	private String typeValue = "";
+	private String category = "";
+	private String sortType = "";
+	private boolean actual;
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
 	 */
 	@Test(priority = 1)
-	public void testShowAllProduct() {
+	@Parameters({ "url" })
+	public void testShowAllProduct(String url) {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		
 		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
@@ -44,15 +68,17 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
 	 */
 	@Test(priority = 2)
-	private void testShowAllProductOfBrand() {
+	@Parameters({ "url" })
+	private void testShowAllProductOfBrand(String url) {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 		// 3. Chọn hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
 		JavascriptExecutor jsEx = (JavascriptExecutor) driver;
-//		jsEx.executeScript(
-//				"var el = document.querySelectorAll('div.test.manufacture.show-10')[0]; el.scrollIntoView(true)");
-//		
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -84,66 +110,46 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * @throws Exception 
 	 */
 	@Test (priority = 3)
-	public void ViewList_SortPriceDescending() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-03", 2);
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("id", "TC-DMX-VLP-03");
-		
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		String category = ExcelUtils.getCellData(rowData + 1, 7);
-		chooseCategory(category);
+	@Parameters({ "url" })
+	public void ViewList_SortPrice(String url) throws Exception {
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = START_ROW; i <= iTestCaseRow; i++) {
+			caseValue = ExcelUtils.getCellData(i, COL_CASE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
+			if(caseValue.equals(Case.SUCCESSFULLY.toString()) && typeValue.equals(Type.SORTING.toString())) {
+				ITestResult result = Reporter.getCurrentTestResult();
+				result.setAttribute("testname", ExcelUtils.getCellData(i, COL_TESTNAME));
+				
+				// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+				String category = ExcelUtils.getCellData(i, COL_INPUT_CATEGORY);
+				chooseCategory(category);
 
-		waitForPageLoad();
-		
-		// 3. Chọn sắp xếp
-		String sortType = ExcelUtils.getCellData(rowData + 2, 7);
-		chooseSort(sortType);
-
-		WebElement[][] dataTable = getTable();
-		boolean actual = checkDescending(dataTable);
-		String actualResult = "";
-		if(actual)
-			actualResult = "Hệ thống hiển thị toàn bộ sản phẩm lọc nước hiện có với sắp xếp theo giá tiền từ cao đến thấp";
-		else
-			actualResult = "Hệ thống không hiển thị đúng";
-		
-		result.setAttribute("actualResult", actualResult);
-		
-		Assert.assertEquals(actual, true);
-	}
-	
-	/**
-	 * Test requirement: TR-DMX-VLP-02. Test case ID: TC-DMX-VLP-04
-	 * @throws Exception 
-	 */
-	@Test (priority = 4)
-	public void ViewList_SortPriceAscending() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-04", 2);
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("id", "TC-DMX-VLP-04");
-		
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		String category = ExcelUtils.getCellData(rowData + 1, 7);
-		chooseCategory(category);
-
-		waitForPageLoad();
-		
-		// 3. Chọn sắp xếp
-		String sortType = ExcelUtils.getCellData(rowData + 2, 7);
-		chooseSort(sortType);
-
-		WebElement[][] dataTable = getTable();
-		boolean actual = checkAscending(dataTable);
-		
-		String actualResult = "";
-		if(actual)
-			actualResult = "Hệ thống hiển thị toàn bộ sản phẩm lọc nước hiện có với sắp xếp theo giá tiền từ thấp đến cao";
-		else
-			actualResult = "Hệ thống không hiển thị đúng";
-		
-		result.setAttribute("actualResult", actualResult);
-		
-		Assert.assertEquals(actual, true);
+				waitForPageLoad();
+				
+				// 3. Chọn sắp xếp
+				sortType = ExcelUtils.getCellData(i, COL_INPUT_SORTTYPE);
+				chooseSort(sortType);
+				
+				WebElement[][] dataTable = getTable();
+				
+				if(sortType.equals("Giá cao đến thấp")) {
+					actual = checkDescending(dataTable);
+					if(actual) {
+						ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+					} else {
+						ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+					}
+				} else {
+					boolean actual = checkAscending(dataTable);
+					if(actual) {
+						ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+					} else {
+						ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+					}
+				}
+				driver.get(url);
+			}
+		}
 	}
 	
 	/**
@@ -151,13 +157,14 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * @throws Exception 
 	 */
 	@Test (priority = 5)
-	public void ViewList_Quantity() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-05", 2);
+	@Parameters({ "url" })
+	public void ViewList_Quantity(String url) throws Exception {
+		int rowData = ExcelUtils.getRowContains("ViewList_Quantity", COL_TESTNAME);
 		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("id", "TC-DMX-VLP-05");
+		result.setAttribute("testname", "ViewList_Quantity");
 		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		String category = ExcelUtils.getCellData(rowData + 1, 7);
+		category = ExcelUtils.getCellData(rowData, COL_INPUT_CATEGORY);
 		chooseCategory(category);
 		
 		waitForProductsLoad();
@@ -165,22 +172,12 @@ public class ViewListProducts extends AbstractAnnotation {
 		int quantityBreadcrumb = getQuantityBreadcrumb();
 		int quantityProducts = getQuantityProducts();
 		int quantityTotal = getQuantityTotal();
-		String actualResult = "";
 		if(quantityBreadcrumb == quantityProducts && quantityBreadcrumb == quantityTotal)
-			actualResult = "Hệ thống hiển thị breadcrumb và ở trước filter có số lượng bằng số lượng sản phẩm đang hiển thị";
-		else if(quantityBreadcrumb != quantityProducts)
-			actualResult = "Hệ thống hiển thị breadcrumb và số lượng sản phẩm đang hiển thị khác nhau";
-		else if(quantityTotal != quantityProducts)
-			actualResult = "Hệ thống hiển thị ở trước filter và số lượng sản phẩm đang hiển thị khác nhau";
-		else if(quantityBreadcrumb != quantityTotal)
-			actualResult = "Hệ thống hiển thị ở trước filter và breadcrumb khác nhau";
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
 		else
-			actualResult = "Hệ thống hiển thị breadcrumb, ở trước filter và số lượng sản phẩm đang hiển thị khác nhau";
-		
-		result.setAttribute("actualResult", actualResult);
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
 		Assert.assertEquals(quantityBreadcrumb, quantityProducts);
 		Assert.assertEquals(quantityTotal, quantityProducts);
-//		Assert.assertEquals(false, true);
 	}
 	
 	private int getQuantityTotal() {
@@ -354,7 +351,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	}
 
 	private void waitForPageLoad() {
-		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	private WebElement waitForElementClickable(By locator) {

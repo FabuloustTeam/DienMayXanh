@@ -13,15 +13,15 @@ public abstract class AbstractAnnotation extends AbstractPath {
 	@Parameters({ "url" })
 	public void accessWebsite(String url) throws Exception {
 		System.setProperty("webdriver.chrome.silentOutput", "true");
-//		driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.get(url);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
 	}
 
 	@AfterMethod
 	public void closeBrowser() throws Exception {
 		ExcelUtils.saveFile(pathExcel);
-//		driver.close();
+		driver.close();
 	}
 
 	@Parameters({ "SheetName" })

@@ -12,7 +12,7 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
-		String fileName = result.getAttribute("id").toString() + "-" + (result.getName()) + ".png";
+		String fileName = result.getAttribute("testname").toString() + "-" + (result.getName()) + ".png";
 		String file = pathFolderImage + fileName;
 		try {
 			TakeSnapShot.takeSnapShot(file);
