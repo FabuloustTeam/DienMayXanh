@@ -1,40 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testing list product]" guice-stage="DEVELOPMENT">
-  <parameter name="SheetName" value="Test Case"/>
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <listeners>
     <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="test view list products(failed)">
-    <parameter name="testCaseName" value="ViewListProducts"/>
-    <classes>
-      <class name="com.dienmayxanh.test.ViewListProducts">
-        <methods>
-          <include name="testViewWithSortPriceAscending"/>
-          <include name="accessWebsite"/>
-          <include name="setExcel"/>
-          <include name="saveAndCloseExcel"/>
-          <include name="closeBrowser"/>
-          <include name="testQuantity"/>
-        </methods>
-      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
-    </classes>
-  </test> <!-- test view list products(failed) -->
   <test thread-count="5" name="test comment(failed)">
-    <parameter name="testCaseName" value="Comment"/>
+    <parameter name="SheetName" value="Comment"/>
     <classes>
       <class name="com.dienmayxanh.test.Comment">
         <methods>
-          <include name="testOnlySpaceCommentContent"/>
           <include name="accessWebsite"/>
-          <include name="testContentCommentIsLessThan10Characters"/>
-          <include name="testWithoutName"/>
-          <include name="setExcel"/>
-          <include name="beforeMethod"/>
-          <include name="testOnlySpaceName"/>
+          <include name="CommentUnsuccessfullyWithError" invocation-numbers="0"/>
           <include name="saveAndCloseExcel"/>
           <include name="closeBrowser"/>
+          <include name="CommentUnsuccessfullyWithAlert"/>
+          <include name="setExcelBeforeTest"/>
         </methods>
       </class> <!-- com.dienmayxanh.test.Comment -->
     </classes>

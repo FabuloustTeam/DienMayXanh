@@ -84,7 +84,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * @throws Exception 
 	 */
 	@Test (priority = 3)
-	public void testViewWithSortPriceDescending() throws Exception {
+	public void ViewList_SortPriceDescending() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-03", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-VLP-03");
@@ -117,7 +117,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * @throws Exception 
 	 */
 	@Test (priority = 4)
-	public void testViewWithSortPriceAscending() throws Exception {
+	public void ViewList_SortPriceAscending() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-04", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-VLP-04");
@@ -151,7 +151,7 @@ public class ViewListProducts extends AbstractAnnotation {
 	 * @throws Exception 
 	 */
 	@Test (priority = 5)
-	public void testQuantity() throws Exception {
+	public void ViewList_Quantity() throws Exception {
 		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-05", 2);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("id", "TC-DMX-VLP-05");
