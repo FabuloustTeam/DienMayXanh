@@ -1,23 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="sheetName" value="Test Case"/>
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <listeners>
     <listener class-name="IListener.IListenerClass"/>
   </listeners>
   <test thread-count="5" name="choosereceived(failed)">
-    <parameter name="testcaseName" value="ChooseReceivedPlace"/>
+    <parameter name="sheetName" value="ChooseReceivedPlace"/>
     <classes>
       <class name="TestCases.ChooseReceivedPlace">
         <methods>
+          <include name="testFailWithoutChooseWard"/>
           <include name="closeBrowser"/>
           <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
+          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
+          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
+          <include name="defineSheetExcel"/>
+          <include name="testSuccessWithOnlyProvince"/>
           <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="accessWebsite"/>
+          <include name="testSuccessUpdateByClickOnButonChange"/>
         </methods>
       </class> <!-- TestCases.ChooseReceivedPlace -->
     </classes>
   </test> <!-- choosereceived(failed) -->
+  <test thread-count="5" name="viewproduct(failed)">
+    <parameter name="sheetName" value="ViewProductThroughList"/>
+    <classes>
+      <class name="TestCases.ViewProductThroughList">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="saveAndCloseExcel"/>
+          <include name="defineSheetExcel"/>
+          <include name="testSuccessViewProductByList"/>
+          <include name="accessWebsite"/>
+        </methods>
+      </class> <!-- TestCases.ViewProductThroughList -->
+    </classes>
+  </test> <!-- viewproduct(failed) -->
 </suite> <!-- Failed suite [Suite] -->

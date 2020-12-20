@@ -11,6 +11,7 @@
           <include name="saveAndCloseExcel"/>
           <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
           <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
+          <include name="defineSheetExcel"/>
           <include name="testSuccessWithOnlyProvince"/>
           <include name="testMainSFWithFullInfor"/>
           <include name="testSuccessWithoutFillTextboxAddress"/>

@@ -13,32 +13,48 @@ import org.testng.annotations.*;
 
 import AbstractAnnotation.AbstractClass;
 import ActionsForITestListener.ExcelUtils;
+import Enum.Result;
 
 public class ViewProductThroughList extends AbstractClass {
+	public static final int COL_TESTTYPE = 0;
+	public static final int COL_TESTNAME = 1;
+	public static final int COL_CASE = 2;
+	public static final int COL_EXPRESULT = 3;
+	public static final int COL_RESULT = 4;
+	public static final int COL_CATEGORY = 5;
+	public static final int COL_MANUFACTURE = 6;
+	public static final int COL_NAMEPRODUCT = 7;
 
+	public static final int iTestBeginRow = 2;
+	public static int iTestCaseRow, rowData;
+	public static String actual, expected, category, manufacture, product;
 	/**
 	 * Test requirement: TR-DMX-VPBLP-01 Test case: TC-DMX-VPBLP-01
 	 * @throws Exception 
 	 */
 	@Test(groups = { "viewByName" })
 	public void testSuccessViewProductByList() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VPBLP-01", 2);
+		rowData = ExcelUtils.getRowContains("TC-DMX-VPBLP-01", 2);
 		// Step 2 Nhấn chọn loại sản phẩm muốn xem trong danh mục
-		String category = ExcelUtils.getCellData(rowData+1, 7);
+		category = ExcelUtils.getCellData(rowData, COL_CATEGORY);
 		chooseCategory(category);
 		// Step 3 Nhấn chọn vào hãng muốn xem của sản phẩm đó
-		String manufacture = ExcelUtils.getCellData(rowData+2, 7);
+		manufacture = ExcelUtils.getCellData(rowData, COL_MANUFACTURE);
 		chooseManufacture(manufacture);
 		// Step 4 Nhấn chọn vào sản phẩm muốn xem
-		String product = ExcelUtils.getCellData(rowData+3, 7);
+		product = ExcelUtils.getCellData(rowData, COL_NAMEPRODUCT);
 		getProduct(product);
 
 		//compareTitle("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
-		String expectedResult = ExcelUtils.getCellData(rowData+3, 8);
-		String actualResult = compareTitle("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		Assert.assertEquals(actualResult, expectedResult);
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		actual = compareTitle("Máy lọc nước RO hydrogen ion kiềm Kangaroo KG100EO 7 lõi");
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	private void chooseCategory(String category) {

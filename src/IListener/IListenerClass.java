@@ -25,26 +25,26 @@ public class IListenerClass extends AbstractPath implements ITestListener {
 	
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		try {
-			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row  = ExcelUtils.getRowContains(result.getName(), 4);
-			ExcelUtils.setCellData(row, 8, "Passed" );
-			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
-			//System.out.println(result.getAttribute("actualResult").toString());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}		
+//		try {
+//			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+//			int row  = ExcelUtils.getRowContains(result.getName(), 4);
+//			ExcelUtils.setCellData(row, 8, "Passed" );
+//			ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+//			//System.out.println(result.getAttribute("actualResult").toString());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}		
 	}
 	
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		try {
-			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row  = ExcelUtils.getRowContains(result.getName(), 4);
-			ExcelUtils.setCellData(row, 8, "Skipped" );
-		} catch (Exception e) {
-			e.printStackTrace();
-		}		
+//		try {
+//			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
+//			int row  = ExcelUtils.getRowContains(result.getName(), 4);
+//			ExcelUtils.setCellData(row, 8, "Skipped" );
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}		
 	}
 	
 	@Override
@@ -52,19 +52,20 @@ public class IListenerClass extends AbstractPath implements ITestListener {
 		String file =  getScreenShotsFolderPath()+ "screenshot-" + (result.getName()) + ".png";
 		try {
 			TakeSnapShot.takeSnapShot(file);
-			ExcelUtils.setExcelFile(getReportFilePath(), "Detailed status");
-			int row = ExcelUtils.getRowContains(result.getName(), 4);			
+			//ExcelUtils.setExcelFile(getExcelFilePath(), "");
+			int row = ExcelUtils.getRowContains(result.getName(), 1);	
+			ExcelUtils.setCellData(row, 4, "FAILED");
 			
-			if(result.getAttribute("actualResult").toString()!=null) {
-				ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
-				System.out.println(result.getAttribute("actualResult").toString());
-			}
-			
-			ExcelUtils.setCellData(row, 8, "Failed");
-			String[] subsStringFile = file.split("DienMayXanh");
-					
-			String srcImage = "DienMayXanh"+subsStringFile[1];
-			ExcelUtils.setCellData(row, 9, srcImage);
+//			if(result.getAttribute("actualResult").toString()!=null) {
+//				ExcelUtils.setCellData(row, 6, result.getAttribute("actualResult").toString());
+//				System.out.println(result.getAttribute("actualResult").toString());
+//			}
+//			
+
+//			String[] subsStringFile = file.split("DienMayXanh");
+//					
+//			String srcImage = "DienMayXanh"+subsStringFile[1];
+//			ExcelUtils.setCellData(row, 9, srcImage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

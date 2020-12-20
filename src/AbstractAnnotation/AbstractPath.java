@@ -7,11 +7,11 @@ public abstract class AbstractPath {
 		return projPath+"\\screenshots\\";
 	}
 	
-	public static String getTestCasesFolderPath() {
-		return projPath+"\\test script\\";
-	}
-	
-	public static String getReportFilePath() {
-		return projPath+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+//	public static String getTestCasesFolderPath() {
+//		return projPath+"\\test cases\\";
+//	}
+//	
+	public static String getExcelFilePath() {
+		return projPath+"\\DienmayXANH-TestData.xlsx";
 	}
 }

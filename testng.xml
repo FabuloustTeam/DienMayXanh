@@ -3,17 +3,18 @@
 
 <suite name="Suite">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
-	<parameter name="sheetName" value="Test Case" />
+
 	<listeners>
 		<listener class-name="IListener.IListenerClass" />
 	</listeners>
 	<test name="choosereceived">
-		<parameter name="testcaseName" value="ChooseReceivedPlace" />
+		<!-- <parameter name="testcaseName" value="ChooseReceivedPlace" /> -->
+		<parameter name="sheetName" value="ChooseReceivedPlace" />
 		<classes>
 			<class name="TestCases.ChooseReceivedPlace">
-<!-- 				<methods> -->
-<!-- 				<include name="testMainSFWithFullInfor" /> -->
-<!-- 				</methods> -->
+				<!-- <methods> -->
+				<!-- <include name="testMainSFWithFullInfor" /> -->
+				<!-- </methods> -->
 			</class>
 		</classes>
 		<!-- <groups> -->
@@ -25,10 +26,14 @@
 	</test>
 
 	<test name="viewproduct">
-		<parameter name="testcaseName"
-			value="ViewProductByListProduct" />
+		<parameter name="sheetName" value="ViewProductThroughList" />
+		<!-- <classes> -->
+		<!-- <class name="TestCases.ViewProductThroughList"> -->
+		<!-- </class> -->
+		<!-- </classes> -->
 		<classes>
-			<class name="TestCases.ViewProductThroughList" />
+			<class name="TestCases.ViewProductThroughList">
+			</class>
 		</classes>
 
 	</test>

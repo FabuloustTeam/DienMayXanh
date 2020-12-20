@@ -6,6 +6,7 @@ import org.testng.Reporter;
 import org.testng.annotations.*;
 import AbstractAnnotation.*;
 import ActionsForITestListener.*;
+import Enum.*;
 
 import static org.testng.Assert.expectThrows;
 import java.awt.AWTException;
@@ -18,6 +19,19 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
 
 public class ChooseReceivedPlace extends AbstractClass {
+	public static final int COL_TESTTYPE = 0;
+	public static final int COL_TESTNAME = 1;
+	public static final int COL_CASE = 2;
+	public static final int COL_EXPRESULT = 3;
+	public static final int COL_RESULT = 4;
+	public static final int COL_PROVINCE = 5;
+	public static final int COL_DISTRICT = 6;
+	public static final int COL_WARD = 7;
+	public static final int COL_ADDRESS = 8;
+	
+	public static final int iTestBeginRow = 2;
+	public static int iTestCaseRow, rowData;
+	public static String actual, expected, province, district, ward, address, changeAddress, changeProvince;
 
 	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {
@@ -31,29 +45,39 @@ public class ChooseReceivedPlace extends AbstractClass {
 	 */
 	@Test(priority = 1, groups = { "chooseReceivePlaceSuccess" })
 	public void testMainSFWithFullInfor() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-01", 2);
+		
+		rowData = ExcelUtils.getRowContains("testMainSFWithFullInfor", COL_TESTNAME);
 		// step 3 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 2, 7);
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 4 Chọn Phường/Xã
-		String ward = ExcelUtils.getCellData(rowData + 3, 7);
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
 		chooseWard(ward);
 
 		// step 5 Nhập vào textbox "Số nhà, tên đường"
-		String address = ExcelUtils.getCellData(rowData + 4, 7);
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
 		fillAddress(address);
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
-
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
 		
-		String expectedResult = ExcelUtils.getCellData(rowData + 3, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
+
+//		ITestResult result = Reporter.getCurrentTestResult();
+//		result.setAttribute("actualResult", actualResult);
+		
+
+		//Assert.assertEquals(actualResult, expectedResult);
 	}
 
 	/*
@@ -61,20 +85,29 @@ public class ChooseReceivedPlace extends AbstractClass {
 	 */
 	@Test(priority = 2, groups = { "chooseRecivePlaceSuccess" })
 	public void testSuccessWithOnlyProvince() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-02", 2);
+		rowData = ExcelUtils.getRowContains("testSuccessWithOnlyProvince", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
-
+		
 		// step 4 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		
-		String expectedResult = ExcelUtils.getCellData(rowData + 2, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
+//		String actualR = getActualResult();
+//		ITestResult result = Reporter.getCurrentTestResult();
+//		result.setAttribute("actualResult", actualResult);
+//		
+//		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		//Assert.assertEquals(actualResult, expectedResult);
 	}
 
 	/*
@@ -82,29 +115,32 @@ public class ChooseReceivedPlace extends AbstractClass {
 	 */
 	@Test(priority = 3, groups = { "chooseReceivePlaceSuccess" })
 	public void testSuccessWithoutFillTextboxAddress() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-03", 2);
+		rowData = ExcelUtils.getRowContains("testSuccessWithoutFillTextboxAddress", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
 
 		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 3, 7);
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 5 Chọn Phường/Xã
-		String ward = ExcelUtils.getCellData(rowData + 4, 7);
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
 		chooseWard(ward);
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		
-		String expectedResult = ExcelUtils.getCellData(rowData + 4, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/*
@@ -112,14 +148,14 @@ public class ChooseReceivedPlace extends AbstractClass {
 	 */
 	@Test(priority = 4, groups = { "chooseReceivePlaceFail" })
 	public void testFailWithoutChooseWard() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-04", 2);
+		rowData = ExcelUtils.getRowContains("testFailWithoutChooseWard", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
 
 		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 3, 7);
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 5 Không chọn Phường/Xã
@@ -127,12 +163,16 @@ public class ChooseReceivedPlace extends AbstractClass {
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
-		String actualResult = getActualErrorWard();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
 		
-		String expectedResult = ExcelUtils.getCellData(rowData + 4, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualErrorWard();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
@@ -143,9 +183,9 @@ public class ChooseReceivedPlace extends AbstractClass {
 
 	@Test(priority = 5, groups = { "successUpdateReceivePlace" })
 	public void testSuccessUpdateWithOnlyProvinceSubmitBefor() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-05", 2);
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateWithOnlyProvinceSubmitBefor", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
 
 		// step 4 Nhấn Xác nhận
@@ -156,22 +196,25 @@ public class ChooseReceivedPlace extends AbstractClass {
 
 		// step 6 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 5, 7);
+		district = ExcelUtils.getCellData(rowData + 1, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 7 Chọn Phường/Xã
-		String ward = ExcelUtils.getCellData(rowData + 6, 7);
+		String ward = ExcelUtils.getCellData(rowData + 1, COL_WARD);
 		chooseWard(ward);
 
 		// step 8 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		
-		String expectedResult = ExcelUtils.getCellData(rowData + 6, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
@@ -182,22 +225,22 @@ public class ChooseReceivedPlace extends AbstractClass {
 
 	@Test(priority = 6, groups = { "successUpdateReceivePlace" })
 	public void testSuccessUpdateByClickOnButonChange() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-06", 2);
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnButonChange", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
 
 		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 3, 7);
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 5 Chọn Phường/Xã
-		String ward = ExcelUtils.getCellData(rowData + 4, 7);
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
 		chooseWard(ward);
 
 		// step 6 Nhập vào textbox "Số nhà, tên đường"
-		String address = ExcelUtils.getCellData(rowData + 5, 7);
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
 		fillAddress(address);
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
@@ -210,18 +253,21 @@ public class ChooseReceivedPlace extends AbstractClass {
 		clickButtonChangeLc();
 
 		// step 10 Thay đổi số nhà, tên đường
-		String changeAddress = ExcelUtils.getCellData(rowData + 9, 7);
+		changeAddress = ExcelUtils.getCellData(rowData + 1, COL_ADDRESS);
 		changeInforOnTextBox(changeAddress);
 
 		// step 11 sNhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		
-		String expectedResult = ExcelUtils.getCellData(rowData + 9, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
@@ -231,22 +277,22 @@ public class ChooseReceivedPlace extends AbstractClass {
 	 */
 	@Test(priority = 7, groups = { "successUpdateReceivePlace" })
 	public void testSuccessUpdateByClickOnDropBoxProvince() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-CNNH-07", 2);
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnDropBoxProvince", COL_TESTNAME);
 		// step 3 Chọn tỉnh thành
-		String province = ExcelUtils.getCellData(rowData + 2, 7);
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
 		chooseProvince(province);
 
 		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		String district = ExcelUtils.getCellData(rowData + 3, 7);
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
 		chooseDistrict(district);
 
 		// step 5 Chọn Phường/Xã
-		String ward = ExcelUtils.getCellData(rowData + 4, 7);
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
 		chooseWard(ward);
 
 		// step 6 Nhập vào textbox "Số nhà, tên đường"
-		String address = ExcelUtils.getCellData(rowData + 5, 7);
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
 		fillAddress(address);
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
@@ -256,18 +302,21 @@ public class ChooseReceivedPlace extends AbstractClass {
 		chooseProvinceBox();
 
 		// step 9 Nhấn chọn tình thành khác ở dropdown list tỉnh thành
-		String changeProvince = ExcelUtils.getCellData(rowData + 8, 7);
+		changeProvince = ExcelUtils.getCellData(rowData+1, COL_PROVINCE);
 		chooseProvince(changeProvince);
 
 		// step 10 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		String actualResult = getActualResult();
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("actualResult", actualResult);
-		
-		String expectedResult = ExcelUtils.getCellData(rowData + 7, 9);
-		Assert.assertEquals(actualResult, expectedResult);
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	private void chooseProvinceBox() {
@@ -296,7 +345,7 @@ public class ChooseReceivedPlace extends AbstractClass {
 	private void chooseProvince(String province) throws InterruptedException {
 		WebElement setProvince = waitForElementVisible(By.id("location_listPro"));
 		setProvince.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		WebElement divContainsUl = waitForElementVisible(By.xpath("//div[@class='flex']//ul"));
 		List<WebElement> lis = divContainsUl.findElements(By.tagName("li"));
 		for (int i = 0; i < lis.size(); i++) {
@@ -355,6 +404,7 @@ public class ChooseReceivedPlace extends AbstractClass {
 
 	private String getActualResult() throws InterruptedException {
 		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(1000);
 		String actualResult = (waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"))).getText();
 		return actualResult;
 	}

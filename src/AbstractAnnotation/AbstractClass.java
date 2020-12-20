@@ -8,14 +8,17 @@ import TestCases.*;
 
 public abstract class AbstractClass extends AbstractPath {
 	public static WebDriver driver;
-	//String actualResult = (driver.findElement(By.xpath("//div[@class='provinces-box']//child::span"))).getText();
+	public static String ExcelSheetName;
 
-	@BeforeMethod
-	@Parameters({"url", "testcaseName", "sheetName"})
-	public void accessWebsite(String url, String testcaseName, String sheetName) throws Exception {
-		String path = getTestCasesFolderPath() + testcaseName + ".xlsx";
-		ExcelUtils.setExcelFile(path, sheetName);
+	@BeforeClass
+	@Parameters({"sheetName"})
+	public void defineSheetExcel(String sheetName) throws Exception {
+		ExcelUtils.setExcelFile(getExcelFilePath(), sheetName);
+	}
 	
+	@BeforeMethod
+	@Parameters({"url"})
+	public void accessWebsite(String url) throws Exception {
 		System.setProperty("webdriver.chrome.silentOutput", "true");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -24,7 +27,7 @@ public abstract class AbstractClass extends AbstractPath {
 
 	@AfterMethod
 	public void closeBrowser() throws Exception {
-		ExcelUtils.saveFile(getReportFilePath());
+		ExcelUtils.saveFile(getExcelFilePath());
 		driver.close();
 	}
 //	@AfterSuite
@@ -34,6 +37,6 @@ public abstract class AbstractClass extends AbstractPath {
 //	}
 	@AfterClass
 	public void saveAndCloseExcel() throws Exception {
-		ExcelUtils.closeandsaveFile(getReportFilePath());
+		ExcelUtils.closeandsaveFile(getExcelFilePath());
 	}
 }
