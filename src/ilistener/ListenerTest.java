@@ -17,6 +17,10 @@ import BaseClass.ExcelUtils;
 
 
 public class ListenerTest implements ITestListener {
+	private final String PASSED = "PASSED";
+	private final String FAILED = "FAILED";
+	private final String SKIPPED = "SKIPPED";
+	private final int COL_RESULT = 4;
 
 	    @Override		
 	    public void onTestFailure(ITestResult Result) {	
@@ -26,11 +30,11 @@ public class ListenerTest implements ITestListener {
 	    	
 	    	try {
 	    		takeSnapShot(file);
-	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Detailed status");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
-	    		ExcelUtils.setCellData(row, 8, "Failed");
-	    		ExcelUtils.closeandsaveFile(path);
+//	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+//	    		ExcelUtils.setExcelFile(path, "Detailed status");
+//	    		int row = ExcelUtils.getRowContains(Result.getName(), 1);
+//	    		ExcelUtils.setCellData(row, COL_RESULT, FAILED);
+//	    		ExcelUtils.closeandsaveFile(path);
 	    	} catch (Exception e) {
 	    		e.printStackTrace();
 	    	}
@@ -39,31 +43,31 @@ public class ListenerTest implements ITestListener {
 	    @Override		
 	    public void onTestSkipped(ITestResult Result) {					
 	        // TODO Auto-generated method stub				
-	    	try {
-	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Detailed status");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
-	    		ExcelUtils.setCellData(row, 8, "Skipped");
-	    		ExcelUtils.closeandsaveFile(path);
-	    	} catch (Exception e) {
-	    		e.printStackTrace();
-	    	}	
+//	    	try {
+//	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+//	    		ExcelUtils.setExcelFile(path, "Detailed status");
+//	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
+//	    		ExcelUtils.setCellData(row, 8, "Skipped");
+//	    		ExcelUtils.closeandsaveFile(path);
+//	    	} catch (Exception e) {
+//	    		e.printStackTrace();
+//	    	}	
 	    }		
 
 
 	    @Override		
 	    public void onTestSuccess(ITestResult Result) {					
 	        // TODO Auto-generated method stub		
-	    	try {
-	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
-	    		ExcelUtils.setExcelFile(path, "Detailed status");
-	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
-	    		ExcelUtils.setCellData(row, 8, "Success");
-	    		ExcelUtils.setCellData(row, 6, Result.getAttribute("error").toString());
-	    		ExcelUtils.closeandsaveFile(path);
-	    	} catch (Exception e) {
-	    		e.printStackTrace();
-	    	}
+//	    	try {
+//	    		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+//	    		ExcelUtils.setExcelFile(path, "Detailed status");
+//	    		int row = ExcelUtils.getRowContains(Result.getName(), 4);
+//	    		ExcelUtils.setCellData(row, 8, "Success");
+//	    		ExcelUtils.setCellData(row, 6, Result.getAttribute("error").toString());
+//	    		ExcelUtils.closeandsaveFile(path);
+//	    	} catch (Exception e) {
+//	    		e.printStackTrace();
+//	    	}
 	        		
 	    }	
 	    

@@ -19,12 +19,12 @@ public abstract class abstractLogin {
 		System.setProperty("webdriver.chrome.driver", driverPath);
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\test cases\\"+"DienmayXANH-LogIn.xlsx", "Test case");
+		ExcelUtils.setExcelFile(System.getProperty("user.dir")+"\\DienmayXANH-TestData.xlsx", "LogIn");
 	}
 	
 	@AfterMethod
 	public void closeBrowser() throws Exception {
-		String path = System.getProperty("user.dir")+"\\DienmayXANH-FunctionalTestExecution.xlsx";
+		String path = System.getProperty("user.dir")+"\\DienmayXANH-TestData.xlsx";
 		ExcelUtils.saveFile(path);
 		driver.close();
 	}

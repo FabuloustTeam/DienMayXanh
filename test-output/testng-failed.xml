@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="login(failed)">
     <classes>
-      <class name="testcase.LogIn">
+      <class name="testcase.Link">
         <methods>
-          <include name="testEnterSpace"/>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
+          <include name="testLinkfb"/>
         </methods>
-      </class> <!-- testcase.LogIn -->
+      </class> <!-- testcase.Link -->
     </classes>
   </test> <!-- login(failed) -->
 </suite> <!-- Failed suite [test login] -->

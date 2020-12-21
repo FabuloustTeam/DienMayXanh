@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-15T19:20:08 ICT" name="test login" finished-at="2020-12-15T19:20:16 ICT" duration-ms="7506">
+  <suite started-at="2020-12-21T14:04:32 ICT" name="test login" finished-at="2020-12-21T14:04:59 ICT" duration-ms="27073">
     <groups>
     </groups>
-    <test started-at="2020-12-15T19:20:08 ICT" name="login" finished-at="2020-12-15T19:20:16 ICT" duration-ms="7506">
-      <class name="testcase.LogIn">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.LogIn@1f0f1111]" started-at="2020-12-15T19:20:08 ICT" name="launchBrowser" finished-at="2020-12-15T19:20:13 ICT" duration-ms="5109" status="PASS">
+    <test started-at="2020-12-21T14:04:32 ICT" name="link" finished-at="2020-12-21T14:04:59 ICT" duration-ms="27073">
+      <class name="testcase.Link">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:32 ICT" name="launchBrowser" finished-at="2020-12-21T14:04:39 ICT" duration-ms="7016" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="testPhoneNumberWithSpecialCharacters()[pri:2, instance:testcase.LogIn@1f0f1111]" started-at="2020-12-15T19:20:13 ICT" name="testPhoneNumberWithSpecialCharacters" finished-at="2020-12-15T19:20:15 ICT" duration-ms="1762" status="PASS">
+        <test-method signature="testLink()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:39 ICT" name="testLink" finished-at="2020-12-21T14:04:58 ICT" duration-ms="19289" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testPhoneNumberWithSpecialCharacters -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.LogIn@1f0f1111]" started-at="2020-12-15T19:20:16 ICT" name="closeBrowser" finished-at="2020-12-15T19:20:16 ICT" duration-ms="157" status="PASS">
+        </test-method> <!-- testLink -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:58 ICT" name="closeBrowser" finished-at="2020-12-21T14:04:59 ICT" duration-ms="696" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testcase.LogIn -->
-    </test> <!-- login -->
+      </class> <!-- testcase.Link -->
+    </test> <!-- link -->
   </suite> <!-- test login -->
 </testng-results>
