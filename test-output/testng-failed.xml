@@ -6,12 +6,15 @@
     <listener class-name="Listeners.IListeners"/>
   </listeners>
   <test thread-count="5" name="play(failed)">
+    <parameter name="SheetName" value="Contact"/>
     <classes>
       <class name="Contact">
         <methods>
+          <include name="testContact" invocation-numbers="0"/>
           <include name="accessWebsite"/>
-          <include name="testWrongNumberPhone"/>
           <include name="closeBrowser"/>
+          <include name="closeAndSaveExcel"/>
+          <include name="setExcelFile"/>
         </methods>
       </class> <!-- Contact -->
     </classes>

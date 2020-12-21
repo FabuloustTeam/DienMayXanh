@@ -30,8 +30,8 @@ public class ViewListProducts extends AbstractBOT {
 	 * @throws Exception 
 	 */
 	@Test(priority = 1)
-	public void testShowAllProduct() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-01", 2);
+	public void ViewList_ShowAll() throws Exception {
+		int rowData = ExcelUtils.getRowContains("ViewList_ShowAll", 1);
 		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
@@ -55,8 +55,8 @@ public class ViewListProducts extends AbstractBOT {
 	 * @throws Exception 
 	 */
 	@Test(priority = 2)
-	private void testShowAllProductOfBrand() throws Exception {
-		int rowData = ExcelUtils.getRowContains("TC-DMX-VLP-02", 2);
+	private void ViewList_ShowAllProductOfBrand() throws Exception {
+		int rowData = ExcelUtils.getRowContains("ViewList_ShowAllProductOfBrand", 1);
 		
 		WebElement locnuoc = driver.findElement(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();

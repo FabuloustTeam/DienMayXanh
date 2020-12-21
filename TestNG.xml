@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name = "Demo" >
+<suite name="Demo">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
 	<listeners>
-	<listener class-name="Listeners.IListeners"/>
-	 </listeners>
-   	<test name = "play">
-      <classes>
-         <class name = "ViewListProducts"/>
-      </classes>
-   </test>
+		<listener class-name="Listeners.IListeners" />
+	</listeners>
+	<test name="play">
+		<parameter name="SheetName" value="Contact" />
+		<classes>
+			<class name="Contact" />
+			<!-- </class> -->
+		</classes>
+	</test>
 </suite> 
 
