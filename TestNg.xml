@@ -4,19 +4,15 @@
 	<listeners>
 		<listener class-name="ilistener.ListenerTest"></listener>
 	</listeners>
-<!-- 	<test name="login"> -->
-<!-- 		<classes> -->
-<!-- 			<class name="testcase.LogIn"> -->
-<!-- 			</class> -->
-
-<!-- 		</classes> -->
-<!-- 	</test> -->
+ 	<test name="login"> 
+ 		<classes> 
+		<class name="testcase.LogIn"> 
+ 		</class>
+		</classes>
+ 	</test> 
 	<test name="link">
 		<classes>
 			<class name="testcase.Link">
-			<methods>
-			<include name="testLink"/>
-			</methods>
 			</class>
 		</classes>
 	</test>
