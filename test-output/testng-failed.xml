@@ -14,29 +14,10 @@
           <include name="closeBrowser"/>
           <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
-          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
-          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
           <include name="defineSheetExcel"/>
-          <include name="testSuccessWithOnlyProvince"/>
-          <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="accessWebsite"/>
-          <include name="testSuccessUpdateByClickOnButonChange"/>
         </methods>
       </class> <!-- TestCases.ChooseReceivedPlace -->
     </classes>
   </test> <!-- choosereceived(failed) -->
-  <test thread-count="5" name="viewproduct(failed)">
-    <parameter name="sheetName" value="ViewProductThroughList"/>
-    <classes>
-      <class name="TestCases.ViewProductThroughList">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="saveAndCloseExcel"/>
-          <include name="defineSheetExcel"/>
-          <include name="testSuccessViewProductByList"/>
-          <include name="accessWebsite"/>
-        </methods>
-      </class> <!-- TestCases.ViewProductThroughList -->
-    </classes>
-  </test> <!-- viewproduct(failed) -->
 </suite> <!-- Failed suite [Suite] -->

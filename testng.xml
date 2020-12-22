@@ -25,16 +25,12 @@
 
 	</test>
 
-	<test name="viewproduct">
-		<parameter name="sheetName" value="ViewProductThroughList" />
-		<!-- <classes> -->
-		<!-- <class name="TestCases.ViewProductThroughList"> -->
-		<!-- </class> -->
-		<!-- </classes> -->
-		<classes>
-			<class name="TestCases.ViewProductThroughList">
-			</class>
-		</classes>
+<!-- 	<test name="viewproduct"> -->
+<!-- 		<parameter name="sheetName" value="ViewProductThroughList" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="TestCases.ViewProductThroughList"> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
 
-	</test>
+<!-- 	</test> -->
 </suite>
