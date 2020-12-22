@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testRunBrowser]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.dienmayxanh.com/"/>
+  <listeners>
+    <listener class-name="Listeners.IListeners"/>
+  </listeners>
+  <test thread-count="5" name="viewlistproduct(failed)">
+    <classes>
+      <class name="Contact">
+        <methods>
+          <include name="accessWebsite"/>
+          <include name="testDoNotChooseGentle"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- Contact -->
+    </classes>
+  </test> <!-- viewlistproduct(failed) -->
+</suite> <!-- Failed suite [testRunBrowser] -->
