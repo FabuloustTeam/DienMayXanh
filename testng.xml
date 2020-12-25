@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="testing list product">
+<suite name="testing">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
-	<listeners>
-		<listener class-name="com.dienmayxanh.listener.ListenerTest" />
-	</listeners>
+	<!-- <listeners> -->
+	<!-- <listener class-name="com.dienmayxanh.listener.ListenerTest" /> -->
+	<!-- </listeners> -->
 	<test name="test view list products">
 		<parameter name="SheetName" value="ViewListProducts" />
 		<classes>
@@ -24,4 +24,18 @@
 			<class name="com.dienmayxanh.test.Comment" />
 		</classes>
 	</test>
+
+<!-- 	<test name=""> -->
+<!-- 		<parameter name="SheetName" value="ChooseReceivedPlace" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dienmayxanh.test.ChooseReceivedPlace" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+
+<!-- 	<test name=""> -->
+<!-- 		<parameter name="SheetName" value="" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dienmayxanh.test." /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 </suite>

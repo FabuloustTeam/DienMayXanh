@@ -10,156 +10,59 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import com.dienmayxanh.service.*;
 
-import com.dienmayxanh.abstractclass.AbstractAnnotation;
+import com.dienmayxanh.abstractclass.*;
 
 public class Link extends AbstractAnnotation {
-
-	/**
-	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-01
-	 */
-	@Test (priority=1)
-	public void LinkFacebook() {
-		// Cuộn xuống cuối trang
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn ch�?n liên kết trang Facebook.
-		waitForElementClickable(By.xpath("//*[(@class='linkfb')]")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
-				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "�?iện máy XANH (dienmayxanh.com) - Trang chủ | Facebook";
-				String actualTitle = driver.getTitle();
-				Assert.assertEquals(actualTitle, expectedTitle);
-
-				driver.close();
-			}
-		}
-		driver.switchTo().window(MainWindow);
-	}
-//	
-	/**
-	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-02
-	 */
-	@Test (priority=2)
-	public void LinkYoutube() {
-		// Cuộn xuống cuối trang
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn ch�?n liên kết trang YouTube.
-		waitForElementClickable(By.xpath("//*[(@class='linkyt')]")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
-				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "�?iện máy XANH - YouTube";
-				String actualTitle = driver.getTitle();
-				Assert.assertEquals(actualTitle, expectedTitle);
-
-				driver.close();
-			}
-		}
-		driver.switchTo().window(MainWindow);
-	}
+	public static final int COL_TESTTYPE = 0;
+	public static final int COL_TESTNAME = 1;
+	public static final int COL_CASE = 2;
+	public static final int COL_EXPRESULT = 3;
+	public static final int COL_RESULT = 4;
+	public static final int COL_LINK=5;
 	
-	/**
-	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-03
-	 */
-	@Test (priority=3)
-	public void LinkMaiAm() {
-		// Cuộn xuống cuối trang
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn ch�?n liên kết trang Mái Ấm.
-		waitForElementClickable(By.xpath("//*[(@class='icondmx-logomaiam')]")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
 
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+	public static final int iTestBeginRow = 2;
+	public static int iTestCaseRow, rowData;
+	public String linkInput;
 
-				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Trang chủ - Mái Ấm TGDD";
-				String actualTitle = driver.getTitle();
-				Assert.assertEquals(actualTitle, expectedTitle);
+	
+	@Test
+	public void testLink() throws Exception {
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = iTestBeginRow; i<iTestCaseRow; i++) {
+			if (ExcelUtils.getCellData(i, COL_TESTNAME).equals("testLink")
+					&& ExcelUtils.getCellData(i, COL_CASE).equals("SUCCESSFULLY")) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+				// Nhấn chọn liên kết trang Facebook.
+				waitForElementClickable(By.xpath("//li//a[@href='"+ExcelUtils.getCellData(i, COL_LINK)+"']")).click();
+				String MainWindow = driver.getWindowHandle();
+				Set<String> s1 = driver.getWindowHandles();
+				Iterator<String> i1 = s1.iterator();
+				while (i1.hasNext()) {
+					String ChildWindow = i1.next();
 
-				driver.close();
+					if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+
+						driver.switchTo().window(ChildWindow);
+						String expected = ExcelUtils.getCellData(i, COL_EXPRESULT);
+						String actual = driver.getTitle();
+						Assert.assertEquals(actual, expected);
+
+						if (actual.equals(expected)) {
+							ExcelUtils.setCellData(i, COL_RESULT, "PASSED");
+						} else {
+							ExcelUtils.setCellData(i, COL_RESULT, "FAILED");
+						}
+						driver.close();
+					}
+				}
+				driver.switchTo().window(MainWindow);
 			}
 		}
-		driver.switchTo().window(MainWindow);
 	}
-	
-	/**
-	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-04
-	 */
-	@Test (priority=4)
-	public void LinkTgdd() {
-		// Cuộn xuống cuối trang
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn ch�?n liên kết trang thegioididong.
-		waitForElementClickable(By.xpath("//*[(@class='icondmx-logotgdd')]")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
-				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Thegioididong.com - �?iện thoại, Laptop, Phụ kiện, �?ồng hồ chính hãng";
-				String actualTitle = driver.getTitle();
-				Assert.assertEquals(actualTitle, expectedTitle);
-
-				driver.close();
-			}
-		}
-		driver.switchTo().window(MainWindow);
-	}
-	
-	/**
-	 * Test Requirement: TR-DMX-Link-01. TestCaseID: TC-DMX-Link-05
-	 */
-	@Test (priority=5)
-	public void LinkBachhoaXanh() {
-		// Cuộn xuống cuối trang
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		// Nhấn ch�?n liên kết trang Bách hóa XANH.
-		waitForElementClickable(By.xpath("//*[(@class='icondmx-logobhx')]")).click();
-		String MainWindow = driver.getWindowHandle();
-		Set<String> s1 = driver.getWindowHandles();
-		Iterator<String> i1 = s1.iterator();
-		while (i1.hasNext()) {
-			String ChildWindow = i1.next();
-
-			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
-
-				driver.switchTo().window(ChildWindow);
-				String expectedTitle = "Siêu thị Bách hoá XANH - Mua bán thực phẩm, sản phẩm gia đình";
-				String actualTitle = driver.getTitle();
-				Assert.assertEquals(actualTitle, expectedTitle);
-
-				driver.close();
-			}
-		}
-		driver.switchTo().window(MainWindow);
-	}
-	
 	private WebElement waitForElementClickable(By locator) {
 		// TODO Auto-generated method stub
 		WebDriverWait wait = new WebDriverWait(this.driver, 10);

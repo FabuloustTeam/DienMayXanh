@@ -18,7 +18,10 @@ import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
+import com.dienmayxanh.service.Element;
 import com.dienmayxanh.service.ExcelUtils;
+import com.dienmayxanh.page.*;
 
 public class ViewListProducts extends AbstractAnnotation {
 	
@@ -37,6 +40,8 @@ public class ViewListProducts extends AbstractAnnotation {
 	private String category = "";
 	private String sortType = "";
 	private boolean actual;
+	private ViewListProductsPage objViewListProducts;
+	private Element elementService;
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
@@ -44,16 +49,19 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test(priority = 1)
 	@Parameters({ "url" })
 	public void testShowAllProduct(String url) {
+		objViewListProducts = new ViewListProductsPage();
+		elementService = new Element();
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
 		
 		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
-		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
+		WebElement locnuoc = elementService.waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 
 		boolean isAllProductTrueName = true;
-		List<WebElement> products = getAllProducts();
+		List<WebElement> products = objViewListProducts.getAllProducts();
 		for (int i = 0; i < products.size(); i ++) {
 			WebElement spanName = products.get(i).findElement(By.xpath("//div[@class='prdName']//span"));
 			if(!spanName.getText().toLowerCase().contains("máy l�?c nước")) {
@@ -70,11 +78,14 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test(priority = 2)
 	@Parameters({ "url" })
 	private void testShowAllProductOfBrand(String url) {
+		objViewListProducts = new ViewListProductsPage();
+		elementService = new Element();
+		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);
 		
-		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
+		WebElement locnuoc = elementService.waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
 		locnuoc.click();
 		// 3. Chọn hãng
 		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
@@ -90,10 +101,10 @@ public class ViewListProducts extends AbstractAnnotation {
 				break;
 			}
 		}
-		waitForPageLoad();
+		elementService.waitForPageLoad();
 		
 		boolean isOnlyBrandProducts = true;
-		List<WebElement> allProducts = getAllProducts();
+		List<WebElement> allProducts = objViewListProducts.getAllProducts();
 		for (int i = 0; i < allProducts.size(); i++) {
 			WebElement spanName = allProducts.get(i).findElement(By.xpath("//div[@class='prdName']//span"));
 			if(!spanName.getText().toLowerCase().contains("kangaroo")) {
@@ -112,6 +123,9 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test (priority = 3)
 	@Parameters({ "url" })
 	public void ViewList_SortPrice(String url) throws Exception {
+		objViewListProducts = new ViewListProductsPage();
+		elementService = new Element();
+		
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for(int i = START_ROW; i <= iTestCaseRow; i++) {
 			caseValue = ExcelUtils.getCellData(i, COL_CASE);
@@ -122,25 +136,25 @@ public class ViewListProducts extends AbstractAnnotation {
 				
 				// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 				String category = ExcelUtils.getCellData(i, COL_INPUT_CATEGORY);
-				chooseCategory(category);
+				objViewListProducts.chooseCategory(category);
 
-				waitForPageLoad();
+				elementService.waitForPageLoad();
 				
 				// 3. Chọn sắp xếp
 				sortType = ExcelUtils.getCellData(i, COL_INPUT_SORTTYPE);
-				chooseSort(sortType);
+				objViewListProducts.chooseSort(sortType);
 				
-				WebElement[][] dataTable = getTable();
+				WebElement[][] dataTable = objViewListProducts.getTable();
 				
 				if(sortType.equals("Giá cao đến thấp")) {
-					actual = checkDescending(dataTable);
+					actual = objViewListProducts.checkDescending(dataTable);
 					if(actual) {
 						ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
 					} else {
 						ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 					}
 				} else {
-					boolean actual = checkAscending(dataTable);
+					boolean actual = objViewListProducts.checkAscending(dataTable);
 					if(actual) {
 						ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
 					} else {
@@ -159,19 +173,22 @@ public class ViewListProducts extends AbstractAnnotation {
 	@Test (priority = 5)
 	@Parameters({ "url" })
 	public void ViewList_Quantity(String url) throws Exception {
+		objViewListProducts = new ViewListProductsPage();
+		elementService = new Element();
+		
 		int rowData = ExcelUtils.getRowContains("ViewList_Quantity", COL_TESTNAME);
 		ITestResult result = Reporter.getCurrentTestResult();
 		result.setAttribute("testname", "ViewList_Quantity");
 		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
 		category = ExcelUtils.getCellData(rowData, COL_INPUT_CATEGORY);
-		chooseCategory(category);
+		objViewListProducts.chooseCategory(category);
 		
-		waitForProductsLoad();
-		waitForPageLoad();
-		int quantityBreadcrumb = getQuantityBreadcrumb();
-		int quantityProducts = getQuantityProducts();
-		int quantityTotal = getQuantityTotal();
+		objViewListProducts.waitForProductsLoad();
+		elementService.waitForPageLoad();
+		int quantityBreadcrumb = objViewListProducts.getQuantityBreadcrumb();
+		int quantityProducts = objViewListProducts.getQuantityProducts();
+		int quantityTotal = objViewListProducts.getQuantityTotal();
 		if(quantityBreadcrumb == quantityProducts && quantityBreadcrumb == quantityTotal)
 			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
 		else
@@ -180,193 +197,5 @@ public class ViewListProducts extends AbstractAnnotation {
 		Assert.assertEquals(quantityTotal, quantityProducts);
 	}
 	
-	private int getQuantityTotal() {
-		WebElement total = waitForElementVisibility(By.xpath("//div[contains(@class,'totalfilter')]//child::span"));
-		return Integer.parseInt(total.getText().trim());
-	}
-
-	private int getQuantityProducts() {
-		int quantityProducts = 0;
-		WebElement[][] dataTable = getTable();
-		for (int i = 0; i < dataTable.length; i++) {
-			for (int j = 0; j < dataTable[i].length; j++) {
-				if(dataTable[i][j] != null)
-					quantityProducts++;
-			}
-		}
-		return quantityProducts;
-	}
-
-	private int getQuantityBreadcrumb() {
-		WebElement quantityBreadcrumb = waitForElementVisibility(By.id("breadcrumb_total"));
-		return Integer.parseInt(quantityBreadcrumb.getText().trim());
-	}
-
-	private boolean checkAscending(WebElement[][] dataTable) {
-		int minPrice = getPrice(dataTable[0][0]);
-		for (int i = 0; i < dataTable.length; i++) {
-			for (int j = 0; j < dataTable[i].length; j++) {
-				if (dataTable[i][j] != null) {
-					int tempPrice = getPrice(dataTable[i][j]);
-					if (minPrice > tempPrice)
-						return false;
-					else
-						minPrice = tempPrice;
-				}
-			}
-		}
-		return true;
-	}
-
-	private boolean checkDescending(WebElement[][] dataTable) {
-		int maxPrice = getPrice(dataTable[0][0]);
-		for (int i = 0; i < dataTable.length; i++) {
-			for (int j = 0; j < dataTable[i].length; j++) {
-				if (dataTable[i][j] != null) {
-					int tempPrice = getPrice(dataTable[i][j]);
-					if (maxPrice < tempPrice)
-						return false;
-					else
-						maxPrice = tempPrice;
-				}
-			}
-		}
-		return true;
-	}
-
-	private int getPrice(WebElement cellTable) {
-		List<WebElement> prices = cellTable.findElements(By.tagName("strong"));
-		WebElement price;
-		if (prices.size() > 1) {
-			price = prices.get(prices.size() - 1);
-		} else {
-			price = prices.get(0);
-		}
-		String priceValue = price.getText().replace("₫", "").replace(".", "");
-		return Integer.parseInt(priceValue);
-	}
-
-	private WebElement[][] getTable() {
-		WebElement table = waitForElementVisibility(By.id("product-list"));
-		List<WebElement> allProducts = table.findElements(By.xpath("//div[contains(@class,'prdItem')]"));
-		WebElement[][] dataTable = new WebElement[(allProducts.size() / 4) + 1][4];
-		int countRow = 0;
-		int countCol = 0;
-		for (int i = 0; i < allProducts.size(); i++) {
-			if (countRow < 4) {
-				dataTable[countCol][countRow] = allProducts.get(i);
-				countRow++;
-			} else {
-				countCol++;
-				countRow = 0;
-				dataTable[countCol][countRow] = allProducts.get(i);
-				countRow++;
-			}
-		}
-		return dataTable;
-	}
-	
-	private List<WebElement> getAllProducts() {
-		WebElement table = waitForElementVisibility(By.id("product-list"));
-		List<WebElement> allProducts = table.findElements(By.xpath("//div[contains(@class,'prdItem')]"));
-		WebElement[][] dataTable = new WebElement[(allProducts.size() / 4) + 1][4];
-		int countRow = 0;
-		int countCol = 0;
-		for (int i = 0; i < allProducts.size(); i++) {
-			if (countRow < 4) {
-				dataTable[countCol][countRow] = allProducts.get(i);
-				countRow++;
-			} else {
-				countCol++;
-				countRow = 0;
-				dataTable[countCol][countRow] = allProducts.get(i);
-				countRow++;
-			}
-		}
-		return allProducts;
-	}
-
-	private void chooseSort(String sortType) {
-		WebElement orderType = waitForElementVisibility(By.xpath("//div[@class='ordertype twonum']"));
-		List<WebElement> orderTypes = orderType.findElements(By.tagName("a"));
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		for (int i = 0; i < orderTypes.size(); i++) {
-			wait.until(ExpectedConditions.elementToBeClickable(orderTypes.get(i)));
-			if(orderTypes.get(i).getText().trim().equalsIgnoreCase(sortType.toLowerCase())) {
-				orderTypes.get(i).click();
-				int centerWidth = orderTypes.get(i).getSize().getWidth()/2;
-				int centerHeight = orderTypes.get(i).getSize().getHeight()/2;
-				Actions builder = new Actions(driver);
-				builder.moveToElement(orderTypes.get(i), centerWidth, centerHeight).click().build().perform();
-				break;
-			}
-		}
-		
-		waitForPageLoad();
-//		WebElement sortPriceDescending = waitForElementClickable(
-//				By.xpath("//div[@class='ordertype twonum']//child::a[@data-text='"+sortType+"']"));
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-//		sortPriceDescending.click();
-
-		waitForElementInvisible(By.id("dlding"));
-
-		waitForProductsLoad();
-	}
-
-	private void waitForProductsLoad() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		while (true) {
-			try {
-				WebElement loadMore = waitForElementClickable(By.xpath("//a[@class='viewmore']"));
-				js.executeScript("arguments[0].scrollIntoView();", loadMore);
-				js.executeScript("window.scrollBy(0,-130)");
-				loadMore.click();
-				waitForElementInvisible(By.id("dlding"));
-			} catch (Exception e) {
-				System.out.println(e.toString());
-				break;
-			}
-		}
-	}
-
-	private void chooseCategory(String category) {
-		WebElement uListCategories = waitForElementClickable(By.xpath("//span[@id='dmsp']//following::nav//child::ul"));
-		List<WebElement> liCategories = uListCategories.findElements(By.tagName("li"));
-		chooseCategory: {
-			for (int i = 0; i < liCategories.size(); i++) {
-				List<WebElement> categories = liCategories.get(i).findElements(By.tagName("a"));
-				for (int j = 0; j < categories.size(); j++) {
-					if (categories.get(j).getText().contentEquals(category)) {
-						categories.get(j).click();
-						break chooseCategory;
-					}
-				}
-			}
-		}
-	}
-
-	private void waitForPageLoad() {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}
-
-	private WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-	}
-
-	private void waitForElementInvisible(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-	}
-
-	private WebElement waitForElementVisibility(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-	}
 
 }

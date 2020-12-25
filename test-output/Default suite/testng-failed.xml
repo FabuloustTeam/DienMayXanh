@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dienmayxanh.testcases.ViewListProducts">
+      <class name="com.dienmayxanh.test.Comment">
         <methods>
           <include name="accessWebsite"/>
-          <include name="testViewWithSortPriceDescending"/>
-          <include name="testQuantity"/>
-          <include name="ShowAllProductOfBrand"/>
-          <include name="testViewWithSortPriceAscending"/>
+          <include name="CommentUnsuccessfullyWithError"/>
+          <include name="saveAndCloseExcel"/>
           <include name="closeBrowser"/>
-          <include name="ShowAllProduct"/>
+          <include name="CommentUnsuccessfullyWithAlert"/>
+          <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.testcases.ViewListProducts -->
+      </class> <!-- com.dienmayxanh.test.Comment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

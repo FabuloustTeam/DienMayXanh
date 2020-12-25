@@ -2,7 +2,9 @@ package com.dienmayxanh.test;
 
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.testng.annotations.Test;
+import com.dienmayxanh.abstractclass.*;
+import com.dienmayxanh.service.*;
+import com.dienmayxanh.Enum.*;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -11,15 +13,26 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import com.dienmayxanh.abstractclass.*;
+import org.openqa.selenium.support.ui.*;
 
-public class ChooseReceivedPlace extends AbstractAnnotation{
+public class ChooseReceivedPlace extends AbstractAnnotation {
+	public static final int COL_TESTTYPE = 0;
+	public static final int COL_TESTNAME = 1;
+	public static final int COL_CASE = 2;
+	public static final int COL_EXPRESULT = 3;
+	public static final int COL_RESULT = 4;
+	public static final int COL_PROVINCE = 5;
+	public static final int COL_DISTRICT = 6;
+	public static final int COL_WARD = 7;
+	public static final int COL_ADDRESS = 8;
+	
+	public static final int iTestBeginRow = 2;
+	public static int iTestCaseRow, rowData;
+	public static String actual, expected, province, district, ward, address, changeAddress, changeProvince;
 
 	@BeforeMethod
 	public void beforeMethod() throws InterruptedException {
-		// step 2 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 		WebElement provincesBox = waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"));
 		provincesBox.click();
 	}
@@ -27,177 +40,270 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-01
 	 */
-	@Test(priority = 1, groups={"chooseReceivePlaceSuccess"})
-	public void mainSFWithFullInfor() throws InterruptedException {
-		//chooseProvince("Hồ Chí Minh");
-		// step 3 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
+	@Test(priority = 1, groups = { "chooseReceivePlaceSuccess" })
+	public void testMainSFWithFullInfor() throws Exception {
+		
+		rowData = ExcelUtils.getRowContains("testMainSFWithFullInfor", COL_TESTNAME);
+		// step 3 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		chooseDistrict("Quận Gò Vấp");
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
+		chooseDistrict(district);
 
-		// step 4 Ch�?n Phư�?ng/Xã
-		chooseWard("Phư�?ng 6");
+		// step 4 Chọn Phường/Xã
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
+		chooseWard(ward);
 
-		// step 5 Nhập vào textbox "Số nhà, tên đư�?ng"
-		fillAddress("496 Dương Quảng Hàm");
+		// step 5 Nhập vào textbox "Số nhà, tên đường"
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
+		fillAddress(address);
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
+		
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 
-		confirmResult("496 Dương Quảng Hàm, Phư�?ng 6, Quận Gò Vấp, Hồ Chí Minh");
 	}
 
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-02
 	 */
-	@Test(priority = 2, groups={"chooseRecivePlaceSuccess"})
-	public void successWithOnlyProvince() throws InterruptedException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("�?ồng Nai");
-
+	@Test(priority = 2, groups = { "chooseRecivePlaceSuccess" })
+	public void testSuccessWithOnlyProvince() throws Exception {
+		rowData = ExcelUtils.getRowContains("testSuccessWithOnlyProvince", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
+		
 		// step 4 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("�?ồng Nai");
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
+
 	}
 
 	/*
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-03
 	 */
-	@Test(priority = 3, groups={"chooseReceivePlaceSuccess"})
-	public void successWithoutFillTextboxAddress() throws InterruptedException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("Hồ Chí Minh");
+	@Test(priority = 3, groups = { "chooseReceivePlaceSuccess" })
+	public void testSuccessWithoutFillTextboxAddress() throws Exception {
+		rowData = ExcelUtils.getRowContains("testSuccessWithoutFillTextboxAddress", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
 
-		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
+		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		chooseDistrict("Quận Bình Thạnh");
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
+		chooseDistrict(district);
 
-		// step 5 Ch�?n Phư�?ng/Xã
-		chooseWard("Phư�?ng 15");
+		// step 5 Chọn Phường/Xã
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
+		chooseWard(ward);
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Phư�?ng 15, Quận Bình Thạnh, Hồ Chí Minh");
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/*
 	 * Test requirement: TR-DMX-CNNH-02 - Test case: TC-DMX-CNNH-04
 	 */
-	@Test(priority = 4, groups={"chooseReceivePlaceFail"})
-	public void failWithoutChooseWard() throws InterruptedException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("Bình �?ịnh");
-		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
-		// tương ứng
-		chooseDistrict("Huyện Vân Canh");
+	@Test(priority = 4, groups = { "chooseReceivePlaceFail" })
+	public void testFailWithoutChooseWard() throws Exception {
+		rowData = ExcelUtils.getRowContains("testFailWithoutChooseWard", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
 
-		// step 5 Không ch�?n Phư�?ng/Xã
-		WebElement dropboxWard = waitForElementClickable(By.id("location_listWard"));
-		dropboxWard.click();
+		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
+		// tương ứng
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
+		chooseDistrict(district);
+
+		// step 5 Không chọn Phường/Xã
+		clickOnWardDropBox();
 
 		// step 6 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
-
-		confirmErrorWard("Vui lòng ch�?n phư�?ng xã");
+		
+		actual = getActualErrorWard();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-05
+	 * 
+	 * @throws Exception
 	 */
 
-	@Test(priority = 5, groups={"successUpdateReceivePlace"})
-	public void successUpdateWithOnlyProvinceSubmitBefor() throws InterruptedException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("Bình Thuận");
-		
+	@Test(priority = 5, groups = { "successUpdateReceivePlace" })
+	public void testSuccessUpdateWithOnlyProvinceSubmitBefor() throws Exception {
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateWithOnlyProvinceSubmitBefor", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
+
 		// step 4 Nhấn Xác nhận
 		submitForm();
 
-		// step 5 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 5 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 6 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
+		// step 6 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		chooseDistrict("Huyện Hàm Tân");
+		district = ExcelUtils.getCellData(rowData + 1, COL_DISTRICT);
+		chooseDistrict(district);
 
-		// step 7 Ch�?n Phư�?ng/Xã
-		chooseWard("Xã Tân �?ức");
+		// step 7 Chọn Phường/Xã
+		String ward = ExcelUtils.getCellData(rowData + 1, COL_WARD);
+		chooseWard(ward);
 
 		// step 8 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Xã Tân �?ức, Huyện Hàm Tân, Bình Thuận");
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-06
+	 * 
+	 * @throws Exception
 	 */
 
-	@Test(priority = 6, groups={"successUpdateReceivePlace"})
-	public void successUpdateByClickOnButonChange() throws InterruptedException, AWTException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("Hà Nội");
+	@Test(priority = 6, groups = { "successUpdateReceivePlace" })
+	public void testSuccessUpdateByClickOnButonChange() throws Exception {
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnButonChange", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
 
-		// step 4 Nhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
+		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		chooseDistrict("Quận Ba �?ình");
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
+		chooseDistrict(district);
 
-		// step 5 Ch�?n Phư�?ng/Xã
-		chooseWard("Phư�?ng �?ội Cấn");
+		// step 5 Chọn Phường/Xã
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
+		chooseWard(ward);
 
-		// step 6 Nhập vào textbox "Số nhà, tên đư�?ng"
-		fillAddress("13 �?ội Cấn");
+		// step 6 Nhập vào textbox "Số nhà, tên đường"
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
+		fillAddress(address);
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		// step 8 Nhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 8 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 9 Nhấn ch�?n địa chỉ khác
+		// step 9 Nhấn chọn địa chỉ khác
 		clickButtonChangeLc();
 
-		// step 10 Thay đổi số nhà, tên đư�?ng
-		changeInforOnTextBox("17 �?ội Mũ");
+		// step 10 Thay đổi số nhà, tên đường
+		changeAddress = ExcelUtils.getCellData(rowData + 1, COL_ADDRESS);
+		changeInforOnTextBox(changeAddress);
 
 		// step 11 sNhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("17 �?ội Mũ, Phư�?ng �?ội Cấn, Quận Ba �?ình, Hà Nội");
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	/**
 	 * Test requirement: TR-DMX-CNNH-03 - Test case: TC-DMX-CNNH-07
+	 * 
+	 * @throws Exception
 	 */
-	@Test(priority = 7, groups={"successUpdateReceivePlace"})
-	public void successUpdateByClickOnDropBoxProvince() throws InterruptedException {
-		// step 3 Ch�?n tỉnh thành
-		chooseProvince("�?à Nẵng");
+	@Test(priority = 7, groups = { "successUpdateReceivePlace" })
+	public void testSuccessUpdateByClickOnDropBoxProvince() throws Exception {
+		rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnDropBoxProvince", COL_TESTNAME);
+		// step 3 Chọn tỉnh thành
+		province = ExcelUtils.getCellData(rowData, COL_PROVINCE);
+		chooseProvince(province);
 
-		// step 4 cNhấn vào drop down list "Vui lòng ch�?n Quận/Huyện" và ch�?n địa chỉ
+		// step 4 Nhấn vào drop down list "Vui lòng chọn Quận/Huyện" và chọn địa chỉ
 		// tương ứng
-		chooseDistrict("Quận Ngũ Hành Sơn");
+		district = ExcelUtils.getCellData(rowData, COL_DISTRICT);
+		chooseDistrict(district);
 
-		// step 5 Ch�?n Phư�?ng/Xã
-		chooseWard("Phư�?ng Mỹ An");
+		// step 5 Chọn Phường/Xã
+		ward = ExcelUtils.getCellData(rowData, COL_WARD);
+		chooseWard(ward);
 
-		// step 6 Nhập vào textbox "Số nhà, tên đư�?ng"
-		fillAddress("27 Sơn An");
+		// step 6 Nhập vào textbox "Số nhà, tên đường"
+		address = ExcelUtils.getCellData(rowData, COL_ADDRESS);
+		fillAddress(address);
 
 		// step 7 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		// step 8 cNhấn ch�?n vào địa chỉ nhận hàng hiển thị trên thanh Header
+		// step 8 cNhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 		chooseProvinceBox();
 
-		// step 9 Nhấn ch�?n tình thành khác ở dropdown list tỉnh thành
-		chooseProvince("Bắc Kạn");
+		// step 9 Nhấn chọn tình thành khác ở dropdown list tỉnh thành
+		changeProvince = ExcelUtils.getCellData(rowData+1, COL_PROVINCE);
+		chooseProvince(changeProvince);
 
 		// step 10 Nhấn Xác nhận và xem kết quả hiển thị
 		submitForm();
 
-		confirmResult("Bắc Kạn");
+		actual = getActualResult();
+		expected = ExcelUtils.getCellData(rowData, COL_EXPRESULT);
+		Assert.assertEquals(actual, expected);
+		if(actual.equals(expected)) {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
+		}
+		else {
+			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
+		}
 	}
 
 	private void chooseProvinceBox() {
@@ -211,16 +317,22 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 		fillAddress.sendKeys(address);
 	}
 
-	private void submitForm() {
+	private void clickOnWardDropBox() {
+		WebElement dropboxWard = waitForElementClickable(By.id("location_listWard"));
+		dropboxWard.click();
+	}
+
+	private void submitForm() throws InterruptedException {
 		WebElement submit = waitForElementClickable(By.id("lc_btn-Confirm"));
 		submit.click();
+		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
 	private void chooseProvince(String province) throws InterruptedException {
 		WebElement setProvince = waitForElementVisible(By.id("location_listPro"));
 		setProvince.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		WebElement divContainsUl = waitForElementVisible(By.xpath("//div[@class='flex']//ul"));
 		List<WebElement> lis = divContainsUl.findElements(By.tagName("li"));
 		for (int i = 0; i < lis.size(); i++) {
@@ -235,7 +347,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		List<WebElement> scrollboxDistrict = driver.findElements(By.xpath("//div[@class='boxprov__listTT--scroll']"));
 		String getStyle = scrollboxDistrict.get(2).getAttribute("style");
-		if(getStyle.equals("display: none;") || getStyle.equals("")) {
+		if (getStyle.equals("display: none;") || getStyle.equals("")) {
 			WebElement setDistrict = waitForElementClickable(By.id("location_listDistrict"));
 			setDistrict.click();
 		}
@@ -277,25 +389,25 @@ public class ChooseReceivedPlace extends AbstractAnnotation{
 		btnChangeLc.click();
 	}
 
-	private void confirmResult(String expectedResult) throws InterruptedException {
-		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		WebElement actualResult =waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"));
-		Thread.sleep(2000);
-		Assert.assertEquals(actualResult.getText(), expectedResult);
+	private String getActualResult() throws InterruptedException {
+		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Thread.sleep(1000);
+		String actualResult = (waitForElementVisible(By.xpath("//div[@class='provinces-box']//child::span"))).getText();
+		return actualResult;
 	}
 
-	private void confirmErrorWard(String expectedErr) throws InterruptedException {
-		WebElement actualErr = waitForElementVisible(By.className("errWard"));
-		Assert.assertEquals(actualErr.getText(), expectedErr);
+	private String getActualErrorWard() throws InterruptedException {
+		String actualErr = (waitForElementVisible(By.className("errWard"))).getText();
+		return actualErr;
 	}
-	
+
 	private WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-	
+
 	private WebElement waitForElementVisible(By locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 }
