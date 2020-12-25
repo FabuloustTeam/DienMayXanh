@@ -9,46 +9,20 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">choosereceived</a></td><td class="num">6</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">171,950</td><td></td><td></td></tr>
+<tr><td><a href="#t0">choosereceived</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">182,134</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">viewproduct</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">26,951</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">8</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">209,085</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">choosereceived &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestCases.ChooseReceivedPlace</td><td><a href="#m0">testFailWithoutChooseWard</a></td><td rowspan="1">1608635626675</td><td rowspan="1">25636</td></tr><tr><th colspan="4">choosereceived &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">TestCases.ChooseReceivedPlace</td><td><a href="#m1">testMainSFWithFullInfor</a></td><td rowspan="1">1608635567598</td><td rowspan="1">6122</td></tr><tr class="passedeven"><td><a href="#m2">testSuccessUpdateByClickOnButonChange</a></td><td rowspan="1">1608635693823</td><td rowspan="1">9778</td></tr><tr class="passedeven"><td><a href="#m3">testSuccessUpdateByClickOnDropBoxProvince</a></td><td rowspan="1">1608635718275</td><td rowspan="1">9353</td></tr><tr class="passedeven"><td><a href="#m4">testSuccessUpdateWithOnlyProvinceSubmitBefor</a></td><td rowspan="1">1608635668005</td><td rowspan="1">9700</td></tr><tr class="passedeven"><td><a href="#m5">testSuccessWithOnlyProvince</a></td><td rowspan="1">1608635586627</td><td rowspan="1">5881</td></tr><tr class="passedeven"><td><a href="#m6">testSuccessWithoutFillTextboxAddress</a></td><td rowspan="1">1608635607279</td><td rowspan="1">6619</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">choosereceived &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">TestCases.ChooseReceivedPlace</td><td><a href="#m0">testFailWithoutChooseWard</a></td><td rowspan="1">1608884786490</td><td rowspan="1">9502</td></tr><tr class="passedeven"><td><a href="#m1">testMainSFWithFullInfor</a></td><td rowspan="1">1608884702934</td><td rowspan="1">11873</td></tr><tr class="passedeven"><td><a href="#m2">testSuccessUpdateByClickOnButonChange</a></td><td rowspan="1">1608884832236</td><td rowspan="1">10128</td></tr><tr class="passedeven"><td><a href="#m3">testSuccessUpdateByClickOnDropBoxProvince</a></td><td rowspan="1">1608884853292</td><td rowspan="1">16731</td></tr><tr class="passedeven"><td><a href="#m4">testSuccessUpdateWithOnlyProvinceSubmitBefor</a></td><td rowspan="1">1608884806512</td><td rowspan="1">12895</td></tr><tr class="passedeven"><td><a href="#m5">testSuccessWithOnlyProvince</a></td><td rowspan="1">1608884732222</td><td rowspan="1">12179</td></tr><tr class="passedeven"><td><a href="#m6">testSuccessWithoutFillTextboxAddress</a></td><td rowspan="1">1608884757335</td><td rowspan="1">18088</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">viewproduct &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestCases.ViewProductThroughList</td><td><a href="#m7">testSuccessViewProductByList</a></td><td rowspan="1">1608884880853</td><td rowspan="1">16174</td></tr></tbody>
 </table>
-<h2>choosereceived</h2><h3 id="m0">TestCases.ChooseReceivedPlace#testFailWithoutChooseWard</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.className: errWard (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at TestCases.ChooseReceivedPlace.waitForElementVisible(ChooseReceivedPlace.java:412)
-	at TestCases.ChooseReceivedPlace.getActualErrorWard(ChooseReceivedPlace.java:401)
-	at TestCases.ChooseReceivedPlace.testFailWithoutChooseWard(ChooseReceivedPlace.java:155)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.errWard&quot;}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
-System info: host: &apos;DAWN&apos;, ip: &apos;10.9.80.112&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\MODERN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52681}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 98161303b1efd2023a803c1da8ab90c5
-*** Element info: {Using=class name, value=errWard}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
-	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 31 more
-... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>choosereceived</h2><h3 id="m0">TestCases.ChooseReceivedPlace#testFailWithoutChooseWard</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">TestCases.ChooseReceivedPlace#testMainSFWithFullInfor</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">TestCases.ChooseReceivedPlace#testSuccessUpdateByClickOnButonChange</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m3">TestCases.ChooseReceivedPlace#testSuccessUpdateByClickOnDropBoxProvince</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m4">TestCases.ChooseReceivedPlace#testSuccessUpdateWithOnlyProvinceSubmitBefor</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m5">TestCases.ChooseReceivedPlace#testSuccessWithOnlyProvince</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m6">TestCases.ChooseReceivedPlace#testSuccessWithoutFillTextboxAddress</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>viewproduct</h2><h3 id="m7">TestCases.ViewProductThroughList#testSuccessViewProductByList</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

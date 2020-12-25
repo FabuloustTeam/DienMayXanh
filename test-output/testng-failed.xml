@@ -10,11 +10,13 @@
     <classes>
       <class name="TestCases.ChooseReceivedPlace">
         <methods>
-          <include name="testFailWithoutChooseWard"/>
           <include name="closeBrowser"/>
           <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
+          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
+          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
           <include name="defineSheetExcel"/>
+          <include name="testSuccessWithOnlyProvince"/>
           <include name="accessWebsite"/>
         </methods>
       </class> <!-- TestCases.ChooseReceivedPlace -->

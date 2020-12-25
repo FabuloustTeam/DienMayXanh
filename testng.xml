@@ -8,29 +8,28 @@
 		<listener class-name="IListener.IListenerClass" />
 	</listeners>
 	<test name="choosereceived">
-		<!-- <parameter name="testcaseName" value="ChooseReceivedPlace" /> -->
 		<parameter name="sheetName" value="ChooseReceivedPlace" />
 		<classes>
 			<class name="TestCases.ChooseReceivedPlace">
-				<!-- <methods> -->
-				<!-- <include name="testMainSFWithFullInfor" /> -->
-				<!-- </methods> -->
 			</class>
 		</classes>
-		<!-- <groups> -->
-		<!-- <run> -->
-		<!-- <include name="viewByName" /> -->
-		<!-- </run> -->
-		<!-- </groups> -->
-
 	</test>
 
-<!-- 	<test name="viewproduct"> -->
-<!-- 		<parameter name="sheetName" value="ViewProductThroughList" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="TestCases.ViewProductThroughList"> -->
-<!-- 			</class> -->
-<!-- 		</classes> -->
+	<test name="viewproduct">
+		<parameter name="sheetName" value="ViewProductThroughList" />
+		<classes>
+			<class name="TestCases.ViewProductThroughList">
+			</class>
+		</classes>
 
-<!-- 	</test> -->
+	</test>
 </suite>
+
+<!-- <methods> -->
+<!-- <include name="testMainSFWithFullInfor" /> -->
+<!-- </methods> -->
+<!-- <groups> -->
+<!-- <run> -->
+<!-- <include name="viewByName" /> -->
+<!-- </run> -->
+<!-- </groups> -->
