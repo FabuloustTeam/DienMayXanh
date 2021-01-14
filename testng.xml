@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite">
+	<parameter name="url" value="https://www.dienmayxanh.com/" />
+
+	<listeners>
+		<listener class-name="IListener.IListenerClass" />
+	</listeners>
+	<test name="choosereceived">
+		<parameter name="sheetName" value="ChooseReceivedPlace" />
+		<classes>
+			<class name="TestCases.ChooseReceivedPlace">
+			</class>
+		</classes>
+	</test>
+
+	<test name="viewproduct">
+		<parameter name="sheetName" value="ViewProductThroughList" />
+		<classes>
+			<class name="TestCases.ViewProductThroughList">
+			</class>
+		</classes>
+
+	</test>
+</suite>
+
+<!-- <methods> -->
+<!-- <include name="testMainSFWithFullInfor" /> -->
+<!-- </methods> -->
+<!-- <groups> -->
+<!-- <run> -->
+<!-- <include name="viewByName" /> -->
+<!-- </run> -->
+<!-- </groups> -->

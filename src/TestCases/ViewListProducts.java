@@ -1,3 +1,4 @@
+package TestCases;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -10,19 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class ViewListProducts {
-	WebDriver driver;
+import AbstractAnnotation.AbstractClass;
 
-	@BeforeMethod
-	public void beforeMethod() {
-		// 1. Truy cập trang chủ điện máy xanh
-		accessWebsite("https://www.dienmayxanh.com/");
-	}
-	
-	@AfterMethod
-	public void closeBrowser() {
-		this.driver.close();
-	}
+public class ViewListProducts extends AbstractClass {
+
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
@@ -276,13 +268,6 @@ public class ViewListProducts {
 				}
 			}
 		}
-	}
-
-	private void accessWebsite(String url) {
-		System.setProperty("webdriver.chrome.silentOutput", "true");
-		this.driver = new ChromeDriver();
-		this.driver.manage().window().maximize();
-		this.driver.get(url);
 	}
 
 	private WebElement waitForElementClickable(By locator) {
