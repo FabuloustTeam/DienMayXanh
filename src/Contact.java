@@ -15,6 +15,7 @@ import AbstractClasses.AbstractBOT;
 import BaseClass.ExcelUtils;
 import BaseClass.TakeSnapShot;
 import Enum.*;
+import POM.ContactPage;
 
 public class Contact extends AbstractBOT {
 	
@@ -40,6 +41,8 @@ public class Contact extends AbstractBOT {
 	private String testCaseName = "";
 	String driverPath = "E:\\Selenium\\chromedriver_win32\\chromedriver.exe";
 	
+	ContactPage objContact = new ContactPage();
+	
 	@Parameters({ "url" })
 	@Test(priority = 1)
 	public void testContact(String url) throws Exception {
@@ -51,39 +54,31 @@ public class Contact extends AbstractBOT {
 			driver.manage().window().maximize();
 			driver.get(url);
 			
-			WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-			contact.click();
+			objContact.clickWeb();
 			
 			// 3. Nhập nội dung muốn góp ý
 			content = ExcelUtils.getCellData(i, COL_INPUT_CONTENT);
-			waitForElementClickable(By.id("message"));
-			WebElement textarea = driver.findElement(By.id("message"));
-			textarea.sendKeys(content);
+			objContact.setContent(content);
 			
 			// 4. Chọn giới tính "Anh" hoặc "Chị"
 			gentle = ExcelUtils.getCellData(i, COL_INPUT_GENTLE);
 			if(!gentle.equals("")) {
-				WebElement genderMiss = waitForElementClickable(By.xpath(".//label[text()=' "+gentle+"']"));
-				genderMiss.click();
+				objContact.clickRadioButton();
 			}
 
 			// 5. Nhập họ và tên
 			name = ExcelUtils.getCellData(i, COL_INPUT_NAME);
-			waitForElementClickable(By.id("fullname"));
-			WebElement fullname = driver.findElement(By.id("fullname"));
-			fullname.sendKeys(name);
+			objContact.setName(name);
 	
 			waitForElementClickable(By.id("contel"));
 			WebElement phonenumber = driver.findElement(By.id("contel"));
 			// 6. Nhập số điện thoại
 			phone = ExcelUtils.getCellData(i, COL_INPUT_PHONE);
-			phonenumber.sendKeys(phone);
+			objContact.setPhone(phone);
 	
 			// 7. Nhập email
 			email = ExcelUtils.getCellData(i, COL_INPUT_EMAIL);
-			waitForElementClickable(By.id("conemail"));
-			WebElement emailElement = driver.findElement(By.id("conemail"));
-			emailElement.sendKeys(email);
+			objContact.setEmail(email);
 	
 			WebElement submit = driver.findElement(By.id("submit"));
 			// 8. Nhấn "Gửi liên hệ"

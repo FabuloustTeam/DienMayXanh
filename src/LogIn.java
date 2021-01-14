@@ -1,5 +1,7 @@
 import org.testng.annotations.Test;
 
+//import POM.LoginPage;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,20 +20,23 @@ public class LogIn {
 		System.out.println("lauching chrome browser");
 		driver = new ChromeDriver();
 		driver.get(baseUrl);
-		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
-		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
-		weblogin.click();
-		// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
-		WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
-		phone1.sendKeys("090dwwwr");
-		// Nhấn Enter hoặc chọn 'Tiếp tục'
-		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
-		login.click();
+//		// Nhấn chọn "Lịch sử mua hàng" trên thanh Header
+//		WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
+//		weblogin.click();
+//		// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
+//		WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
+//		phone1.sendKeys("090dwwwr");
+//		// Nhấn Enter hoặc chọn 'Tiếp tục'
+//		WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
+//		login.click();
+//
+//		String expectedError = "Số điện thoại trống/không đúng định dạng";
+//		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
+//		Assert.assertEquals(error, expectedError);
 
-		String expectedError = "Số điện thoại trống/không đúng định dạng";
-		String error = waitForElementClickable(By.xpath("/html/body/section/div[1]/form/label")).getText();
-		Assert.assertEquals(error, expectedError);
-
+//		LoginPage login = new LoginPage(driver);
+//		login.typePhone();
+//		login.clickOnButtonNext();
 		driver.close();
 
 	}

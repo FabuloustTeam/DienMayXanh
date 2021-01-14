@@ -6,10 +6,11 @@
 		<listener class-name="Listeners.IListeners" />
 	</listeners>
 	<test name="play">
-		<parameter name="SheetName" value="Contact" />
+		<parameter name="SheetName" value="ViewListProducts" />
 		<classes>
-			<class name="Contact" />
-			<!-- </class> -->
+			<class name="ViewListProducts" >
+			
+			</class>
 		</classes>
 	</test>
 </suite> 

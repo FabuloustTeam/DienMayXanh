@@ -14,10 +14,10 @@ public class IListeners implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailure(result);
-		String testCaseName = result.getAttribute("id").toString();
-		String file = System.getProperty("user.dir") + "\\screenshots\\" + testCaseName + ".png";
+//		String testCaseName = result.getAttribute("id").toString();
+//		String file = System.getProperty("user.dir") + "\\screenshots\\" + testCaseName + ".png";
 		try {
-			TakeSnapShot.takeScreenShot(file);
+//			TakeSnapShot.takeScreenShot(file);
 //			String path = System.getProperty("user.dir")+"\\DienmayXANH-TestData.xlsx";
 //			ExcelUtils.setExcelFile(path, "Contact");
 //			int row = ExcelUtils.getRowContains(result.getName(), 1);

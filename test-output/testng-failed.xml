@@ -6,17 +6,18 @@
     <listener class-name="Listeners.IListeners"/>
   </listeners>
   <test thread-count="5" name="play(failed)">
-    <parameter name="SheetName" value="Contact"/>
+    <parameter name="SheetName" value="ViewListProducts"/>
     <classes>
-      <class name="Contact">
+      <class name="ViewListProducts">
         <methods>
-          <include name="testContact" invocation-numbers="0"/>
+          <include name="ViewList_ShowAllProductOfBrand"/>
           <include name="accessWebsite"/>
           <include name="closeBrowser"/>
           <include name="closeAndSaveExcel"/>
+          <include name="ViewList_ShowAll"/>
           <include name="setExcelFile"/>
         </methods>
-      </class> <!-- Contact -->
+      </class> <!-- ViewListProducts -->
     </classes>
   </test> <!-- play(failed) -->
 </suite> <!-- Failed suite [Demo] -->

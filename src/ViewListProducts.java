@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 
 import AbstractClasses.AbstractBOT;
 import BaseClass.ExcelUtils;
+import POM.ViewListProductsPage;
 
 public class ViewListProducts extends AbstractBOT {
 //	@BeforeMethod
@@ -24,7 +25,7 @@ public class ViewListProducts extends AbstractBOT {
 //	public void closeBrowser() {
 //		this.driver.close();
 //	}
-	
+	ViewListProductsPage objViewListProducts = new ViewListProductsPage();
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
 	 * @throws Exception 
@@ -34,9 +35,10 @@ public class ViewListProducts extends AbstractBOT {
 		int rowData = ExcelUtils.getRowContains("ViewList_ShowAll", 1);
 		
 		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
-		locnuoc.click();
-
+//		WebElement locnuoc = waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
+//		locnuoc.click();
+		objViewListProducts.viewListProducts();
+		
 		boolean isAllProductTrueName = true;
 		List<WebElement> products = getAllProducts();
 		for (int i = 0; i < products.size(); i ++) {
