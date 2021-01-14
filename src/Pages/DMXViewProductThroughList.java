@@ -98,7 +98,7 @@ public class DMXViewProductThroughList extends AbstractClass {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement element = elm;
 		js.executeScript("arguments[0].scrollIntoView();", element);
-		js.executeScript("window.scrollBy(0,-185)");
+		js.executeScript("window.scrollBy(0,-420)");
 	}
 
 	public String compareTitle(String expected) {

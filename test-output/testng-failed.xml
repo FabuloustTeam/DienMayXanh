@@ -5,21 +5,18 @@
   <listeners>
     <listener class-name="IListener.IListenerClass"/>
   </listeners>
-  <test thread-count="5" name="choosereceived(failed)">
-    <parameter name="sheetName" value="ChooseReceivedPlace"/>
+  <test thread-count="5" name="viewproduct(failed)">
+    <parameter name="sheetName" value="ViewProductThroughList"/>
     <classes>
-      <class name="TestCases.ChooseReceivedPlace">
+      <class name="TestCases.ViewProductThroughList">
         <methods>
           <include name="closeBrowser"/>
-          <include name="beforeMethod"/>
           <include name="saveAndCloseExcel"/>
-          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
-          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
           <include name="defineSheetExcel"/>
-          <include name="testSuccessWithOnlyProvince"/>
+          <include name="testSuccessViewProductByList"/>
           <include name="accessWebsite"/>
         </methods>
-      </class> <!-- TestCases.ChooseReceivedPlace -->
+      </class> <!-- TestCases.ViewProductThroughList -->
     </classes>
-  </test> <!-- choosereceived(failed) -->
+  </test> <!-- viewproduct(failed) -->
 </suite> <!-- Failed suite [Suite] -->

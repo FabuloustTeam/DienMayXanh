@@ -19,7 +19,7 @@ public class ChooseReceivedPlace extends AbstractClass {
 	public static final int COL_ADDRESS = 8;
 	
 	public static final int iTestBeginRow = 2;
-	public static int iTestCaseRow, rowData;
+	public static int rowData;
 	public static String actual, expected, province, district, ward, address, changeAddress, changeProvince;
 	
 	DMXChooseReceivedPlace objCRP = new DMXChooseReceivedPlace();
