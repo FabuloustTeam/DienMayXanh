@@ -1,21 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-21T14:04:32 ICT" name="test login" finished-at="2020-12-21T14:04:59 ICT" duration-ms="27073">
+  <suite started-at="2021-01-14T12:18:35 ICT" name="test login" finished-at="2021-01-14T12:20:05 ICT" duration-ms="90048">
     <groups>
     </groups>
-    <test started-at="2020-12-21T14:04:32 ICT" name="link" finished-at="2020-12-21T14:04:59 ICT" duration-ms="27073">
-      <class name="testcase.Link">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:32 ICT" name="launchBrowser" finished-at="2020-12-21T14:04:39 ICT" duration-ms="7016" status="PASS">
+    <test started-at="2021-01-14T12:18:35 ICT" name="login" finished-at="2021-01-14T12:19:47 ICT" duration-ms="72227">
+      <class name="testcase.LogIn">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:18:35 ICT" name="launchBrowser" finished-at="2021-01-14T12:18:40 ICT" duration-ms="5098" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="testLink()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:39 ICT" name="testLink" finished-at="2020-12-21T14:04:58 ICT" duration-ms="19289" status="PASS">
+        <test-method signature="testLoginWithWrongFormatPhoneNumber()[pri:1, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:18:40 ICT" name="testLoginWithWrongFormatPhoneNumber" finished-at="2021-01-14T12:18:46 ICT" duration-ms="5933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWithWrongFormatPhoneNumber -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:18:46 ICT" name="closeBrowser" finished-at="2021-01-14T12:18:46 ICT" duration-ms="291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:18:46 ICT" name="launchBrowser" finished-at="2021-01-14T12:18:51 ICT" duration-ms="4136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testLoginWithWrongOTP()[pri:2, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:18:51 ICT" name="testLoginWithWrongOTP" finished-at="2021-01-14T12:19:02 ICT" duration-ms="11958" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWithWrongOTP -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:02 ICT" name="closeBrowser" finished-at="2021-01-14T12:19:03 ICT" duration-ms="155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:03 ICT" name="launchBrowser" finished-at="2021-01-14T12:19:06 ICT" duration-ms="3796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testNoticeOfResendingOTP()[pri:3, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:06 ICT" name="testNoticeOfResendingOTP" finished-at="2021-01-14T12:19:42 ICT" duration-ms="36058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoticeOfResendingOTP -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:42 ICT" name="closeBrowser" finished-at="2021-01-14T12:19:43 ICT" duration-ms="105" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:43 ICT" name="launchBrowser" finished-at="2021-01-14T12:19:46 ICT" duration-ms="3675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testTitle()[pri:4, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:46 ICT" name="testTitle" finished-at="2021-01-14T12:19:47 ICT" duration-ms="823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.LogIn@96def03]" started-at="2021-01-14T12:19:47 ICT" name="closeBrowser" finished-at="2021-01-14T12:19:47 ICT" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testcase.LogIn -->
+    </test> <!-- login -->
+    <test started-at="2021-01-14T12:19:47 ICT" name="link" finished-at="2021-01-14T12:20:05 ICT" duration-ms="17767">
+      <class name="testcase.Link">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:testcase.Link@3ba9ad43]" started-at="2021-01-14T12:19:47 ICT" name="launchBrowser" finished-at="2021-01-14T12:19:51 ICT" duration-ms="3813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="testLink()[pri:0, instance:testcase.Link@3ba9ad43]" started-at="2021-01-14T12:19:51 ICT" name="testLink" finished-at="2021-01-14T12:20:05 ICT" duration-ms="13786" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLink -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.Link@7ee955a8]" started-at="2020-12-21T14:04:58 ICT" name="closeBrowser" finished-at="2020-12-21T14:04:59 ICT" duration-ms="696" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testcase.Link@3ba9ad43]" started-at="2021-01-14T12:20:05 ICT" name="closeBrowser" finished-at="2021-01-14T12:20:05 ICT" duration-ms="163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="ilistener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="login(failed)">
+  <test thread-count="5" name="link(failed)">
     <classes>
       <class name="testcase.Link">
         <methods>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
-          <include name="testLinkfb"/>
+          <include name="testLink"/>
         </methods>
       </class> <!-- testcase.Link -->
     </classes>
-  </test> <!-- login(failed) -->
+  </test> <!-- link(failed) -->
 </suite> <!-- Failed suite [test login] -->

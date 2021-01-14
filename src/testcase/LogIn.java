@@ -14,6 +14,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import BaseClass.ExcelUtils;
+import POM.LoginPage;
 
 //@Listeners(ListenerTest.class)			
 
@@ -28,6 +29,8 @@ public class LogIn extends abstractLogin {
 
 	public static final int iTestBeginRow = 3;
 	public static int iTestCaseRow, rowData;
+	
+	LoginPage objLogin = new LoginPage();
 	// public String baseUrl = "https://www.dienmayxanh.com";
 //	public WebDriver driver;
 
@@ -37,16 +40,15 @@ public class LogIn extends abstractLogin {
 		for(int i = iTestBeginRow; i<iTestCaseRow;i++) {
 			if(ExcelUtils.getCellData(i, COL_TESTNAME).equals("LoginWithWrongFormatPhoneNumber")
 					&& ExcelUtils.getCellData(i, COL_CASE).equals("UNSUCCESSFULLY")) {
-				WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
-				weblogin.click();
+				objLogin.clickWeb();
 				// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
-				WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
-				phone1.sendKeys(ExcelUtils.getCellData(i, COL_PHONENUMBER));
+				//WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
+				objLogin.setPhoneNumber(ExcelUtils.getCellData(i, COL_PHONENUMBER));
 				// Nhấn Enter hoặc chọn 'Tiếp tục'
-				WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
-				login.click();
+				objLogin.clickLoginPhone();
+				
 				String expected = ExcelUtils.getCellData(i, COL_EXPRESULT);
-				String actual = waitForElementClickable(By.xpath("//*[@name='txtPhoneNumber']//following::label[1]")).getText();
+				String actual = objLogin.getMessagePhone();
 				Assert.assertEquals(actual, expected);
 
 				if(actual.equals(expected)) {
@@ -64,23 +66,18 @@ public class LogIn extends abstractLogin {
 		for(int i = iTestBeginRow; i<iTestCaseRow;i++) {
 			if(ExcelUtils.getCellData(i, COL_TESTNAME).equals("LoginWithWrongOTP")
 					&& ExcelUtils.getCellData(i, COL_CASE).equals("UNSUCCESSFULLY")) {
-				WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
-				weblogin.click();
+				objLogin.clickWeb();
 				// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
-				WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
-				phone1.sendKeys(ExcelUtils.getCellData(i, COL_PHONENUMBER));
+				objLogin.setPhoneNumber(ExcelUtils.getCellData(i, COL_PHONENUMBER));
 				// Nhấn Enter hoặc chọn 'Tiếp tục'
-				WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
-				login.click();
+				objLogin.clickLoginPhone();
+		
+				objLogin.setOTP(ExcelUtils.getCellData(i, COL_OTP));
 				
-				WebElement otp = waitForElementClickable(By.xpath("//input[@name='txtOTP']"));
-				otp.sendKeys(ExcelUtils.getCellData(i, COL_OTP));
-				
-				WebElement code = waitForElementClickable(By.xpath("//*[@id=\"frmSubmitVerifyCode\"]/button"));
-				code.click();
+				objLogin.clickLoginOTP();;
 				
 				String expected = ExcelUtils.getCellData(i, COL_EXPRESULT);
-				String actual = waitForElementClickable(By.xpath("//*[@name='txtOTP']//following::label[1]")).getText();
+				String actual = objLogin.getMessageOTP();
 				Assert.assertEquals(actual, expected);
 
 				if(actual.equals(expected)) {
@@ -100,23 +97,18 @@ public class LogIn extends abstractLogin {
 		for(int i = iTestBeginRow; i<iTestCaseRow;i++) {
 			if(ExcelUtils.getCellData(i, COL_TESTNAME).equals("NoticeOfResendingOTP")
 					&& ExcelUtils.getCellData(i, COL_CASE).equals("UNSUCCESSFULLY")) {
-				WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
-				weblogin.click();
+				objLogin.clickWeb();
 				// Nhập chữ vào trường 'Nhập số điện thoại mua hàng'.
-				WebElement phone1 = waitForElementClickable(By.name("txtPhoneNumber"));
-				phone1.sendKeys(ExcelUtils.getCellData(i, COL_PHONENUMBER));
+				objLogin.setPhoneNumber(ExcelUtils.getCellData(i, COL_PHONENUMBER));
 				// Nhấn Enter hoặc chọn 'Tiếp tục'
-				WebElement login = waitForElementClickable(By.xpath("//*[@id=\"frmGetVerifyCode\"]/button"));
-				login.click();
+				objLogin.clickLoginPhone();
 				Thread.sleep(35000);
 				
 				// Nhấn chọn "Tôi không nhận được mã, vui lòng gửi lại"
-				WebElement thongbao = waitForElementClickable(By.xpath("//a[@class='resend-sms']"));
-				thongbao.click();
-				
+				objLogin.clickResendOTP();
 				
 				String expected = ExcelUtils.getCellData(i, COL_EXPRESULT);
-				String actual = waitForElementClickable(By.xpath("//a[@class='resend-sms']")).getText();
+				String actual = objLogin.getMessageResend();
 				Assert.assertEquals(actual, expected);
 
 				if(actual.equals(expected)) {
@@ -139,8 +131,7 @@ public class LogIn extends abstractLogin {
 		for(int i = iTestBeginRow; i<=iTestCaseRow;i++) {
 			if(ExcelUtils.getCellData(i, COL_TESTNAME).equals("Title")
 					&& ExcelUtils.getCellData(i, COL_CASE).equals("SUCCESSFULLY")) {
-				WebElement weblogin = waitForElementClickable(By.xpath("//a[@href='/lich-su-mua-hang']"));
-				weblogin.click();
+				objLogin.clickWeb();
 				
 				String expected = ExcelUtils.getCellData(i, COL_EXPRESULT);
 				String actual = driver.getTitle();
@@ -156,9 +147,5 @@ public class LogIn extends abstractLogin {
 		}
 }
 
-	private WebElement waitForElementClickable(By locator) {
-		// TODO Auto-generated method stub
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-	}
+	
 }

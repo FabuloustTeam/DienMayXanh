@@ -4,16 +4,16 @@
 	<listeners>
 		<listener class-name="ilistener.ListenerTest"></listener>
 	</listeners>
- 	<test name="login"> 
+ 	  <test name="login"> 
  		<classes> 
 		<class name="testcase.LogIn"> 
  		</class>
 		</classes>
  	</test> 
-	<test name="link">
+ 	<test name="link">
 		<classes>
 			<class name="testcase.Link">
 			</class>
 		</classes>
-	</test>
+	</test> 
 </suite>

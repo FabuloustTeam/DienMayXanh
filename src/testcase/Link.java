@@ -15,7 +15,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import BaseClass.ExcelUtils;
-
+import POM.LinkPage;
+import POM.LoginPage;
 import AbstractClass.abstractLink;
 
 public class Link extends abstractLink {
@@ -30,18 +31,18 @@ public class Link extends abstractLink {
 	public static final int iTestBeginRow = 2;
 	public static int iTestCaseRow, rowData;
 	public String linkInput;
-
+	
+	LinkPage objLink = new LinkPage();
 	
 	@Test
 	public void testLink() throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
-		for(int i = iTestBeginRow; i<iTestCaseRow; i++) {
+		for(int i = iTestBeginRow; i<=iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TESTNAME).equals("testLink")
 					&& ExcelUtils.getCellData(i, COL_CASE).equals("SUCCESSFULLY")) {
 				JavascriptExecutor js = (JavascriptExecutor) driver;
 				js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-				// Nhấn chọn liên kết trang Facebook.
-				waitForElementClickable(By.xpath("//li//a[@href='"+ExcelUtils.getCellData(i, COL_LINK)+"']")).click();
+				objLink.getLink(ExcelUtils.getCellData(i, COL_LINK)).click();
 				String MainWindow = driver.getWindowHandle();
 				Set<String> s1 = driver.getWindowHandles();
 				Iterator<String> i1 = s1.iterator();

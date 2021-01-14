@@ -9,7 +9,7 @@ import BaseClass.ExcelUtils;
 public abstract class abstractLink {
 	public String baseUrl = "https://www.dienmayxanh.com";
 	String driverPath = "C:\\Users\\Phuong\\Downloads\\chromedriver_win32\\chromedriver.exe";
-	public WebDriver driver;
+	public static WebDriver driver;
 
 
 	@BeforeTest

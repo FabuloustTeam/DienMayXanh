@@ -5,20 +5,9 @@
     <classes>
       <class name="testcase.LogIn">
         <methods>
-          <include name="testDoNotEnterOTP"/>
           <include name="closeBrowser"/>
-          <include name="testWrongPhoneNumber"/>
-          <include name="testPhoneNumberWithSpecialCharacters"/>
-          <include name="testTitle"/>
-          <include name="testOTPHasLetters"/>
-          <include name="testEnterSpace"/>
-          <include name="testNoticeOfResendingOTP"/>
-          <include name="testWrongOTP"/>
-          <include name="testDoNotEnterEnoughOTP"/>
-          <include name="testOTPEntersSpace"/>
+          <include name="testLoginWithWrongFormatPhoneNumber"/>
           <include name="launchBrowser"/>
-          <include name="testOTPHasSpecialCharacters"/>
-          <include name="testDoNotEnterPhoneNumber"/>
         </methods>
       </class> <!-- testcase.LogIn -->
     </classes>
