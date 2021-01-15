@@ -12,6 +12,7 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
+		
 		String fileName = (result.getName()) + ".png";
 		String file = pathFolderImage + fileName;
 		try {

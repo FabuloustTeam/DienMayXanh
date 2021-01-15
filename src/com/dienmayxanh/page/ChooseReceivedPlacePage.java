@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.dienmayxanh.abstractclass.AbstractAnnotation;
+import com.dienmayxanh.service.Element;
 
 public class ChooseReceivedPlacePage extends AbstractAnnotation {
 
@@ -36,8 +37,14 @@ public class ChooseReceivedPlacePage extends AbstractAnnotation {
 	By list = By.tagName("li");
 	By eachItem = By.tagName("a");
 	
+	private Element elementService;
+	
+	public ChooseReceivedPlacePage() {
+		elementService = new Element();
+	}
+	
 	public List<WebElement> getList(By locator){
-		return waitForElementVisible(locator).findElements(list);
+		return elementService.waitForElementVisibility(locator).findElements(list);
 	}
 	
 	public List<WebElement> getStyleWard(){
@@ -45,25 +52,25 @@ public class ChooseReceivedPlacePage extends AbstractAnnotation {
 	}
 	public void chooseProvinceBox() {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		waitForElementVisible(chooseReceivedPlaceBox).click();
+		elementService.waitForElementVisibility(chooseReceivedPlaceBox).click();
 	}
 
 	public void fillAddress(String address) {
-		waitForElementClickable(textBoxAddress).sendKeys(address);
+		elementService.waitForElementClickable(textBoxAddress).sendKeys(address);
 	}
 
 	public void clickOnWardDropBox() {
-		waitForElementClickable(dropBoxWard).click();
+		elementService.waitForElementClickable(dropBoxWard).click();
 	}
 
 	public void submitForm() throws InterruptedException {
-		waitForElementClickable(buttonSubmit).click();
+		elementService.waitForElementClickable(buttonSubmit).click();
 		Thread.sleep(1000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
 	public void chooseProvince(String province) throws InterruptedException {
-		waitForElementVisible(dropBoxProvince).click();
+		elementService.waitForElementVisibility(dropBoxProvince).click();
 		Thread.sleep(1000);
 		for (int i = 0; i < getList(allListProvince).size(); i++) {
 			if (getList(allListProvince).get(i).findElement(eachItem).getText().contentEquals(province)) {
@@ -77,7 +84,7 @@ public class ChooseReceivedPlacePage extends AbstractAnnotation {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		String getStyle = getStyleWard().get(2).getAttribute("style");
 		if (getStyle.equals("display: none;") || getStyle.equals("")) {
-			waitForElementClickable(dropBoxDistrict).click();
+			elementService.waitForElementClickable(dropBoxDistrict).click();
 		}
 	}
 	public void chooseDistrict(String district) throws InterruptedException {
@@ -101,40 +108,30 @@ public class ChooseReceivedPlacePage extends AbstractAnnotation {
 	}
 
 	public void changeInforOnTextBox(String address) throws AWTException, InterruptedException {
-		waitForElementClickable(textBoxAddress).click();
+		elementService.waitForElementClickable(textBoxAddress).click();
 		final Robot robot = new Robot();
 		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_A);
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyRelease(KeyEvent.VK_A);
-		waitForElementVisible(textBoxAddress).sendKeys(address);
+		elementService.waitForElementVisibility(textBoxAddress).sendKeys(address);
 	}
 
 	public void clickButtonChangeLc() {
-		waitForElementClickable(buttonChangeLocation).click();
+		elementService.waitForElementClickable(buttonChangeLocation).click();
 	}
 
 	public String getActualResult() throws InterruptedException {
 		// driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Thread.sleep(1000);
-		String actualResult = (waitForElementVisible(chooseReceivedPlaceBox)).getText();
+		String actualResult = (elementService.waitForElementVisibility(chooseReceivedPlaceBox)).getText();
 		return actualResult;
 	}
 
 	public String getActualErrorWard() throws InterruptedException {
-		String actualErr = (waitForElementVisible(errorWard)).getText();
+		String actualErr = (elementService.waitForElementVisibility(errorWard)).getText();
 		return actualErr;
-	}
-
-	public WebElement waitForElementClickable(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-	}
-
-	public WebElement waitForElementVisible(By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
 }
