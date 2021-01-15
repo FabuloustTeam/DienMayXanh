@@ -81,6 +81,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				}
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -119,6 +120,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				}
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -166,6 +168,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				}
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -212,6 +215,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				}
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -270,6 +274,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				i++;
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -339,6 +344,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				i++;
 				driver.close();				
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}
@@ -404,6 +410,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				i++;
 				driver.close();
 				driver = new ChromeDriver();
+				driver.manage().window().maximize();
 				driver.get(url);
 			}
 		}

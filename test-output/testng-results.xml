@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-16T03:12:31 ICT" name="testing" finished-at="2021-01-16T03:14:31 ICT" duration-ms="120326">
+  <suite started-at="2021-01-16T03:57:06 ICT" name="testing" finished-at="2021-01-16T03:59:28 ICT" duration-ms="141876">
     <groups>
+      <group name="chooseRecivePlaceSuccess">
+        <method signature="ChooseReceivedPlace.testSuccessWithOnlyProvince(java.lang.String)[pri:2, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessWithOnlyProvince" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseRecivePlaceSuccess -->
+      <group name="successUpdateReceivePlace">
+        <method signature="ChooseReceivedPlace.testSuccessUpdateByClickOnButonChange(java.lang.String)[pri:6, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateByClickOnButonChange" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessUpdateByClickOnDropBoxProvince(java.lang.String)[pri:7, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateByClickOnDropBoxProvince" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessUpdateWithOnlyProvinceSubmitBefor(java.lang.String)[pri:5, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateWithOnlyProvinceSubmitBefor" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- successUpdateReceivePlace -->
+      <group name="chooseReceivePlaceSuccess">
+        <method signature="ChooseReceivedPlace.testMainSFWithFullInfor(java.lang.String)[pri:1, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testMainSFWithFullInfor" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessWithoutFillTextboxAddress(java.lang.String)[pri:3, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessWithoutFillTextboxAddress" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseReceivePlaceSuccess -->
+      <group name="chooseReceivePlaceFail">
+        <method signature="ChooseReceivedPlace.testFailWithoutChooseWard(java.lang.String)[pri:4, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testFailWithoutChooseWard" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseReceivePlaceFail -->
     </groups>
-    <test started-at="2021-01-16T03:12:31 ICT" name="test view list products" finished-at="2021-01-16T03:14:31 ICT" duration-ms="120326">
-      <class name="com.dienmayxanh.test.ViewListProducts">
-        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:31 ICT" name="setExcelBeforeTest" finished-at="2021-01-16T03:12:31 ICT" duration-ms="462" status="PASS">
+    <test started-at="2021-01-16T03:57:06 ICT" name="test choose received place" finished-at="2021-01-16T03:59:28 ICT" duration-ms="141876">
+      <class name="com.dienmayxanh.test.ChooseReceivedPlace">
+        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:06 ICT" name="setExcelBeforeTest" finished-at="2021-01-16T03:57:07 ICT" duration-ms="468" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ViewListProducts]]>
+                <![CDATA[ChooseReceivedPlace]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcelBeforeTest -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:31 ICT" name="accessWebsite" finished-at="2021-01-16T03:12:38 ICT" duration-ms="6085" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:07 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:13 ICT" duration-ms="6125" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,7 +44,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testShowAllProduct(java.lang.String)[pri:1, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:38 ICT" name="testShowAllProduct" finished-at="2021-01-16T03:12:53 ICT" duration-ms="15804" status="PASS">
+        <test-method signature="testMainSFWithFullInfor(java.lang.String)[pri:1, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:13 ICT" name="testMainSFWithFullInfor" finished-at="2021-01-16T03:57:24 ICT" duration-ms="11098" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,12 +54,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testShowAllProduct -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:53 ICT" name="closeBrowser" finished-at="2021-01-16T03:12:54 ICT" duration-ms="181" status="PASS">
+        </test-method> <!-- testMainSFWithFullInfor -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:24 ICT" name="closeBrowser" finished-at="2021-01-16T03:57:24 ICT" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:54 ICT" name="accessWebsite" finished-at="2021-01-16T03:12:59 ICT" duration-ms="5958" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:24 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:30 ICT" duration-ms="5854" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,7 +70,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testShowAllProductOfBrand(java.lang.String)[pri:2, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:12:59 ICT" name="testShowAllProductOfBrand" finished-at="2021-01-16T03:13:18 ICT" duration-ms="18397" status="PASS">
+        <test-method signature="testSuccessWithOnlyProvince(java.lang.String)[pri:2, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:30 ICT" name="testSuccessWithOnlyProvince" finished-at="2021-01-16T03:57:42 ICT" duration-ms="12252" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -65,12 +80,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testShowAllProductOfBrand -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:13:18 ICT" name="closeBrowser" finished-at="2021-01-16T03:13:18 ICT" duration-ms="82" status="PASS">
+        </test-method> <!-- testSuccessWithOnlyProvince -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:42 ICT" name="closeBrowser" finished-at="2021-01-16T03:57:42 ICT" duration-ms="62" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:13:18 ICT" name="accessWebsite" finished-at="2021-01-16T03:13:24 ICT" duration-ms="5826" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:42 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:48 ICT" duration-ms="5754" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -81,7 +96,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="ViewList_SortPrice(java.lang.String)[pri:3, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:13:24 ICT" name="ViewList_SortPrice" finished-at="2021-01-16T03:14:05 ICT" duration-ms="41522" status="PASS">
+        <test-method signature="testSuccessWithoutFillTextboxAddress(java.lang.String)[pri:3, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:48 ICT" name="testSuccessWithoutFillTextboxAddress" finished-at="2021-01-16T03:58:01 ICT" duration-ms="12654" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -91,12 +106,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewList_SortPrice -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:14:05 ICT" name="closeBrowser" finished-at="2021-01-16T03:14:05 ICT" duration-ms="71" status="PASS">
+        </test-method> <!-- testSuccessWithoutFillTextboxAddress -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:01 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:01 ICT" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:14:05 ICT" name="accessWebsite" finished-at="2021-01-16T03:14:11 ICT" duration-ms="5815" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:01 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:07 ICT" duration-ms="5959" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -107,7 +122,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="ViewList_Quantity(java.lang.String)[pri:5, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:14:11 ICT" name="ViewList_Quantity" finished-at="2021-01-16T03:14:31 ICT" duration-ms="19988" status="PASS">
+        <test-method signature="testFailWithoutChooseWard(java.lang.String)[pri:4, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:07 ICT" name="testFailWithoutChooseWard" finished-at="2021-01-16T03:58:17 ICT" duration-ms="10503" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -117,16 +132,94 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewList_Quantity -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:14:31 ICT" name="closeBrowser" finished-at="2021-01-16T03:14:31 ICT" duration-ms="68" status="PASS">
+        </test-method> <!-- testFailWithoutChooseWard -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:17 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:17 ICT" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewListProducts@258d79be]" started-at="2021-01-16T03:14:31 ICT" name="saveAndCloseExcel" finished-at="2021-01-16T03:14:31 ICT" duration-ms="40" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:17 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:23 ICT" duration-ms="5922" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateWithOnlyProvinceSubmitBefor(java.lang.String)[pri:5, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:23 ICT" name="testSuccessUpdateWithOnlyProvinceSubmitBefor" finished-at="2021-01-16T03:58:44 ICT" duration-ms="20495" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessUpdateWithOnlyProvinceSubmitBefor -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:44 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:44 ICT" duration-ms="50" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:44 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:50 ICT" duration-ms="5892" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateByClickOnButonChange(java.lang.String)[pri:6, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:50 ICT" name="testSuccessUpdateByClickOnButonChange" finished-at="2021-01-16T03:59:04 ICT" duration-ms="14467" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessUpdateByClickOnButonChange -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:04 ICT" name="closeBrowser" finished-at="2021-01-16T03:59:04 ICT" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:04 ICT" name="accessWebsite" finished-at="2021-01-16T03:59:10 ICT" duration-ms="5819" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateByClickOnDropBoxProvince(java.lang.String)[pri:7, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:10 ICT" name="testSuccessUpdateByClickOnDropBoxProvince" finished-at="2021-01-16T03:59:28 ICT" duration-ms="18018" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessUpdateByClickOnDropBoxProvince -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:28 ICT" name="closeBrowser" finished-at="2021-01-16T03:59:28 ICT" duration-ms="63" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:28 ICT" name="saveAndCloseExcel" finished-at="2021-01-16T03:59:28 ICT" duration-ms="34" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->
-      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
-    </test> <!-- test view list products -->
+      </class> <!-- com.dienmayxanh.test.ChooseReceivedPlace -->
+    </test> <!-- test choose received place -->
   </suite> <!-- testing -->
 </testng-results>

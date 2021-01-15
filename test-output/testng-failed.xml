@@ -5,18 +5,18 @@
   <listeners>
     <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="test view list products(failed)">
-    <parameter name="SheetName" value="ViewListProducts"/>
+  <test thread-count="5" name="test choose received place(failed)">
+    <parameter name="SheetName" value="ChooseReceivedPlace"/>
     <classes>
-      <class name="com.dienmayxanh.test.ViewListProducts">
+      <class name="com.dienmayxanh.test.ChooseReceivedPlace">
         <methods>
           <include name="accessWebsite"/>
+          <include name="testFailWithoutChooseWard" invocation-numbers="0"/>
           <include name="saveAndCloseExcel"/>
-          <include name="ViewList_Quantity" invocation-numbers="0"/>
           <include name="closeBrowser"/>
           <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
+      </class> <!-- com.dienmayxanh.test.ChooseReceivedPlace -->
     </classes>
-  </test> <!-- test view list products(failed) -->
+  </test> <!-- test choose received place(failed) -->
 </suite> <!-- Failed suite [testing] -->
