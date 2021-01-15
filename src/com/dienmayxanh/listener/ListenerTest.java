@@ -6,6 +6,7 @@ import org.testng.ITestResult;
 
 import com.dienmayxanh.service.ExcelUtils;
 import com.dienmayxanh.service.TakeSnapShot;
+import com.dienmayxanh.Enum.Result;
 import com.dienmayxanh.abstractclass.*;
 
 public class ListenerTest extends AbstractPath implements ITestListener {
@@ -18,7 +19,7 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 		try {
 			TakeSnapShot.takeSnapShot(file);
 			int row = ExcelUtils.getRowContains(result.getName(), 1);	
-			ExcelUtils.setCellData(row, 4, "FAILED");
+			ExcelUtils.setCellData(row, 4, Result.FAILED.toString());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

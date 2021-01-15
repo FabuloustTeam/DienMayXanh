@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testing]" guice-stage="DEVELOPMENT">
-  <parameter name="SheetName" value="ChooseReceivedPlace"/>
+  <parameter name="SheetName" value="Contact"/>
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <listeners>
     <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="test choose received place(failed)">
+  <test thread-count="5" name="test contact(failed)">
     <classes>
-      <class name="com.dienmayxanh.test.ChooseReceivedPlace">
+      <class name="com.dienmayxanh.test.Contact">
         <methods>
           <include name="accessWebsite"/>
-          <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
-          <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
-          <include name="testSuccessUpdateByClickOnButonChange"/>
-          <include name="testFailWithoutChooseWard"/>
+          <include name="testContact"/>
           <include name="saveAndCloseExcel"/>
-          <include name="testSuccessWithoutFillTextboxAddress"/>
-          <include name="testSuccessWithOnlyProvince"/>
           <include name="closeBrowser"/>
           <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.ChooseReceivedPlace -->
+      </class> <!-- com.dienmayxanh.test.Contact -->
     </classes>
-  </test> <!-- test choose received place(failed) -->
+  </test> <!-- test contact(failed) -->
 </suite> <!-- Failed suite [testing] -->

@@ -1,392 +1,99 @@
 package com.dienmayxanh.test;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.dienmayxanh.Enum.Result;
 import com.dienmayxanh.abstractclass.AbstractAnnotation;
+import com.dienmayxanh.page.ContactPage;
+import com.dienmayxanh.service.ExcelUtils;
+import com.dienmayxanh.service.TakeSnapShot;
 
 public class Contact extends AbstractAnnotation {
 	
-	/**
-	 * Test requirement: TR-DMX-CMCT-01 Test case ID: TC-DMX-CMCT-01
-	 */
-	@Test
-	public void Lienhethanhcong() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		
-		// 3. Nhập nội dung muốn góp ý
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		
-		// 4. Ch�?n giới tính "Anh" hoặc "Chị"
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		// 5. Nhập h�? và tên
-		fullname.sendKeys("Jônh Aná");
-
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		// 6. Nhập số điện thoại
-		phonenumber.sendKeys("0907978025");
-
-		// 7. Nhập email
-		waitForElementClickable(By.id("conemail"));
-		WebElement email = driver.findElement(By.id("conemail"));
-		email.sendKeys("thanhnhan@gmail.com");
-
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 8. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		waitForAlert();
-		String actual = driver.switchTo().alert().getText();
-		driver.switchTo().alert().accept();
-
-		String expected = "�?ã gửi thông tin thành công!";
-		Assert.assertEquals(actual, expected);
-
-		this.driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-02
-	 */
-	@Test
-	public void SaiTruongSDT() {
-//		
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		
-		// 3. Nhập số vào trư�?ng có 'Nhập số điện thoại'
-		phonenumber.sendKeys("0907898mbcd");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 4. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		// driver.close();
-
-		this.driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-03
-	 */
-	@Test
-	public void NhapkytudacbiettruongSDT() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		// 3. Nhập ký tự đặc biệt vào trư�?ng "số điện thoại"
-		phonenumber.sendKeys("090943432!./?");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 4. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-02 Test case ID: TC-DMX-CMCT-04
-	 */
-	@Test
-	public void SDTkhonghople() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-		// 3. Nhập số điện thoại không có thật vào trư�?ng 'Nhập số điện thoại mua hàng
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("0542344234");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		// 4. Nhấn "Gửi liên hệ"
-		WebElement submit = driver.findElement(By.id("submit"));
-		submit.click();
-
-		waitForAlert();
-		String actual = driver.switchTo().alert().getText();
-		driver.switchTo().alert().accept();
-
-		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
-		Assert.assertEquals(actual, expected);
-
-		driver.close();
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-03 Test case ID: TC-DMX-CMCT-05
-	 */
-	@Test
-	public void Chuachongioitinh() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("");
-
-		// 3. B�? trống không ch�?n nút "Anh", " Chị"
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		//// genderMiss.click();
-
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 4. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-04 Test case ID: TC-DMX-CMCT-06
-	 */
-	@Test
-	public void BotrongtruongHvT() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		// 3. B�? trống trư�?ng h�? và tên vào trư�?ng 'Nhập h�? và tên'.
-		fullname.sendKeys("");
-
-		waitForElementClickable(By.id("contel"));
-		WebElement phonenumber = driver.findElement(By.id("contel"));
-		phonenumber.sendKeys("0907972811");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 4. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-07
-	 */
-	@Test
-	public void NhapchuhoavaotruognEmail() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-		// 3. Nhập chữ vào trư�?ng 'Email'.
-		waitForElementClickable(By.id("conemail"));
-		WebElement email = driver.findElement(By.id("conemail"));
-		email.sendKeys("Thanhnhan@gmail.com");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		// 4. Nhấn "Gửi liên hệ"
-		WebElement submit = driver.findElement(By.id("submit"));
-		submit.click();
-
-		waitForAlert();
-		String actual = driver.switchTo().alert().getText();
-		driver.switchTo().alert().accept();
-
-		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
-		Assert.assertEquals(actual, expected);
-
-		driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-08
-	 */
-	@Test
-	public void NhapkytudacbietvaotruongEmail() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-
-		waitForElementClickable(By.id("conemail"));
-		WebElement email = driver.findElement(By.id("conemail"));
-		// 3. Nhập kí tự đặc biệt vào trư�?ng 'Email'.
-		email.sendKeys("thanhnhan?..'`@gmail.com");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		WebElement submit = driver.findElement(By.id("submit"));
-		// 4. Nhấn "Gửi liên hệ"
-		submit.click();
-
-		driver.close();
-
-	}
-
-	/**
-	 * Test requirement: TR-DMX-CMCT-05 Test case ID: TC-DMX-CMCT-09
-	 */
-	@Test
-	public void NhapEmailkhonghople() {
-//		// 1. Truy cập vào website: https://www.dienmayxanh.com
-//		System.out.print("Launching chrome browser");
-//		driver = new ChromeDriver();
-//		driver.get(baseUrl);
-		// 2. Nhấn ch�?n "Góp ý, liên hệ" trên thanh Footer
-		WebElement contact = driver.findElement(By.xpath("//a[text()='Gửi góp ý, khiếu nại']"));
-		contact.click();
-
-		waitForElementClickable(By.id("message"));
-		WebElement textarea = driver.findElement(By.id("message"));
-		textarea.sendKeys("Em mệt lắm, em mệt lắm chị à!");
-
-		waitForElementClickable(By.id("fullname"));
-		WebElement fullname = driver.findElement(By.id("fullname"));
-		fullname.sendKeys("Jônh Aná");
-
-		waitForElementClickable(By.id("conemail"));
-		WebElement email = driver.findElement(By.id("conemail"));
-		// 3. Nhập email không có thật vào trư�?ng 'Email'.
-		email.sendKeys("motconvitxoa2caichan@gmail.com");
-
-		waitForElementClickable(By.xpath(".//label[text()=' Chị']"));
-		WebElement genderMiss = driver.findElement(By.xpath(".//label[text()=' Chị']"));
-		genderMiss.click();
-		// 4. Nhấn "Gửi liên hệ"
-		WebElement submit = driver.findElement(By.id("submit"));
-		submit.click();
-
-		waitForAlert();
-		String actual = driver.switchTo().alert().getText();
-		driver.switchTo().alert().accept();
-
-		String expected = "Xảy ra lỗi, vui lòng thử lại sau!";
-		Assert.assertEquals(actual, expected);
-
-		driver.close();
-
-	}
-
-	public WebElement waitForElementClickable(final By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 5000);
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-
-	}
-
-	public Alert waitForAlert() {
-		WebDriverWait wait = new WebDriverWait(driver, 1000);
-		return wait.until(ExpectedConditions.alertIsPresent());
-
+	private final int COL_EXPECT = 3;
+	private final int COL_RESULT = 4;
+	private final int COL_INPUT_CONTENT = 5;
+	private final int COL_INPUT_NAME = 6;
+	private final int COL_INPUT_PHONE = 7;
+	private final int COL_INPUT_GENDER = 8;
+	private final int COL_INPUT_EMAIL = 9;
+	private final int COL_TYPE = 10;
+	private final int START_ROW = 2;
+	private final int COL_TESTNAME = 1;
+	private int iTestCaseRow;
+	private String typeValue = "";
+	private String content = "";
+	private String name = "";
+	private String phone = "";
+	private String gender = "";
+	private String email = "";
+	private String actual = "";
+	private String expected = "";
+	private String testCaseName = "";
+	
+	ContactPage objContact = new ContactPage();
+	
+	@Test(priority = 1)
+	@Parameters({ "url" })
+	public void testContact(String url) throws Exception {
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = START_ROW; i <= iTestCaseRow; i++) {
+			actual = "";
+			
+			objContact.clickWebContact();
+			
+			// 3. Nhập nội dung muốn góp ý
+			content = ExcelUtils.getCellData(i, COL_INPUT_CONTENT);
+			objContact.setContent(content);
+			
+			// 4. Chọn giới tính "Anh" hoặc "Chị"
+			gender = ExcelUtils.getCellData(i, COL_INPUT_GENDER);
+			if(!gender.equals("")) {
+				objContact.clickRadioButton(gender);
+			}
+
+			// 5. Nhập họ và tên
+			name = ExcelUtils.getCellData(i, COL_INPUT_NAME);
+			objContact.setName(name);
+	
+			// 6. Nhập số điện thoại
+			phone = ExcelUtils.getCellData(i, COL_INPUT_PHONE);
+			objContact.setPhone(phone);
+	
+			// 7. Nhập email
+			email = ExcelUtils.getCellData(i, COL_INPUT_EMAIL);
+			objContact.setEmail(email);
+	
+//			WebElement submit = driver.findElement(By.id("submit"));
+			// 8. Nhấn "Gửi liên hệ"
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
+			objContact.submit(typeValue);
+			
+			actual = objContact.actual;
+			
+			expected = ExcelUtils.getCellData(i, COL_EXPECT);
+			if(actual.equals(expected)) {
+				ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+			} else {
+				testCaseName = ExcelUtils.getCellData(i, COL_TESTNAME);
+				String file = System.getProperty("user.dir") + "\\screenshots\\" + testCaseName + ".png";
+				try {
+					TakeSnapShot.takeSnapShot(file);
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+			}
+			
+			if(actual.equals(""))
+				ExcelUtils.setCellData(i, COL_RESULT, Result.SKIPPED.toString());
+			
+			driver.close();
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get(url);
+		}
 	}
 }

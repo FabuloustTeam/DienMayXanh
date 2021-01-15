@@ -25,12 +25,12 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-	<parameter name="SheetName" value="ChooseReceivedPlace" />
-	<test name="test choose received place">
-		<classes>
-			<class name="com.dienmayxanh.test.ChooseReceivedPlace" />
-		</classes>
-	</test>
+<!-- 	<parameter name="SheetName" value="ChooseReceivedPlace" /> -->
+<!-- 	<test name="test choose received place"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dienmayxanh.test.ChooseReceivedPlace" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 <!-- 	<parameter name="SheetName" value="ViewProductThroughList" /> -->
 <!-- 	<test name="test product through list"> -->
@@ -38,4 +38,11 @@
 <!-- 			<class name="com.dienmayxanh.test.ViewProductThroughList" /> -->
 <!-- 		</classes> -->
 <!-- 	</test> -->
+
+	<parameter name="SheetName" value="Contact" />
+	<test name="test contact">
+		<classes>
+			<class name="com.dienmayxanh.test.Contact" />
+		</classes>
+	</test>
 </suite>
