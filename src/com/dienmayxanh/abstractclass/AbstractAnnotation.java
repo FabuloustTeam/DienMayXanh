@@ -22,7 +22,7 @@ public abstract class AbstractAnnotation extends AbstractPath {
 	public void closeBrowser() throws Exception {
 		ExcelUtils.saveFile(pathExcel);
 		driver.close();
-	}
+	 }                                           
 
 	@Parameters({ "SheetName" })
 	@BeforeClass
@@ -30,7 +30,7 @@ public abstract class AbstractAnnotation extends AbstractPath {
 		ExcelUtils.setExcelFile(pathExcel, SheetName);
 	}
 
-	@AfterTest
+	@AfterClass
 	public void saveAndCloseExcel() throws Exception {
 		ExcelUtils.closeandsaveFile(pathExcel);
 	}

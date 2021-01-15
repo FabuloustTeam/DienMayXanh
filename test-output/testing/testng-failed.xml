@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testing]" guice-stage="DEVELOPMENT">
+  <parameter name="SheetName" value="ViewProductThroughList"/>
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
-  <test thread-count="5" name="test view list products(failed)">
-    <parameter name="SheetName" value="ViewListProducts"/>
+  <listeners>
+    <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
+  </listeners>
+  <test thread-count="5" name="test product through list(failed)">
     <classes>
-      <class name="com.dienmayxanh.test.ViewListProducts">
+      <class name="com.dienmayxanh.test.ViewProductThroughList">
         <methods>
           <include name="accessWebsite"/>
-          <include name="ViewList_SortPrice" invocation-numbers="0"/>
-          <include name="saveAndCloseExcel"/>
-          <include name="ViewList_Quantity"/>
-          <include name="closeBrowser"/>
-          <include name="setExcelBeforeTest"/>
-        </methods>
-      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
-    </classes>
-  </test> <!-- test view list products(failed) -->
-  <test thread-count="5" name="test comment(failed)">
-    <parameter name="SheetName" value="Comment"/>
-    <classes>
-      <class name="com.dienmayxanh.test.Comment">
-        <methods>
-          <include name="accessWebsite"/>
-          <include name="CommentUnsuccessfullyWithError"/>
           <include name="saveAndCloseExcel"/>
           <include name="closeBrowser"/>
-          <include name="CommentUnsuccessfullyWithAlert"/>
+          <include name="testSuccessViewProductByList"/>
           <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.Comment -->
+      </class> <!-- com.dienmayxanh.test.ViewProductThroughList -->
     </classes>
-  </test> <!-- test comment(failed) -->
+  </test> <!-- test product through list(failed) -->
 </suite> <!-- Failed suite [testing] -->

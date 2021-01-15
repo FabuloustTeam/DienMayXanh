@@ -2,28 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="testing">
 	<parameter name="url" value="https://www.dienmayxanh.com/" />
-	<!-- <listeners> -->
-	<!-- <listener class-name="com.dienmayxanh.listener.ListenerTest" /> -->
-	<!-- </listeners> -->
-	<test name="test view list products">
-		<parameter name="SheetName" value="ViewListProducts" />
-		<classes>
+	<listeners>
+	<listener class-name="com.dienmayxanh.listener.ListenerTest" />
+	</listeners>
+<!-- 	<test name="test view list products"> -->
+<!-- 		<parameter name="SheetName" value="ViewListProducts" /> -->
+<!-- 		<classes> -->
 <!-- 			<class name="com.dienmayxanh.test.ViewListProducts" /> -->
-			<class name="com.dienmayxanh.test.ViewListProducts">
-				<methods>
-					<include name="ViewList_SortPrice" />
-					<include name="ViewList_Quantity" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 			<class name="com.dienmayxanh.test.ViewListProducts"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="ViewList_SortPrice" /> -->
+<!-- 					<include name="ViewList_Quantity" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
-	<test name="test comment">
-		<parameter name="SheetName" value="Comment" />
-		<classes>
-			<class name="com.dienmayxanh.test.Comment" />
-		</classes>
-	</test>
+<!-- 	<test name="test comment"> -->
+<!-- 		<parameter name="SheetName" value="Comment" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dienmayxanh.test.Comment" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 <!-- 	<test name=""> -->
 <!-- 		<parameter name="SheetName" value="ChooseReceivedPlace" /> -->
@@ -32,10 +32,10 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-<!-- 	<test name=""> -->
-<!-- 		<parameter name="SheetName" value="" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.dienmayxanh.test." /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<parameter name="SheetName" value="ViewProductThroughList" />
+	<test name="test product through list">
+		<classes>
+			<class name="com.dienmayxanh.test.ViewProductThroughList" />
+		</classes>
+	</test>
 </suite>

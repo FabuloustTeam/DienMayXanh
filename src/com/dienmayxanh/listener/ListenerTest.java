@@ -12,15 +12,16 @@ public class ListenerTest extends AbstractPath implements ITestListener {
 	
 	@Override
 	public void onTestFailure(ITestResult result) {
-//		String fileName = result.getAttribute("testname").toString() + "-" + (result.getName()) + ".png";
-//		String file = pathFolderImage + fileName;
-//		try {
-//			TakeSnapShot.takeSnapShot(file);
-//			
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		String fileName = (result.getName()) + ".png";
+		String file = pathFolderImage + fileName;
+		try {
+			TakeSnapShot.takeSnapShot(file);
+			int row = ExcelUtils.getRowContains(result.getName(), 1);	
+			ExcelUtils.setCellData(row, 4, "FAILED");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
