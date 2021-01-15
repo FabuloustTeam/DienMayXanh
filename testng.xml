@@ -32,10 +32,26 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-	<parameter name="SheetName" value="ViewProductThroughList" />
-	<test name="test product through list">
+	
+	<test name="test login">
+		<parameter name="SheetName" value="LogIn" />
 		<classes>
-			<class name="com.dienmayxanh.test.ViewProductThroughList" />
+			<class name = "com.dienmayxanh.test.LogIn"/>
+<!-- 				<methods> -->
+<!-- 					<include name="testLoginWithWrongFormatPhoneNumber"/> -->
+<!-- 				</methods> -->
+			
+		</classes>
+	</test>
+
+	<test name="test link">
+		<parameter name="SheetName" value="Link" />
+		<classes>
+			<class name="com.dienmayxanh.test.Link"/>
+<!-- 				<methods> -->
+<!-- 					<include name="testLoginWithWrongFormatPhoneNumber"/> -->
+<!-- 				</methods> -->
+			
 		</classes>
 	</test>
 </suite>

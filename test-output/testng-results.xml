@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-15T21:52:05 ICT" name="testing" finished-at="2021-01-15T21:52:39 ICT" duration-ms="34375">
+  <suite started-at="2021-01-16T02:03:34 ICT" name="testing" finished-at="2021-01-16T02:05:19 ICT" duration-ms="105262">
     <groups>
-      <group name="viewByName">
-        <method signature="ViewProductThroughList.testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" name="testSuccessViewProductByList" class="com.dienmayxanh.test.ViewProductThroughList"/>
-      </group> <!-- viewByName -->
     </groups>
-    <test started-at="2021-01-15T21:52:05 ICT" name="test product through list" finished-at="2021-01-15T21:52:39 ICT" duration-ms="34375">
-      <class name="com.dienmayxanh.test.ViewProductThroughList">
-        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:05 ICT" name="setExcelBeforeTest" finished-at="2021-01-15T21:52:06 ICT" duration-ms="843" status="PASS">
+    <test started-at="2021-01-16T02:03:34 ICT" name="test login" finished-at="2021-01-16T02:04:59 ICT" duration-ms="85463">
+      <class name="com.dienmayxanh.test.LogIn">
+        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:34 ICT" name="setExcelBeforeTest" finished-at="2021-01-16T02:03:35 ICT" duration-ms="721" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ViewProductThroughList]]>
+                <![CDATA[LogIn]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcelBeforeTest -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:06 ICT" name="accessWebsite" finished-at="2021-01-15T21:52:13 ICT" duration-ms="7687" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:35 ICT" name="accessWebsite" finished-at="2021-01-16T02:03:42 ICT" duration-ms="7514" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,19 +29,114 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:13 ICT" name="testSuccessViewProductByList" finished-at="2021-01-15T21:52:39 ICT" duration-ms="25330" status="PASS">
+        <test-method signature="testLoginWithWrongFormatPhoneNumber()[pri:1, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:42 ICT" name="testLoginWithWrongFormatPhoneNumber" finished-at="2021-01-16T02:03:49 ICT" duration-ms="6431" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSuccessViewProductByList -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:39 ICT" name="closeBrowser" finished-at="2021-01-15T21:52:39 ICT" duration-ms="378" status="PASS">
+        </test-method> <!-- testLoginWithWrongFormatPhoneNumber -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:49 ICT" name="closeBrowser" finished-at="2021-01-16T02:03:49 ICT" duration-ms="383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:39 ICT" name="saveAndCloseExcel" finished-at="2021-01-15T21:52:39 ICT" duration-ms="94" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:49 ICT" name="accessWebsite" finished-at="2021-01-16T02:03:56 ICT" duration-ms="7284" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testLoginWithWrongOTP()[pri:2, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:03:56 ICT" name="testLoginWithWrongOTP" finished-at="2021-01-16T02:04:09 ICT" duration-ms="13195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWithWrongOTP -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:09 ICT" name="closeBrowser" finished-at="2021-01-16T02:04:10 ICT" duration-ms="167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:10 ICT" name="accessWebsite" finished-at="2021-01-16T02:04:16 ICT" duration-ms="6394" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testNoticeOfResendingOTP()[pri:3, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:16 ICT" name="testNoticeOfResendingOTP" finished-at="2021-01-16T02:04:52 ICT" duration-ms="36192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoticeOfResendingOTP -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:52 ICT" name="closeBrowser" finished-at="2021-01-16T02:04:52 ICT" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:52 ICT" name="accessWebsite" finished-at="2021-01-16T02:04:59 ICT" duration-ms="6310" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testTitle()[pri:4, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:59 ICT" name="testTitle" finished-at="2021-01-16T02:04:59 ICT" duration-ms="496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:59 ICT" name="closeBrowser" finished-at="2021-01-16T02:04:59 ICT" duration-ms="152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.LogIn@225129c]" started-at="2021-01-16T02:04:59 ICT" name="saveAndCloseExcel" finished-at="2021-01-16T02:04:59 ICT" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->
-      </class> <!-- com.dienmayxanh.test.ViewProductThroughList -->
-    </test> <!-- test product through list -->
+      </class> <!-- com.dienmayxanh.test.LogIn -->
+    </test> <!-- test login -->
+    <test started-at="2021-01-16T02:04:59 ICT" name="test link" finished-at="2021-01-16T02:05:19 ICT" duration-ms="19760">
+      <class name="com.dienmayxanh.test.Link">
+        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.Link@63611043]" started-at="2021-01-16T02:04:59 ICT" name="setExcelBeforeTest" finished-at="2021-01-16T02:04:59 ICT" duration-ms="124" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Link]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setExcelBeforeTest -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.Link@63611043]" started-at="2021-01-16T02:04:59 ICT" name="accessWebsite" finished-at="2021-01-16T02:05:06 ICT" duration-ms="6232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testLink()[pri:0, instance:com.dienmayxanh.test.Link@63611043]" started-at="2021-01-16T02:05:06 ICT" name="testLink" finished-at="2021-01-16T02:05:19 ICT" duration-ms="13221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLink -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.Link@63611043]" started-at="2021-01-16T02:05:19 ICT" name="closeBrowser" finished-at="2021-01-16T02:05:19 ICT" duration-ms="118" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.Link@63611043]" started-at="2021-01-16T02:05:19 ICT" name="saveAndCloseExcel" finished-at="2021-01-16T02:05:19 ICT" duration-ms="62" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveAndCloseExcel -->
+      </class> <!-- com.dienmayxanh.test.Link -->
+    </test> <!-- test link -->
   </suite> <!-- testing -->
 </testng-results>

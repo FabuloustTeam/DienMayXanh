@@ -3,15 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dienmayxanh.test.ViewProductThroughList">
+      <class name="com.dienmayxanh.test.LogIn">
         <methods>
+          <include name="testLoginWithWrongOTP"/>
           <include name="accessWebsite"/>
+          <include name="testTitle"/>
           <include name="saveAndCloseExcel"/>
+          <include name="testLoginWithWrongFormatPhoneNumber"/>
           <include name="closeBrowser"/>
-          <include name="testSuccessViewProductByList"/>
+          <include name="testNoticeOfResendingOTP"/>
           <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.ViewProductThroughList -->
+      </class> <!-- com.dienmayxanh.test.LogIn -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
