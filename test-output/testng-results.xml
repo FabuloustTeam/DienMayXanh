@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-15T21:12:12 ICT" name="testing" finished-at="2021-01-15T21:12:32 ICT" duration-ms="20676">
+  <suite started-at="2021-01-15T21:52:05 ICT" name="testing" finished-at="2021-01-15T21:52:39 ICT" duration-ms="34375">
     <groups>
       <group name="viewByName">
         <method signature="ViewProductThroughList.testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" name="testSuccessViewProductByList" class="com.dienmayxanh.test.ViewProductThroughList"/>
       </group> <!-- viewByName -->
     </groups>
-    <test started-at="2021-01-15T21:12:12 ICT" name="test product through list" finished-at="2021-01-15T21:12:32 ICT" duration-ms="20676">
+    <test started-at="2021-01-15T21:52:05 ICT" name="test product through list" finished-at="2021-01-15T21:52:39 ICT" duration-ms="34375">
       <class name="com.dienmayxanh.test.ViewProductThroughList">
-        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:12:12 ICT" name="setExcelBeforeTest" finished-at="2021-01-15T21:12:12 ICT" duration-ms="752" status="PASS">
+        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:05 ICT" name="setExcelBeforeTest" finished-at="2021-01-15T21:52:06 ICT" duration-ms="843" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setExcelBeforeTest -->
-        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:12:12 ICT" name="accessWebsite" finished-at="2021-01-15T21:12:19 ICT" duration-ms="6849" status="PASS">
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:06 ICT" name="accessWebsite" finished-at="2021-01-15T21:52:13 ICT" duration-ms="7687" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessWebsite -->
-        <test-method signature="testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:12:19 ICT" name="testSuccessViewProductByList" finished-at="2021-01-15T21:12:32 ICT" duration-ms="12538" status="PASS">
+        <test-method signature="testSuccessViewProductByList()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:13 ICT" name="testSuccessViewProductByList" finished-at="2021-01-15T21:52:39 ICT" duration-ms="25330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessViewProductByList -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:12:32 ICT" name="closeBrowser" finished-at="2021-01-15T21:12:32 ICT" duration-ms="415" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:39 ICT" name="closeBrowser" finished-at="2021-01-15T21:52:39 ICT" duration-ms="378" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:12:32 ICT" name="saveAndCloseExcel" finished-at="2021-01-15T21:12:32 ICT" duration-ms="91" status="PASS">
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ViewProductThroughList@488d1cd7]" started-at="2021-01-15T21:52:39 ICT" name="saveAndCloseExcel" finished-at="2021-01-15T21:52:39 ICT" duration-ms="94" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveAndCloseExcel -->

@@ -14,7 +14,7 @@ import com.dienmayxanh.service.Element;
 public class ViewProductThroughListPage extends AbstractAnnotation {
 	
 	By menu = By.id("menu2017");
-	By manufactureName = By.xpath("//aside[@class='filter bannerFilter']//child::div[@class='test manufacture show-10']");
+	By manufactureName = By.xpath("//div[@class='test manufacture show-10']");
 	By table = By.id("product-list");
 	By allProduct = By.xpath("//div[contains(@class,'prdItem')]");
 	By productName = By.tagName("span");
