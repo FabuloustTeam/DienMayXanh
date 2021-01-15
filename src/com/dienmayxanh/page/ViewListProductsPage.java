@@ -26,12 +26,30 @@ public class ViewListProductsPage extends AbstractAnnotation {
 	By liCategoriesLocator = By.tagName("li");
 	By categoriesLocator = By.tagName("a");
 	By orderTypesLocator = By.tagName("a");
+	By manufactureName = By.xpath("//div[@class='test manufacture show-10']");
+	By eachItem = By.tagName("a");
+	By namePrd = By.xpath("//div[@class='prdName']//span");
 	private Element elementService;
-	
+
 	public ViewListProductsPage() {
 		elementService = new Element();
 	}
-	
+
+	private List<WebElement> getManufactureList() {
+		return elementService.waitForElementClickable(manufactureName).findElements(eachItem);
+	}
+
+	public void chooseManufacture(String manufac) {
+		List<WebElement> listManufac = getManufactureList();
+		elementService.scrollToElement(elementService.waitForElementClickable(manufactureName));
+		for (int i = 0; i < listManufac.size(); i++) {
+			if (listManufac.get(i).getAttribute("title").contentEquals(manufac) && !listManufac.get(i).isSelected()) {
+				listManufac.get(i).click();
+				break;
+			}
+		}
+	}
+
 	public int getQuantityTotal() {
 		WebElement total = elementService.waitForElementVisibility(totalLocator);
 		return Integer.parseInt(total.getText().trim());
@@ -42,7 +60,7 @@ public class ViewListProductsPage extends AbstractAnnotation {
 		WebElement[][] dataTable = getTable();
 		for (int i = 0; i < dataTable.length; i++) {
 			for (int j = 0; j < dataTable[i].length; j++) {
-				if(dataTable[i][j] != null)
+				if (dataTable[i][j] != null)
 					quantityProducts++;
 			}
 		}
@@ -117,9 +135,9 @@ public class ViewListProductsPage extends AbstractAnnotation {
 		}
 		return dataTable;
 	}
-	
+
 	public List<WebElement> getAllProducts() {
-		WebElement table = elementService.waitForElementVisibility(tableLocator); 
+		WebElement table = elementService.waitForElementVisibility(tableLocator);
 		List<WebElement> allProducts = table.findElements(allProductsLocator);
 		WebElement[][] dataTable = new WebElement[(allProducts.size() / 4) + 1][4];
 		int countRow = 0;
@@ -144,16 +162,16 @@ public class ViewListProductsPage extends AbstractAnnotation {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		for (int i = 0; i < orderTypes.size(); i++) {
 			wait.until(ExpectedConditions.elementToBeClickable(orderTypes.get(i)));
-			if(orderTypes.get(i).getText().trim().equalsIgnoreCase(sortType.toLowerCase())) {
+			if (orderTypes.get(i).getText().trim().equalsIgnoreCase(sortType.toLowerCase())) {
 				orderTypes.get(i).click();
-				int centerWidth = orderTypes.get(i).getSize().getWidth()/2;
-				int centerHeight = orderTypes.get(i).getSize().getHeight()/2;
+				int centerWidth = orderTypes.get(i).getSize().getWidth() / 2;
+				int centerHeight = orderTypes.get(i).getSize().getHeight() / 2;
 				Actions builder = new Actions(driver);
 				builder.moveToElement(orderTypes.get(i), centerWidth, centerHeight).click().build().perform();
 				break;
 			}
 		}
-		
+
 		elementService.waitForPageLoad();
 
 		try {
@@ -198,6 +216,26 @@ public class ViewListProductsPage extends AbstractAnnotation {
 				}
 			}
 		}
+	}
+
+	public boolean isAllProductRightName(List<WebElement> products, String category) {
+		for (int i = 0; i < products.size(); i++) {
+			WebElement spanName = products.get(i).findElement(namePrd);
+			if (!spanName.getText().trim().toLowerCase().contains(category.toLowerCase().trim())) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public boolean isOnlyBrandProduct(List<WebElement> allProducts, String brand) {
+		for (int i = 0; i < allProducts.size(); i++) {
+			WebElement spanName = allProducts.get(i).findElement(namePrd);
+			if(!spanName.getText().trim().toLowerCase().contains(brand.toLowerCase().trim())) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

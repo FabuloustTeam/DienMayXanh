@@ -42,78 +42,88 @@ public class ViewListProducts extends AbstractAnnotation {
 	private boolean actual;
 	private ViewListProductsPage objViewListProducts;
 	private Element elementService;
-	
+	private boolean isAllProductTrueName;
+	private boolean isOnlyBrandProducts;
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-01
+	 * @throws Exception 
 	 */
 	@Test(priority = 1)
 	@Parameters({ "url" })
-	public void testShowAllProduct(String url) {
+	public void testShowAllProduct(String url) throws Exception {
 		objViewListProducts = new ViewListProductsPage();
 		elementService = new Element();
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get(url);
-		
-		// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
-		WebElement locnuoc = elementService.waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
-		locnuoc.click();
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = START_ROW; i <= iTestCaseRow; i++) {
+			caseValue = ExcelUtils.getCellData(i, COL_CASE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
+			if(caseValue.equals(Case.SUCCESSFULLY.toString()) && typeValue.equals(Type.ALL_LIST.toString())) {
+				
+				// 2. Nhấn ch�?n danh sách sản phẩm trong danh mục
+				String category = ExcelUtils.getCellData(i, COL_INPUT_CATEGORY);
+				objViewListProducts.chooseCategory(category);
 
-		boolean isAllProductTrueName = true;
-		List<WebElement> products = objViewListProducts.getAllProducts();
-		for (int i = 0; i < products.size(); i ++) {
-			WebElement spanName = products.get(i).findElement(By.xpath("//div[@class='prdName']//span"));
-			if(!spanName.getText().toLowerCase().contains("máy l�?c nước")) {
-				isAllProductTrueName = false;
-				break;
+				elementService.waitForPageLoad();
+
+				List<WebElement> products = objViewListProducts.getAllProducts();
+				isAllProductTrueName = objViewListProducts.isAllProductRightName(products, category);
+				if(isAllProductTrueName) {
+					ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+				} else {
+					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+				}
+				Assert.assertEquals(isAllProductTrueName, true);
+				driver.close();
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.get(url);
 			}
 		}
-		Assert.assertEquals(isAllProductTrueName, true);
 	}
 	
 	/**
 	 * Test requirement: TR-DMX-VLP-01 Test Case ID: TC-DMX-VLP-02
+	 * @throws Exception 
 	 */
 	@Test(priority = 2)
 	@Parameters({ "url" })
-	private void testShowAllProductOfBrand(String url) {
+	private void testShowAllProductOfBrand(String url) throws Exception {
 		objViewListProducts = new ViewListProductsPage();
 		elementService = new Element();
-		
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get(url);
-		
-		WebElement locnuoc = elementService.waitForElementClickable(By.xpath("//a[@href='/may-loc-nuoc']"));
-		locnuoc.click();
-		// 3. Chọn hãng
-		List<WebElement> listBrand = driver.findElements(By.xpath("//div[@class=\"test manufacture show-10\"]/a"));
-		JavascriptExecutor jsEx = (JavascriptExecutor) driver;
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		for (int i = 0; i < listBrand.size() - 1; i++) {
-			if (listBrand.get(i).getAttribute("title").equalsIgnoreCase("kangaroo")) {
-				listBrand.get(i).findElement(By.tagName("i")).click();
-				break;
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = START_ROW; i <= iTestCaseRow; i++) {
+			caseValue = ExcelUtils.getCellData(i, COL_CASE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
+			if(caseValue.equals(Case.SUCCESSFULLY.toString()) && typeValue.equals(Type.ALL_OF_BRAND.toString())) {
+				String category = ExcelUtils.getCellData(i, COL_INPUT_CATEGORY);
+				objViewListProducts.chooseCategory(category);
+
+				elementService.waitForPageLoad();
+				
+				// 3. Chọn hãng
+				String manufacture = ExcelUtils.getCellData(i, COL_INPUT_BRAND);
+				objViewListProducts.chooseManufacture(manufacture);
+				
+				elementService.waitForPageLoad();
+				
+				List<WebElement> allProducts = objViewListProducts.getAllProducts();
+				isOnlyBrandProducts = objViewListProducts.isOnlyBrandProduct(allProducts, manufacture);
+				
+				if(isOnlyBrandProducts) {
+					ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+				} else {
+					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+				}
+				
+				Assert.assertEquals(isOnlyBrandProducts, true);
+				
+				driver.close();
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.get(url);
 			}
 		}
-		elementService.waitForPageLoad();
 		
-		boolean isOnlyBrandProducts = true;
-		List<WebElement> allProducts = objViewListProducts.getAllProducts();
-		for (int i = 0; i < allProducts.size(); i++) {
-			WebElement spanName = allProducts.get(i).findElement(By.xpath("//div[@class='prdName']//span"));
-			if(!spanName.getText().toLowerCase().contains("kangaroo")) {
-				isOnlyBrandProducts = false;
-				break;
-			}
-		}
-		
-		Assert.assertEquals(isOnlyBrandProducts, true);
 	}
 
 	/**
@@ -164,6 +174,10 @@ public class ViewListProducts extends AbstractAnnotation {
 				driver.get(url);
 			}
 		}
+		driver.close();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
 	}
 	
 	/**
@@ -175,26 +189,35 @@ public class ViewListProducts extends AbstractAnnotation {
 	public void ViewList_Quantity(String url) throws Exception {
 		objViewListProducts = new ViewListProductsPage();
 		elementService = new Element();
-		
-		int rowData = ExcelUtils.getRowContains("ViewList_Quantity", COL_TESTNAME);
-		ITestResult result = Reporter.getCurrentTestResult();
-		result.setAttribute("testname", "ViewList_Quantity");
-		
-		// 2. Nhấn chọn danh sách sản phẩm trong danh mục
-		category = ExcelUtils.getCellData(rowData, COL_INPUT_CATEGORY);
-		objViewListProducts.chooseCategory(category);
-		
-		objViewListProducts.waitForProductsLoad();
-		elementService.waitForPageLoad();
-		int quantityBreadcrumb = objViewListProducts.getQuantityBreadcrumb();
-		int quantityProducts = objViewListProducts.getQuantityProducts();
-		int quantityTotal = objViewListProducts.getQuantityTotal();
-		if(quantityBreadcrumb == quantityProducts && quantityBreadcrumb == quantityTotal)
-			ExcelUtils.setCellData(rowData, COL_RESULT, Result.PASSED.toString());
-		else
-			ExcelUtils.setCellData(rowData, COL_RESULT, Result.FAILED.toString());
-		Assert.assertEquals(quantityBreadcrumb, quantityProducts);
-		Assert.assertEquals(quantityTotal, quantityProducts);
+		iTestCaseRow = ExcelUtils.getRowUsed();
+		for(int i = START_ROW; i <= iTestCaseRow; i++) {
+			caseValue = ExcelUtils.getCellData(i, COL_CASE);
+			typeValue = ExcelUtils.getCellData(i, COL_TYPE);
+			if(caseValue.equals(Case.SUCCESSFULLY.toString()) && typeValue.equals(Type.QUANTITY.toString())) {
+				
+				// 2. Nhấn chọn danh sách sản phẩm trong danh mục
+				category = ExcelUtils.getCellData(i, COL_INPUT_CATEGORY);
+				objViewListProducts.chooseCategory(category);
+				
+				objViewListProducts.waitForProductsLoad();
+				elementService.waitForPageLoad();
+				int quantityBreadcrumb = objViewListProducts.getQuantityBreadcrumb();
+				int quantityProducts = objViewListProducts.getQuantityProducts();
+				int quantityTotal = objViewListProducts.getQuantityTotal();
+				if(quantityBreadcrumb == quantityProducts && quantityBreadcrumb == quantityTotal)
+					ExcelUtils.setCellData(i, COL_RESULT, Result.PASSED.toString());
+				else
+					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
+				
+				Assert.assertEquals(quantityBreadcrumb, quantityProducts);
+				Assert.assertEquals(quantityTotal, quantityProducts);
+				
+				driver.close();
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.get(url);
+			}
+		}
 	}
 	
 

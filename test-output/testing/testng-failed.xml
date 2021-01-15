@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [testing]" guice-stage="DEVELOPMENT">
-  <parameter name="SheetName" value="Contact"/>
   <parameter name="url" value="https://www.dienmayxanh.com/"/>
   <listeners>
     <listener class-name="com.dienmayxanh.listener.ListenerTest"/>
   </listeners>
-  <test thread-count="5" name="test contact(failed)">
+  <test thread-count="5" name="test view list products(failed)">
+    <parameter name="SheetName" value="ViewListProducts"/>
     <classes>
-      <class name="com.dienmayxanh.test.Contact">
+      <class name="com.dienmayxanh.test.ViewListProducts">
         <methods>
           <include name="accessWebsite"/>
-          <include name="testContact"/>
           <include name="saveAndCloseExcel"/>
+          <include name="ViewList_Quantity" invocation-numbers="0"/>
           <include name="closeBrowser"/>
           <include name="setExcelBeforeTest"/>
         </methods>
-      </class> <!-- com.dienmayxanh.test.Contact -->
+      </class> <!-- com.dienmayxanh.test.ViewListProducts -->
     </classes>
-  </test> <!-- test contact(failed) -->
+  </test> <!-- test view list products(failed) -->
 </suite> <!-- Failed suite [testing] -->

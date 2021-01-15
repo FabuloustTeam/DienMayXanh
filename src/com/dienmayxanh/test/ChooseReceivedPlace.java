@@ -50,10 +50,7 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE).equalsIgnoreCase(Type.FULL_INFORMATION.toString())) {
-//				if(i > iTestBeginRow) {
-//					driver = new ChromeDriver();
-//					driver.get(url);
-//				}
+
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 				

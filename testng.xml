@@ -5,18 +5,17 @@
 	<listeners>
 	<listener class-name="com.dienmayxanh.listener.ListenerTest" />
 	</listeners>
-<!-- 	<test name="test view list products"> -->
-<!-- 		<parameter name="SheetName" value="ViewListProducts" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.dienmayxanh.test.ViewListProducts" /> -->
+	<test name="test view list products">
+		<parameter name="SheetName" value="ViewListProducts" />
+		<classes>
+			<class name="com.dienmayxanh.test.ViewListProducts" />
 <!-- 			<class name="com.dienmayxanh.test.ViewListProducts"> -->
 <!-- 				<methods> -->
-<!-- 					<include name="ViewList_SortPrice" /> -->
 <!-- 					<include name="ViewList_Quantity" /> -->
 <!-- 				</methods> -->
 <!-- 			</class> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+		</classes>
+	</test>
 
 <!-- 	<test name="test comment"> -->
 <!-- 		<parameter name="SheetName" value="Comment" /> -->
@@ -39,10 +38,10 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-	<parameter name="SheetName" value="Contact" />
-	<test name="test contact">
-		<classes>
-			<class name="com.dienmayxanh.test.Contact" />
-		</classes>
-	</test>
+<!-- 	<parameter name="SheetName" value="Contact" /> -->
+<!-- 	<test name="test contact"> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.dienmayxanh.test.Contact" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 </suite>

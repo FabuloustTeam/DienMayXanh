@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,22 @@
                     <div class="method-list-content passed suite-testing">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-testing" title="com.dienmayxanh.test.Contact" class="method navigator-link" hash-for-method="testContact(https://www.dienmayxanh.com/)">testContact(https://www.dienmayxanh.com/)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-testing" title="com.dienmayxanh.test.ViewListProducts" class="method navigator-link" hash-for-method="ViewList_Quantity(https://www.dienmayxanh.com/)">ViewList_Quantity(https://www.dienmayxanh.com/)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-testing" title="com.dienmayxanh.test.ViewListProducts" class="method navigator-link" hash-for-method="ViewList_SortPrice(https://www.dienmayxanh.com/)">ViewList_SortPrice(https://www.dienmayxanh.com/)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-testing" title="com.dienmayxanh.test.ViewListProducts" class="method navigator-link" hash-for-method="testShowAllProduct(https://www.dienmayxanh.com/)">testShowAllProduct(https://www.dienmayxanh.com/)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-testing" title="com.dienmayxanh.test.ViewListProducts" class="method navigator-link" hash-for-method="testShowAllProductOfBrand(https://www.dienmayxanh.com/)">testShowAllProductOfBrand(https://www.dienmayxanh.com/)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-testing -->
@@ -122,14 +137,38 @@
           <div class="suite-testing-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.dienmayxanh.test.Contact</span>
+              <span class="class-name">com.dienmayxanh.test.ViewListProducts</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testContact(https://www.dienmayxanh.com/)">
-                  </a> <!-- testContact(https://www.dienmayxanh.com/) -->
-                  <span class="method-name">testContact</span>
+                  <a name="ViewList_Quantity(https://www.dienmayxanh.com/)">
+                  </a> <!-- ViewList_Quantity(https://www.dienmayxanh.com/) -->
+                  <span class="method-name">ViewList_Quantity</span>
+                  <span class="parameters">(https://www.dienmayxanh.com/)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ViewList_SortPrice(https://www.dienmayxanh.com/)">
+                  </a> <!-- ViewList_SortPrice(https://www.dienmayxanh.com/) -->
+                  <span class="method-name">ViewList_SortPrice</span>
+                  <span class="parameters">(https://www.dienmayxanh.com/)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testShowAllProduct(https://www.dienmayxanh.com/)">
+                  </a> <!-- testShowAllProduct(https://www.dienmayxanh.com/) -->
+                  <span class="method-name">testShowAllProduct</span>
+                  <span class="parameters">(https://www.dienmayxanh.com/)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testShowAllProductOfBrand(https://www.dienmayxanh.com/)">
+                  </a> <!-- testShowAllProductOfBrand(https://www.dienmayxanh.com/) -->
+                  <span class="method-name">testShowAllProductOfBrand</span>
                   <span class="parameters">(https://www.dienmayxanh.com/)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -145,16 +184,16 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;testing&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;parameter name=&quot;SheetName&quot; value=&quot;Contact&quot;/&gt;
   &lt;parameter name=&quot;url&quot; value=&quot;https://www.dienmayxanh.com/&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.dienmayxanh.listener.ListenerTest&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;test contact&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;test view list products&quot;&gt;
+    &lt;parameter name=&quot;SheetName&quot; value=&quot;ViewListProducts&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.dienmayxanh.test.Contact&quot;/&gt;
+      &lt;class name=&quot;com.dienmayxanh.test.ViewListProducts&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- test contact --&gt;
+  &lt;/test&gt; &lt;!-- test view list products --&gt;
 &lt;/suite&gt; &lt;!-- testing --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -166,7 +205,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">test contact (1 class)</span>
+                <span class="test-name">test view list products (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -192,11 +231,23 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testContact')
-data.setCell(0, 2, 'com.dienmayxanh.test.Contact')
-data.setCell(0, 3, 69314);
+data.setCell(0, 1, 'ViewList_SortPrice')
+data.setCell(0, 2, 'com.dienmayxanh.test.ViewListProducts')
+data.setCell(0, 3, 41522);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'ViewList_Quantity')
+data.setCell(1, 2, 'com.dienmayxanh.test.ViewListProducts')
+data.setCell(1, 3, 19988);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testShowAllProductOfBrand')
+data.setCell(2, 2, 'com.dienmayxanh.test.ViewListProducts')
+data.setCell(2, 3, 18397);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testShowAllProduct')
+data.setCell(3, 2, 'com.dienmayxanh.test.ViewListProducts')
+data.setCell(3, 3, 15804);
 window.suiteTableData['testing']= { tableData: data, tableDiv: 'times-div-testing'}
 return data;
 }
@@ -227,26 +278,62 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.dienmayxanh.test.Contact</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.dienmayxanh.test.ViewListProducts</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setExcelBeforeTest(Contact)</span>
+                <span class="method-name">setExcelBeforeTest(ViewListProducts)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">accessWebsite(https://www.dienmayxanh.com/)</span>
-                <span class="method-start">510 ms</span>
+                <span class="method-start">466 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testContact(https://www.dienmayxanh.com/)</span>
-                <span class="method-start">6741 ms</span>
+                <span class="method-name">testShowAllProduct(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">6552 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">76059 ms</span>
+                <span class="method-start">22358 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">accessWebsite(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">22542 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testShowAllProductOfBrand(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">28501 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">46900 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">accessWebsite(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">46983 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ViewList_SortPrice(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">52809 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">94331 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">accessWebsite(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">94403 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">ViewList_Quantity(https://www.dienmayxanh.com/)</span>
+                <span class="method-start">100218 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">120207 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">saveAndCloseExcel</span>
-                <span class="method-start">76286 ms</span>
+                <span class="method-start">120276 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

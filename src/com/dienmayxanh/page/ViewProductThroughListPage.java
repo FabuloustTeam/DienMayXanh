@@ -12,33 +12,35 @@ import com.dienmayxanh.abstractclass.AbstractAnnotation;
 import com.dienmayxanh.service.Element;
 
 public class ViewProductThroughListPage extends AbstractAnnotation {
-	
+
 	By menu = By.id("menu2017");
 	By manufactureName = By.xpath("//div[@class='test manufacture show-10']");
 	By table = By.id("product-list");
 	By allProduct = By.xpath("//div[contains(@class,'prdItem')]");
 	By productName = By.tagName("span");
-	
+
 	By titleProductName = By.xpath("//section[@id='main-container']//child::h1");
 
 	By listCate = By.tagName("li");
-	By eachItem = By.tagName("a");	
+	By eachItem = By.tagName("a");
 	private Element elementService;
-	
+
 	public ViewProductThroughListPage() {
 		elementService = new Element();
 	}
-	
+
 	public List<WebElement> getListCategory() {
 		return elementService.waitForElementClickable(menu).findElements(listCate);
 	}
-	public List<WebElement> getManufactureList(){
+
+	public List<WebElement> getManufactureList() {
 		return elementService.waitForElementClickable(manufactureName).findElements(eachItem);
 	}
 
-	public List<WebElement> getAllProduct(){
+	public List<WebElement> getAllProduct() {
 		return driver.findElement(table).findElements(allProduct);
 	}
+
 	public void chooseCategory(String category) {
 		chooseCate: {
 			for (int i = 0; i < getListCategory().size(); i++) {
@@ -56,7 +58,8 @@ public class ViewProductThroughListPage extends AbstractAnnotation {
 	public void chooseManufacture(String manufac) {
 		scrollToElement(elementService.waitForElementClickable(manufactureName));
 		for (int i = 0; i < getManufactureList().size(); i++) {
-			if (getManufactureList().get(i).getAttribute("title").contentEquals(manufac) && !getManufactureList().get(i).isSelected()) {
+			if (getManufactureList().get(i).getAttribute("title").contentEquals(manufac)
+					&& !getManufactureList().get(i).isSelected()) {
 				getManufactureList().get(i).click();
 				break;
 			}
@@ -112,6 +115,5 @@ public class ViewProductThroughListPage extends AbstractAnnotation {
 		String actual = driver.findElement(titleProductName).getText();
 		return actual;
 	}
-
 
 }

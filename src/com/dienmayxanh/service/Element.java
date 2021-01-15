@@ -3,6 +3,7 @@ package com.dienmayxanh.service;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,5 +45,12 @@ public class Element extends AbstractAnnotation {
 	public void waitForAlert() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.alertIsPresent());
+	}
+	
+	public void scrollToElement(WebElement elm) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement element = elm;
+		js.executeScript("arguments[0].scrollIntoView();", element);
+		js.executeScript("window.scrollBy(0,-420)");
 	}
 }
