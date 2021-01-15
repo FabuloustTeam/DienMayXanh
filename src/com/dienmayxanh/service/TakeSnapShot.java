@@ -18,13 +18,4 @@ public class TakeSnapShot {
 
 		FileUtils.copyFile(SrcFile, DestFile);
 	}
-	
-	public static void takeSnapShotOnOtherDriver(String fileWithPath, WebDriver mDriver) throws Exception {
-		TakesScreenshot scrShot = ((TakesScreenshot) mDriver);
-
-		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		File DestFile = new File(fileWithPath);
-
-		FileUtils.copyFile(SrcFile, DestFile);
-	}
 }

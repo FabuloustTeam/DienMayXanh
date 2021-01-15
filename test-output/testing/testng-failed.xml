@@ -10,13 +10,16 @@
     <classes>
       <class name="com.dienmayxanh.test.ChooseReceivedPlace">
         <methods>
+          <include name="accessWebsite"/>
           <include name="testSuccessUpdateByClickOnDropBoxProvince"/>
           <include name="testSuccessUpdateWithOnlyProvinceSubmitBefor"/>
-          <include name="testMainSFWithFullInfor"/>
           <include name="testSuccessUpdateByClickOnButonChange"/>
           <include name="testFailWithoutChooseWard"/>
+          <include name="saveAndCloseExcel"/>
           <include name="testSuccessWithoutFillTextboxAddress"/>
           <include name="testSuccessWithOnlyProvince"/>
+          <include name="closeBrowser"/>
+          <include name="setExcelBeforeTest"/>
         </methods>
       </class> <!-- com.dienmayxanh.test.ChooseReceivedPlace -->
     </classes>

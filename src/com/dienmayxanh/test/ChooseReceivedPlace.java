@@ -45,11 +45,15 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-01
 	 */
 	@Test(priority = 1, groups = { "chooseReceivePlaceSuccess" })
-	public void testMainSFWithFullInfor() throws Exception {
+	@Parameters({ "url" })
+	public void testMainSFWithFullInfor(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE).equalsIgnoreCase(Type.FULL_INFORMATION.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 				
@@ -78,6 +82,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -86,11 +93,15 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-02
 	 */
 	@Test(priority = 2, groups = { "chooseRecivePlaceSuccess" })
-	public void testSuccessWithOnlyProvince() throws Exception {
+	@Parameters({ "url" })
+	public void testSuccessWithOnlyProvince(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE).equalsIgnoreCase(Type.ONLY_PROVINCE.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testSuccessWithOnlyProvince", COL_TESTNAME);
@@ -109,6 +120,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -117,11 +131,15 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-CNNH-01 - Test case: TC-DMX-CNNH-03
 	 */
 	@Test(priority = 3, groups = { "chooseReceivePlaceSuccess" })
-	public void testSuccessWithoutFillTextboxAddress() throws Exception {
+	@Parameters({ "url" })
+	public void testSuccessWithoutFillTextboxAddress(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE).equalsIgnoreCase(Type.NOT_FILL_ADDRESS.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testSuccessWithoutFillTextboxAddress", COL_TESTNAME);
@@ -149,6 +167,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -157,10 +178,15 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 * Test requirement: TR-DMX-CNNH-02 - Test case: TC-DMX-CNNH-04
 	 */
 	@Test(priority = 4, groups = { "chooseReceivePlaceFail" })
-	public void testFailWithoutChooseWard() throws Exception {
+	@Parameters({ "url" })
+	public void testFailWithoutChooseWard(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE).equalsIgnoreCase(Type.NOT_CHOOSE_WARD.toString())) {
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testFailWithoutChooseWard", COL_TESTNAME);
@@ -187,6 +213,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 				} else {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -198,12 +227,16 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 */
 
 	@Test(priority = 5, groups = { "successUpdateReceivePlace" })
-	public void testSuccessUpdateWithOnlyProvinceSubmitBefor() throws Exception {
+	@Parameters({ "url" })
+	public void testSuccessUpdateWithOnlyProvinceSubmitBefor(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE)
 					.equalsIgnoreCase(Type.UPDATE_ONLY_PROVINCE_SUBMIT_BEFORE.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testSuccessUpdateWithOnlyProvinceSubmitBefor", COL_TESTNAME);
@@ -238,6 +271,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
 				i++;
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -249,12 +285,16 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 */
 
 	@Test(priority = 6, groups = { "successUpdateReceivePlace" })
-	public void testSuccessUpdateByClickOnButonChange() throws Exception {
+	@Parameters({ "url" })
+	public void testSuccessUpdateByClickOnButonChange(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE)
 					.equalsIgnoreCase(Type.UPDATE_BY_CLICK_ON_BUTTON_CHANGE.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnButonChange", COL_TESTNAME);
@@ -300,6 +340,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
 				i++;
+				driver.close();				
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
@@ -310,12 +353,16 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 	 * @throws Exception
 	 */
 	@Test(priority = 7, groups = { "successUpdateReceivePlace" })
-	public void testSuccessUpdateByClickOnDropBoxProvince() throws Exception {
+	@Parameters({ "url" })
+	public void testSuccessUpdateByClickOnDropBoxProvince(String url) throws Exception {
 		iTestCaseRow = ExcelUtils.getRowUsed();
 		for (int i = iTestBeginRow; i <= iTestCaseRow; i++) {
 			if (ExcelUtils.getCellData(i, COL_TYPE)
 					.equalsIgnoreCase(Type.UPDATE_BY_CLICK_ON_DROP_BOX_PROVINCE.toString())) {
-				
+//				if(i > iTestBeginRow) {
+//					driver = new ChromeDriver();
+//					driver.get(url);
+//				}
 				// step 2 Nhấn chọn vào địa chỉ nhận hàng hiển thị trên thanh Header
 				objCRP.chooseProvinceBox();
 //				rowData = ExcelUtils.getRowContains("testSuccessUpdateByClickOnDropBoxProvince", COL_TESTNAME);
@@ -358,6 +405,9 @@ public class ChooseReceivedPlace extends AbstractAnnotation {
 					ExcelUtils.setCellData(i, COL_RESULT, Result.FAILED.toString());
 				}
 				i++;
+				driver.close();
+				driver = new ChromeDriver();
+				driver.get(url);
 			}
 		}
 	}
