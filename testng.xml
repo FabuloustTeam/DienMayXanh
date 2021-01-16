@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testing">
+	<parameter name="url" value="https://www.dienmayxanh.com/" />
+	<listeners>
+	<listener class-name="com.dienmayxanh.listener.ListenerTest" />
+	</listeners>
+	
+	
+	<test name="test choose received place">
+	<parameter name="SheetName" value="ChooseReceivedPlace" />
+		<classes>
+			<class name="com.dienmayxanh.test.ChooseReceivedPlace" />
+		</classes>
+	</test>
+
+	<test name="test product through list">
+	<parameter name="SheetName" value="ViewProductThroughList" />
+		<classes>
+			<class name="com.dienmayxanh.test.ViewProductThroughList" />
+		</classes>
+	</test>
+	
+	<test name="test view list products">
+		<parameter name="SheetName" value="ViewListProducts" />
+		<classes>
+			<class name="com.dienmayxanh.test.ViewListProducts" />
+		</classes>
+	</test>
+
+	<test name="test comment">
+		<parameter name="SheetName" value="Comment" />
+		<classes>
+			<class name="com.dienmayxanh.test.Comment" />
+		</classes>
+	</test>
+
+
+	<test name="test contact">
+	<parameter name="SheetName" value="Contact" />
+		<classes>
+			<class name="com.dienmayxanh.test.Contact" />
+		</classes>
+	</test>
+
+	<test name="test link">
+	<parameter name="SheetName" value="Link" />
+		<classes>
+			<class name="com.dienmayxanh.test.Link" />
+		</classes>
+	</test>
+	
+	<test name="test log in">
+	<parameter name="SheetName" value="LogIn" />
+		<classes>
+			<class name="com.dienmayxanh.test.LogIn" />
+		</classes>
+	</test>
+	
+</suite>

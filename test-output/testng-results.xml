@@ -1,167 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-11-24T18:41:37 ICT" name="Default suite" finished-at="2020-11-24T18:43:43 ICT" duration-ms="125390">
+  <suite started-at="2021-01-16T03:57:06 ICT" name="testing" finished-at="2021-01-16T03:59:28 ICT" duration-ms="141876">
     <groups>
+      <group name="chooseRecivePlaceSuccess">
+        <method signature="ChooseReceivedPlace.testSuccessWithOnlyProvince(java.lang.String)[pri:2, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessWithOnlyProvince" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseRecivePlaceSuccess -->
+      <group name="successUpdateReceivePlace">
+        <method signature="ChooseReceivedPlace.testSuccessUpdateByClickOnButonChange(java.lang.String)[pri:6, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateByClickOnButonChange" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessUpdateByClickOnDropBoxProvince(java.lang.String)[pri:7, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateByClickOnDropBoxProvince" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessUpdateWithOnlyProvinceSubmitBefor(java.lang.String)[pri:5, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessUpdateWithOnlyProvinceSubmitBefor" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- successUpdateReceivePlace -->
+      <group name="chooseReceivePlaceSuccess">
+        <method signature="ChooseReceivedPlace.testMainSFWithFullInfor(java.lang.String)[pri:1, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testMainSFWithFullInfor" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+        <method signature="ChooseReceivedPlace.testSuccessWithoutFillTextboxAddress(java.lang.String)[pri:3, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testSuccessWithoutFillTextboxAddress" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseReceivePlaceSuccess -->
+      <group name="chooseReceivePlaceFail">
+        <method signature="ChooseReceivedPlace.testFailWithoutChooseWard(java.lang.String)[pri:4, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" name="testFailWithoutChooseWard" class="com.dienmayxanh.test.ChooseReceivedPlace"/>
+      </group> <!-- chooseReceivePlaceFail -->
     </groups>
-    <test started-at="2020-11-24T18:41:37 ICT" name="Default test" finished-at="2020-11-24T18:43:43 ICT" duration-ms="125390">
-      <class name="ChooseReceivedPlace">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:37 ICT" name="beforeMethod" finished-at="2020-11-24T18:41:44 ICT" duration-ms="7043" status="PASS">
+    <test started-at="2021-01-16T03:57:06 ICT" name="test choose received place" finished-at="2021-01-16T03:59:28 ICT" duration-ms="141876">
+      <class name="com.dienmayxanh.test.ChooseReceivedPlace">
+        <test-method is-config="true" signature="setExcelBeforeTest(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:06 ICT" name="setExcelBeforeTest" finished-at="2021-01-16T03:57:07 ICT" duration-ms="468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ChooseReceivedPlace]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="mainSFWithFullInfor()[pri:1, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:44 ICT" name="mainSFWithFullInfor" finished-at="2020-11-24T18:41:50 ICT" duration-ms="6121" status="PASS">
+        </test-method> <!-- setExcelBeforeTest -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:07 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:13 ICT" duration-ms="6125" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- mainSFWithFullInfor -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:50 ICT" name="closeDriver" finished-at="2020-11-24T18:41:54 ICT" duration-ms="4133" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testMainSFWithFullInfor(java.lang.String)[pri:1, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:13 ICT" name="testMainSFWithFullInfor" finished-at="2021-01-16T03:57:24 ICT" duration-ms="11098" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:41:54 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:01 ICT" duration-ms="6035" status="PASS">
+        </test-method> <!-- testMainSFWithFullInfor -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:24 ICT" name="closeBrowser" finished-at="2021-01-16T03:57:24 ICT" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successWithOnlyProvince()[pri:2, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:01 ICT" name="successWithOnlyProvince" finished-at="2020-11-24T18:42:06 ICT" duration-ms="5828" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:24 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:30 ICT" duration-ms="5854" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successWithOnlyProvince -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:06 ICT" name="closeDriver" finished-at="2020-11-24T18:42:10 ICT" duration-ms="4113" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessWithOnlyProvince(java.lang.String)[pri:2, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:30 ICT" name="testSuccessWithOnlyProvince" finished-at="2021-01-16T03:57:42 ICT" duration-ms="12252" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:10 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:17 ICT" duration-ms="6134" status="PASS">
+        </test-method> <!-- testSuccessWithOnlyProvince -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:42 ICT" name="closeBrowser" finished-at="2021-01-16T03:57:42 ICT" duration-ms="62" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successWithoutFillTextboxAddress()[pri:3, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:17 ICT" name="successWithoutFillTextboxAddress" finished-at="2020-11-24T18:42:24 ICT" duration-ms="7226" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:42 ICT" name="accessWebsite" finished-at="2021-01-16T03:57:48 ICT" duration-ms="5754" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successWithoutFillTextboxAddress -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:24 ICT" name="closeDriver" finished-at="2020-11-24T18:42:28 ICT" duration-ms="4318" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessWithoutFillTextboxAddress(java.lang.String)[pri:3, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:57:48 ICT" name="testSuccessWithoutFillTextboxAddress" finished-at="2021-01-16T03:58:01 ICT" duration-ms="12654" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:28 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:34 ICT" duration-ms="6078" status="PASS">
+        </test-method> <!-- testSuccessWithoutFillTextboxAddress -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:01 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:01 ICT" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="failWithoutChooseWard()[pri:4, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:34 ICT" name="failWithoutChooseWard" finished-at="2020-11-24T18:42:40 ICT" duration-ms="5443" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:01 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:07 ICT" duration-ms="5959" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- failWithoutChooseWard -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:40 ICT" name="closeDriver" finished-at="2020-11-24T18:42:44 ICT" duration-ms="4136" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testFailWithoutChooseWard(java.lang.String)[pri:4, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:07 ICT" name="testFailWithoutChooseWard" finished-at="2021-01-16T03:58:17 ICT" duration-ms="10503" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:44 ICT" name="beforeMethod" finished-at="2020-11-24T18:42:52 ICT" duration-ms="8688" status="PASS">
+        </test-method> <!-- testFailWithoutChooseWard -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:17 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:17 ICT" duration-ms="59" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateWithOnlyProvinceSubmitBefor()[pri:5, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:42:52 ICT" name="successUpdateWithOnlyProvinceSubmitBefor" finished-at="2020-11-24T18:43:01 ICT" duration-ms="8297" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:17 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:23 ICT" duration-ms="5922" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successUpdateWithOnlyProvinceSubmitBefor -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:01 ICT" name="closeDriver" finished-at="2020-11-24T18:43:05 ICT" duration-ms="4138" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateWithOnlyProvinceSubmitBefor(java.lang.String)[pri:5, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:23 ICT" name="testSuccessUpdateWithOnlyProvinceSubmitBefor" finished-at="2021-01-16T03:58:44 ICT" duration-ms="20495" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:05 ICT" name="beforeMethod" finished-at="2020-11-24T18:43:12 ICT" duration-ms="6606" status="PASS">
+        </test-method> <!-- testSuccessUpdateWithOnlyProvinceSubmitBefor -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:44 ICT" name="closeBrowser" finished-at="2021-01-16T03:58:44 ICT" duration-ms="50" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateByClickOnButonChange()[pri:6, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:12 ICT" name="successUpdateByClickOnButonChange" finished-at="2020-11-24T18:43:23 ICT" duration-ms="11309" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:44 ICT" name="accessWebsite" finished-at="2021-01-16T03:58:50 ICT" duration-ms="5892" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successUpdateByClickOnButonChange -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:23 ICT" name="closeDriver" finished-at="2020-11-24T18:43:27 ICT" duration-ms="4129" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateByClickOnButonChange(java.lang.String)[pri:6, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:58:50 ICT" name="testSuccessUpdateByClickOnButonChange" finished-at="2021-01-16T03:59:04 ICT" duration-ms="14467" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:27 ICT" name="beforeMethod" finished-at="2020-11-24T18:43:33 ICT" duration-ms="6209" status="PASS">
+        </test-method> <!-- testSuccessUpdateByClickOnButonChange -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:04 ICT" name="closeBrowser" finished-at="2021-01-16T03:59:04 ICT" duration-ms="49" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="successUpdateByClickOnDropBoxProvince()[pri:7, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:33 ICT" name="successUpdateByClickOnDropBoxProvince" finished-at="2020-11-24T18:43:38 ICT" duration-ms="5206" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='provinces-box']//child::span"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54239}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 35bcfc980faf3a75125ccae168c139a8
-*** Element info: {Using=xpath, value=//div[@class='provinces-box']//child::span}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='provinces-box']//child::span"}
-  (Session info: chrome=86.0.4240.198)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-IRHMPCR', ip: '10.9.80.100', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\GIAPHU~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54239}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 35bcfc980faf3a75125ccae168c139a8
-*** Element info: {Using=xpath, value=//div[@class='provinces-box']//child::span}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at ChooseReceivedPlace.chooseProvinceBox(ChooseReceivedPlace.java:255)
-at ChooseReceivedPlace.successUpdateByClickOnDropBoxProvince(ChooseReceivedPlace.java:236)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="accessWebsite(java.lang.String)[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:04 ICT" name="accessWebsite" finished-at="2021-01-16T03:59:10 ICT" duration-ms="5819" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successUpdateByClickOnDropBoxProvince -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:ChooseReceivedPlace@683dbc2c]" started-at="2020-11-24T18:43:38 ICT" name="closeDriver" finished-at="2020-11-24T18:43:43 ICT" duration-ms="4132" status="PASS">
+        </test-method> <!-- accessWebsite -->
+        <test-method signature="testSuccessUpdateByClickOnDropBoxProvince(java.lang.String)[pri:7, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:10 ICT" name="testSuccessUpdateByClickOnDropBoxProvince" finished-at="2021-01-16T03:59:28 ICT" duration-ms="18018" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.dienmayxanh.com/]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-      </class> <!-- ChooseReceivedPlace -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- testSuccessUpdateByClickOnDropBoxProvince -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:28 ICT" name="closeBrowser" finished-at="2021-01-16T03:59:28 ICT" duration-ms="63" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="saveAndCloseExcel()[pri:0, instance:com.dienmayxanh.test.ChooseReceivedPlace@3148f668]" started-at="2021-01-16T03:59:28 ICT" name="saveAndCloseExcel" finished-at="2021-01-16T03:59:28 ICT" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- saveAndCloseExcel -->
+      </class> <!-- com.dienmayxanh.test.ChooseReceivedPlace -->
+    </test> <!-- test choose received place -->
+  </suite> <!-- testing -->
 </testng-results>
